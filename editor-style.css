@@ -1,0 +1,105 @@
+/*
+ * Styles Gutenberg editor
+ */
+
+/* Widths/Structure
+--------------------------------------------- */
+
+.wp-block {
+    max-width: 920px;
+	font-family: sans-serif;
+}
+
+.wp-block[data-align="wide"] {
+    max-width: 1280px;
+}
+
+.wp-block[data-align="full"] {
+    max-width: none;
+	margin-left: -58px;
+    margin-right: -58px;	
+}
+
+.wp-block[data-align="full"] > .is-block-content > .wp-block-group {
+    padding: 7% 5%;
+}
+
+/* Color styles
+--------------------------------------------- */
+
+.has-primary-color {
+	color: #03a9f4;
+}
+
+.has-primary-background-color {
+	background-color: #03a9f4;
+}
+
+.has-white-color {
+	color: #fff;
+}
+
+.has-white-background-color {
+	background-color: #fff;
+}
+
+
+/* Headings
+--------------------------------------------- */
+.editor-post-title__block .editor-post-title__input {
+	font-family: sans-serif;
+}
+
+h2 {
+	font-size: 27px;
+	font-size: 2.7rem;
+}
+
+h3 {
+	font-size: 24px;
+	font-size: 2.4rem;
+}
+
+h4 {
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+h5 {
+	font-size: 18px;
+	font-size: 1.8rem;
+}
+
+h6 {
+	font-size: 16px;
+	font-size: 1.6rem;
+} 
+
+
+
+/* Buttons
+--------------------------------------------- */
+
+.wp-block-button.is-style-default .wp-block-button__link,
+.wp-block-button.is-style-ghost .wp-block-button__link {
+	background-color: #03a9f4;
+	border: 2px solid #03a9f4;
+	border-radius: 0;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 16px;
+	font-size: 1.6rem;
+	font-weight: 600;
+	padding: 15px 30px;
+	text-decoration: none;
+	white-space: normal;
+	width: auto;
+}
+
+.wp-block-button.is-style-ghost .wp-block-button__link {
+	background: transparent;
+	color: #03a9f4;
+}
+
+
