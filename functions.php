@@ -62,7 +62,7 @@ function hct_enqueue_scripts_styles() {
 	);
 	
 	wp_enqueue_script(
-		'theme-name',
+		'smooth-scroll',
 		get_stylesheet_directory_uri() . '/js/smooth-scroll.js',
 		array( 'jquery' ),
 		CHILD_THEME_VERSION,
