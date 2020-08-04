@@ -84,6 +84,7 @@ include_once( get_stylesheet_directory() . '/inc/wordpress.php' );
 include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
 
 // Theme
+include_once( get_stylesheet_directory() . '/inc/presets.php' );
 include_once( get_stylesheet_directory() . '/inc/layouts.php' );
 include_once( get_stylesheet_directory() . '/inc/navigation.php' ); //includes header
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
