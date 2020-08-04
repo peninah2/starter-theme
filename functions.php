@@ -99,13 +99,9 @@ include_once( get_stylesheet_directory() . '/inc/dashboard.php' );
 include_once( get_stylesheet_directory() . '/inc/gravity-forms.php' );
 include_once( get_stylesheet_directory() . '/inc/acf.php' ); // non-blocks
 
-// Editor Styles
-add_theme_support( 'editor-styles' );
 
 // Image Sizes
-// add_image_size( 'ea_featured', 400, 100, true );
-
-// Gutenberg
+// add_image_size( 'file_size', 400, 100, true );
 
 // -- Responsive embeds
 add_theme_support( 'responsive-embeds' );
@@ -113,6 +109,16 @@ add_theme_support( 'responsive-embeds' );
 // -- Wide Images
 add_theme_support( 'align-wide' );
 
+// Editor Styles
+add_theme_support( 'editor-styles' );
+// add_editor_style( 'editor-style.css' ); 
+/**
+ * Editor stylesheet
+ */
+function hct_editor_layout_style() {
+	wp_enqueue_style( 'editor-style', get_stylesheet_directory_uri() . 'editor-style.css', [], filemtime( get_stylesheet_directory() . 'editor-style.css' ) );
+}
+add_action( 'enqueue_block_editor_assets', 'hct_editor_layout_style' );
 
 /** 
  * Gutenberg scripts and styles
@@ -128,6 +134,7 @@ function hct_editor_styling_scripts() {
 	);
 }
 add_action( 'enqueue_block_editor_assets', 'hct_editor_styling_scripts' );
+
 
 
 
@@ -162,7 +169,13 @@ function hct_responsive_menu_settings() {
 function hct_hide_scrollreveal() {
 	?>
 	<style>
-		html.sr .load-hidden {
+		html.sr .load-hidden,
+		html.sr .wp-block-column,
+		html.sr h1,
+		html.sr .wp-block-image,
+		html.sr .wp-block-media-text__media,
+		html.sr .wp-block-media-text__content,
+		html.sr .wp-block-button {
 			visibility: hidden;
 		}
 	 </style>
