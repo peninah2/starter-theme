@@ -113,51 +113,8 @@ add_theme_support( 'responsive-embeds' );
 // -- Wide Images
 add_theme_support( 'align-wide' );
 
-// -- Disable custom font sizes
-add_theme_support( 'disable-custom-font-sizes' );
 
-// -- Editor Font Styles
-add_theme_support( 'editor-font-sizes', array(
-array(
-	'name'      => __( 'Small', 'theme-name' ),
-	'shortName' => __( 'S', 'theme-name' ),
-	'size'      => 14,
-	'slug'      => 'small'
-),
-array(
-	'name'      => __( 'Normal', 'theme-name' ),
-	'shortName' => __( 'M', 'theme-name' ),
-	'size'      => 20,
-	'slug'      => 'normal'
-),
-array(
-	'name'      => __( 'Large', 'theme-name' ),
-	'shortName' => __( 'L', 'theme-name' ),
-	'size'      => 24,
-	'slug'      => 'large'
-),
-) );
-
-// -- Disable Custom Colors
-add_theme_support( 'disable-custom-colors' );
-
-// -- Editor Color Palette
-add_theme_support( 'editor-color-palette', array(
-array(
-	'name'  => __( 'Primary', 'theme-name' ),
-	'slug'  => 'primary',
-	'color' => '#03a9f4',
-),
-
-array(
-	'name'  => __( 'White', 'theme-name' ),
-	'slug'  => 'white',
-	'color' => '#ffffff',
-),
-) );
-
-
-/** ?????????????????? Do I have this elsewhere??
+/** 
  * Gutenberg scripts and styles
  */
 function hct_editor_styling_scripts() {
