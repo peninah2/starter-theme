@@ -1166,7 +1166,6 @@ figcaption,
 
 .genesis-nav-menu .sub-menu {
 	clear: both;
-	display: none;
 	left: -9999px;
 	margin: 0;
 	opacity: 1;
@@ -1769,6 +1768,12 @@ h5.question {
 	.genesis-nav-menu .menu-item:hover {
 		position: relative;
 	}
+	
+	.genesis-nav-menu .menu-item:hover > .sub-menu {
+		left: auto;
+		opacity: 1;
+		display: block;
+	}
 
 	.genesis-responsive-menu .genesis-nav-menu .sub-menu,
 	.genesis-responsive-menu .genesis-nav-menu .sub-menu a {
@@ -1793,6 +1798,7 @@ h5.question {
 	.genesis-nav-menu .sub-menu .sub-menu {
 		margin: -46px 0 0 179px;
 	}
+
 
 	/* Responsive Menu
 	--------------------------------------------- */
