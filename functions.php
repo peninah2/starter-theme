@@ -88,7 +88,7 @@ include_once( get_stylesheet_directory() . '/inc/presets.php' );
 include_once( get_stylesheet_directory() . '/inc/layouts.php' );
 include_once( get_stylesheet_directory() . '/inc/navigation.php' ); //includes header
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
-include_once( get_stylesheet_directory() . '/inc/blocks/acf-block-setup.php' );
+include_once( get_stylesheet_directory() . '/blocks/acf-block-setup.php' );
 
 // Dashboard
 include_once( get_stylesheet_directory() . '/inc/disable-editor.php' );
