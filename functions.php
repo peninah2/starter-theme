@@ -111,14 +111,7 @@ add_theme_support( 'align-wide' );
 
 // Editor Styles
 add_theme_support( 'editor-styles' );
-
-/**
- * Editor stylesheet
- */
-function hct_editor_layout_style() {
-	wp_enqueue_style( 'editor-style', get_stylesheet_directory_uri() . 'editor-style.css', array(), filemtime( get_stylesheet_directory() . '/editor-style.css' ) );
-}
-add_action( 'enqueue_block_editor_assets', 'hct_editor_layout_style' );
+add_editor_style( 'editor-style.css' );
 
 /** 
  * Gutenberg scripts and styles
