@@ -2,23 +2,21 @@ wp.domReady( () => {
 
 	wp.blocks.unregisterBlockStyle(
 		'core/button',
-		[ 'default', 'outline', 'squared', 'fill' ]
+		[ 'squared', 'fill' ]
 	);
-
-	wp.blocks.registerBlockStyle(
-		'core/button',
-		[
-			{
-				name: 'default',
-				label: 'Default',
-				isDefault: true,
-			},
-			{
-				name: 'ghost',
-				label: 'Outline',
-			}
-		]
-	);
+	
+	wp.blocks.registerBlockStyle( 'core/group', [ 
+		{
+			name: 'default',
+			label: 'Default',
+			isDefault: true,
+		},
+		{
+			name: 'flexbox',
+			label: 'Flexbox',
+		},	
+	
+	]);	
 
 	wp.blocks.unregisterBlockStyle(
 		'core/separator',
