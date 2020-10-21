@@ -296,6 +296,10 @@ li {
 	margin-right: auto !important;
 }
 
+.no-padding {
+	padding: 0 !important;
+}
+
 .padding-top-none {
 	padding-top: 0 !important;
 }
