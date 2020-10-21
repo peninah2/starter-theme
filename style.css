@@ -283,13 +283,33 @@ li {
 
 /* Styling classes
 --------------------------------------------- */
+.overflow {
+	overflow: auto;
+}
 
 .no-margin {
 	margin: 0 !important;
 }
 
-.overflow {
-	overflow: auto;
+.margin-auto {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.padding-top-none {
+	padding-top: 0 !important;
+}
+
+.padding-bottom-none {
+	padding-bottom: 0 !important;
+}
+
+.padding-sm {
+    padding: 15px !important;
+}
+
+.line-height-sm {
+    line-height: 1.2 !important;
 }
 
 
@@ -382,8 +402,7 @@ input[type="submit"],
 input[type="reset"],
 input[type="submit"],
 input[type="submit"].gform_button,
-.wp-block-button .wp-block-button__link,
-.wp-block-button.is-style-default .wp-block-button__link {
+.wp-block-button .wp-block-button__link {
 	background-color: #03a9f4;
 	border: 2px solid #03a9f4;
 	border-radius: 0;	
@@ -401,8 +420,7 @@ input[type="submit"].gform_button,
 	transition: .25s all ease-in-out;
 }
 
-.wp-block-button .wp-block-button__link,
-.wp-block-button.is-style-default .wp-block-button__link  {
+.wp-block-button .wp-block-button__link  {
 	display: block;
 }
 
@@ -421,11 +439,9 @@ input[type="submit"]:hover,
 .button:focus,
 .button:hover,
 input[type="submit"].gform_button:hover,
-.wp-block-button .wp-block-button__link:hover,
 input[type="submit"].gform_button:focus,
-.wp-block-button .wp-block-button__link:focus,
-.wp-block-button.is-style-default .wp-block-button__link:hover,
-.wp-block-button.is-style-default .wp-block-button__link:focus {
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link:focus {
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1.25" /><feFuncG type="linear" slope="1.25" /><feFuncB type="linear" slope="1.25" /></feComponentTransfer></filter></svg>#filter');
 	-webkit-filter: brightness(1.25);
 	filter: brightness(1.25);	
@@ -794,7 +810,7 @@ th {
 	width: 100vw;
 }
 
-/* Default blocks
+/* Other native block styling
 --------------------------------------------- */
 
 .wp-block-media-text__content p:last-of-type {
@@ -1605,8 +1621,7 @@ h5.question {
 	}	
 	
 	.wp-block-buttons .wp-block-button.wp-block-button,
-	.wp-block-button .wp-block-button__link,
-	.wp-block-button.is-style-default .wp-block-button__link {
+	.wp-block-button .wp-block-button__link{
 		display: inline-block;
 	}	
 
