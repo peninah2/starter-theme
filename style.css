@@ -797,19 +797,18 @@ th {
 /* Padding for columns 
 -------------------------*/
 
+.wp-block-column,
+.wp-block-media-text .wp-block-media-text__content {
+	padding: 15px;
+}	
+	
 .wp-block-columns.has-4-columns .wp-block-column {
 	padding: 5px;
 }
 
-.wp-block-media-text .wp-block-media-text__content {
-	padding: 15%;
-}
 
-.wp-block-media-text.page-title .wp-block-media-text__content {
-	padding: 15% 15% 10% 15%;
-}
-
-/* Makes Media-text blocks inside of groups be full width */
+/* Makes Media-text blocks inside of groups be full width. 
+ * Otherwise, they take on the padding from the group, which is too much padding on mobile. */
 .wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text {
 	width: 100%;
 	width: 100vw;
@@ -1623,10 +1622,6 @@ h5.question {
 @media only screen and (min-width: 480px) {
 
 	/* Blocks */	
-	.wp-block-column {
-		padding: 15px;
-	}	
-	
 	.wp-block-buttons .wp-block-button.wp-block-button,
 	.wp-block-button .wp-block-button__link {
 		display: inline-block;
@@ -1686,31 +1681,11 @@ h5.question {
 	
 	.wp-block-column:nth-child(2n) { /* combats Gutenberg default */
 		margin-left: 0;
-	}	
-	
-	
-	/* Stacks media-text blocks with text always first */
+	}
+
+	/* Stacks media-text blocks */
 	.wp-block-media-text {
-		-ms-grid-columns: 100%!important;
-		grid-template-columns: 100%!important;
-	}
-	
-	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
-		width: 100% !important;		
-		-ms-grid-column: 1;
-		grid-column: 1;
-		order: 1;
-		-ms-grid-row: 1;
-		grid-row: 1;
-	}
-	
-	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media {
-		width: 100% !important;			
-		-ms-grid-column: 1;
-		grid-column: 1;	
-		order: 2;
-		-ms-grid-row: 2;
-	    grid-row: 2;		
+		display: block;
 	}
 
 }
@@ -1727,14 +1702,11 @@ h5.question {
 		margin-top: 32px;
 	}
 	
-	.wp-block-column {
+	.wp-block-column,
+	.wp-block-media-text .wp-block-media-text__content {
 		padding: 35px;
 	}
 	
-	.wp-block-column:not(:first-child) {
-		padding-left: 45px;
-	}	
-
 }
 
 /* Admin bar changes height */
@@ -1763,7 +1735,6 @@ h5.question {
 }
 
 
-
 @media only screen and (max-width: 959px) {
 
 	.stack-960.flexbox,
@@ -1779,6 +1750,14 @@ h5.question {
 		-webkit-flex-basis: 100% !important;
 		-ms-flex-preferred-size: 100% !important;
 		flex-basis: 100% !important;	
+	}
+	
+	.wp-block-columns.stack-960 {
+		display: block;
+	}
+	
+	.wp-block-columns.stack-960 .wp-block-column:not(:first-child) {
+		margin: 0;
 	}
 
 }
@@ -1897,7 +1876,8 @@ h5.question {
 		padding: 5em;
 	}
 	
-	.wp-block-column {
+	.wp-block-column,
+	.wp-block-media-text .wp-block-media-text__content	{
 		padding: 7% 4%;
 	}
 
@@ -1981,6 +1961,14 @@ h5.question {
 		-webkit-flex-basis: 100% !important;
 		-ms-flex-preferred-size: 100% !important;
 		flex-basis: 100% !important;	
+	}
+	
+	.wp-block-columns.stack-1280 {
+		display: block;
+	}
+	
+	.wp-block-columns.stack-1280 .wp-block-column:not(:first-child) {
+		margin: 0;
 	}
 
 }
