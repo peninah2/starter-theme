@@ -431,19 +431,19 @@ input[type="submit"].gform_button:focus,
 	filter: brightness(1.25);	
 }
  
-.ghost, 
-.button.ghost,
-.wp-block-button.is-style-ghost .wp-block-button__link {
+.outline, 
+.button.outline,
+.wp-block-button.is-style-outline .wp-block-button__link {
 	background: transparent;
 	color: #03a9f4; 
 }
 
-.ghost:hover,
-.ghost:focus, 
-.button.ghost:hover,
-.button.ghost:focus,
-.wp-block-button.is-style-ghost .wp-block-button__link:hover,
-.wp-block-button.is-style-ghost .wp-block-button__link:focus {
+.outline:hover,
+.outline:focus, 
+.button.outline:hover,
+.button.outline:focus,
+.wp-block-button.is-style-outline .wp-block-button__link:hover,
+.wp-block-button.is-style-outline .wp-block-button__link:focus {
 	background: #03a9f4;
 	color: #fff;
 	filter: brightness(1);
