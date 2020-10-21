@@ -81,7 +81,7 @@ h6 {
 --------------------------------------------- */
 
 .wp-block-button.is-style-default .wp-block-button__link,
-.wp-block-button.is-style-ghost .wp-block-button__link {
+.wp-block-button.is-style-outline .wp-block-button__link {
 	background-color: #03a9f4;
 	border: 2px solid #03a9f4;
 	border-radius: 0;
@@ -97,7 +97,7 @@ h6 {
 	width: auto;
 }
 
-.wp-block-button.is-style-ghost .wp-block-button__link {
+.wp-block-button.is-style-outline .wp-block-button__link {
 	background: transparent;
 	color: #03a9f4;
 }
