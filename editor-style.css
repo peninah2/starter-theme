@@ -80,7 +80,7 @@ h6 {
 /* Buttons
 --------------------------------------------- */
 
-.wp-block-button.is-style-default .wp-block-button__link,
+.wp-block-button .wp-block-button__link,
 .wp-block-button.is-style-outline .wp-block-button__link {
 	background-color: #03a9f4;
 	border: 2px solid #03a9f4;
