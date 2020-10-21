@@ -174,7 +174,7 @@ function hct_hide_scrollreveal() {
 	 </style>
 	<?php
 }
-add_action( 'wp_head', 'hct_hide_scrollreveal' );
+// add_action( 'wp_head', 'hct_hide_scrollreveal' );
 
 /* 
  * Google Analytics
