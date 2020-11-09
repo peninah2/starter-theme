@@ -12,6 +12,11 @@ add_filter('auto_plugin_update_send_email', '__return_false');
 //Disable theme auto-update email notification
 add_filter('auto_theme_update_send_email', '__return_false');
 
+// Disable password update notifications
+if ( !function_exists( 'wp_password_change_notification' ) ) {
+    function wp_password_change_notification() {}
+}
+
  /**
   * Dont Update the Theme
   *
