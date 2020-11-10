@@ -793,6 +793,12 @@ th {
 	text-align: center;
 }
 
+.wp-block-media-text.alignfull,
+.wp-block-media-text.alignwide {
+    padding: 0;
+}
+
+
 
 /* Padding for columns 
 -------------------------*/
