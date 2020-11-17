@@ -195,3 +195,12 @@ function hct_google_tag_manager_body() {
 	<?php
 }
 add_action( 'genesis_before', 'hct_google_tag_manager_body', 0 ); 
+
+
+add_action( 'template_redirect', 'hct_in_development_redirect' );
+function hct_in_development_redirect() {
+    $homepage_id = get_option('page_on_front');
+    if ( ( ! is_page( $homepage_id ) ) && ! is_user_logged_in() ) {                                                                                  
+         wp_redirect( home_url() ); 
+    }    
+}
