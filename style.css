@@ -768,8 +768,16 @@ th {
 .wp-block-cover,
 .content-width {
     max-width: 900px;
+}
+
+.entry-content > .wp-block-group, 
+.entry-content > .wp-block-columns, 
+.entry-content > .wp-block-image,
+.entry-content > .wp-block-cover,
+.entry-content > .content-width {
     margin: auto;
 }
+
 
 .alignwide {
 	max-width: 1200px;
