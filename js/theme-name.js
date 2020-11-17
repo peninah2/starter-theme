@@ -65,7 +65,9 @@ jQuery( window ).on( 'load', genesisSample.init );
  */
 (function($) {
 	
-	sr.reveal('.fadeIn', {
+		window.sr = ScrollReveal();
+	
+		sr.reveal('.fadeIn, h1, .wp-block-column, .wp-block-media-text__media, .wp-block-media-text__content, .wp-block-image, .wp-block-cover', {
 				duration: 1000,
 				easing : 'ease-in-out',
 				opacity: 0,
