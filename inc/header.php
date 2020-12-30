@@ -1,0 +1,8 @@
+<?php 
+
+/**
+ * Header 
+ *
+ * @package      HCStarter
+
+**/
