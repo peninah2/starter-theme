@@ -60,11 +60,12 @@ var genesisSample = ( function( $ ) {
 
 jQuery( window ).on( 'load', genesisSample.init );
 
-/*
- * Scroll Reveal classes/objects
- */
+
 (function($) {
-	
+		
+		/*
+		* Scroll Reveal classes/objects
+		*/
 		window.sr = ScrollReveal();
 	
 		sr.reveal('.fadeIn, h1, .wp-block-column, .wp-block-media-text__media, .wp-block-media-text__content, .wp-block-image, .wp-block-cover', {
@@ -109,6 +110,27 @@ jQuery( window ).on( 'load', genesisSample.init );
 				scale: 1,				
 				reset: false
 		},200);	
+		
+		// Scroll to top
+		$(document).ready(function(){
+	
+			//Check to see if the window is top if not then display button
+			$(window).scroll(function(){
+				if ($(this).scrollTop() > 700) {
+					$('#scroll-top').fadeIn();
+				} else {
+					$('#scroll-top').fadeOut();
+				}
+			});
+			
+			//Click event to scroll to top
+			$('#scroll-top').click(function(){
+				$('html, body').animate({scrollTop : 0},400);
+				return false;
+			});
+			
+		});
+		
 		
 })(jQuery);
 
