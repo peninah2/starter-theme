@@ -14,7 +14,7 @@ function hct_register_custom_blocks() {
 
 	acf_register_block_type( array(
 		'name'			=> 'team-member',
-		'title'			=> __( 'Team Member', 'theme-name' ),
+		'title'			=> __( 'Team Member', 'themename' ),
 		'render_template'	=> 'blocks/block-team-member.php',
 		'category'		=> 'formatting',
 		'icon'			=> 'businessman',
@@ -22,49 +22,26 @@ function hct_register_custom_blocks() {
 		//'post_types'	=> 'team',
 		'keywords'		=> array( 'team', 'member', 'staff', 'client'  )
 	));
-	
+
+	acf_register_block_type( array(
+		'name'				=> 'testimonial-slider',
+		'title'				=> __( 'Testimonial Slider', 'themename' ),
+		'render_template'	=> 'blocks/block-testimonial-slider.php',
+		'category'			=> 'formatting',
+		'icon'				=> 'editor-quote',
+		'mode'				=> 'auto',
+		'keywords'			=> array( 'testimonials', 'slider', 'themename' ),
+	));	
 	
 	acf_register_block_type( array(
-		'name'				=> 'header',
-		'title'				=> __( 'Header', 'theme-name' ),
-		'render_template'	=> 'blocks/block-header.php',
+		'name'				=> 'logo-slider',
+		'title'				=> __( 'Logo Slider', 'themename' ),
+		'render_template'	=> 'blocks/block-logo-slider.php',
 		'category'			=> 'formatting',
-		'icon'				=> 'editor-textcolor',
+		'icon'				=> 'gallery',
 		'mode'				=> 'auto',
-		'keywords'			=> array( 'title', 'header', 'page title', 'client'),
-		'supports'			=> array( 'multiple' => false ),
+		'keywords'			=> array( 'logo', 'slider', 'themename' ),
 	));
-	
-	acf_register_block_type( array(
-		'name'				=> 'page-title',
-		'title'				=> __( 'Page Title', 'theme-name' ),
-		'render_template'	=> 'blocks/block-page-title.php',
-		'category'			=> 'formatting',
-		'icon'				=> 'editor-textcolor',
-		'mode'				=> 'auto',
-		'keywords'			=> array( 'title', 'header', 'page title', 'client'),
-		'supports'			=> array( 'multiple' => false ),
-	));	
-
-	acf_register_block_type( array(
-		'name'			=> 'testimonial',
-		'title'			=> __( 'Testimonial', 'theme-name' ),
-		'render_template'	=> 'blocks/block-testimonial.php',
-		'category'		=> 'formatting',
-		'icon'			=> 'editor-quote',
-		'mode'			=> 'preview',
-		'keywords'		=> array( 'testimonial', 'quote', 'client'  )
-	));	
-
-	acf_register_block_type( array(
-		'name'			=> 'contact',
-		'title'			=> __( 'Themeprefix Contact', 'vbdesign' ),
-		'render_template'	=> 'blocks/block-contact.php',
-		'category'		=> 'formatting',
-		'icon'			=> 'phone',
-		'mode'			=> 'auto',
-		'keywords'		=> array( 'contact', 'email', 'phone', 'client'  )
-	));		
 
 }
 add_action('acf/init', 'hct_register_custom_blocks' );
@@ -100,4 +77,109 @@ function hct_hide_h1() {
 	}
 }
 //add_action( 'genesis_before_entry', 'hct_hide_h1' );
+
+
+/*
+ * Only load Swiper scripts if slider block is present
+ */
+
+function hct_slider_block_swiper_enqueue_script() {
+	
+	if ( has_block( 'acf/testimonial-slider' ) || has_block( 'acf/logo-slider' ) ) {
+		wp_enqueue_script(
+			'swiper-js',
+			'//unpkg.com/swiper/swiper-bundle.min.js',
+			array( 'jquery' ),
+			CHILD_THEME_VERSION,
+			true
+		);
+		
+		wp_enqueue_style(
+			'swiper-styles',
+			'//unpkg.com/swiper/swiper-bundle.min.css',
+			array(),
+		);
+	}
+}
+//add_action( 'wp_enqueue_scripts', 'hct_slider_block_swiper_enqueue_script' );
+
+
+
+// Now add specific for this slider 
+function hct_testimonial_slider() {
+	
+	if ( has_block( 'acf/testimonial-slider' ) || is_post_type_archive( 'featured' ) ) { 
+	?>
+	
+	<script type='text/javascript'>
+		jQuery(function ($) {
+		$(document).ready(function(){
+			
+			var swiper = new Swiper('.testimonial-slider', {
+				autoplay: {
+					delay: 10000,
+				  },
+				
+				speed: 1000,
+				loop: true, 
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				  },
+			});		
+			
+		});	
+	});	
+	</script>
+	
+	<?php
+	}
+}
+add_action( 'wp_footer', 'hct_testimonial_slider', 50 );
+
+// Now add specific for this slider 
+function hct_logo_slider() {
+	
+	if ( has_block( 'acf/logo-slider' ) ) { 
+	?>
+	
+		<script type='text/javascript'>
+		jQuery(function ($) {
+		$(document).ready(function(){
+			
+			var swiper = new Swiper('.logo-slider', {
+				  
+				loop: true,
+				
+				slidesPerView: 1,
+				speed: 5000,
+				
+				breakpoints: {
+					600: {
+					  slidesPerView: 2,
+					  spaceBetween: 30,
+					},
+					
+					1280: {
+					  slidesPerView: 3,
+					  spaceBetween: 30,
+					  slidesPerGroup: 3,
+					}
+				},
+				  
+				  
+				navigation: {
+					nextEl: '.swiper-button-next',
+					prevEl: '.swiper-button-prev',
+				  },
+			});		
+			
+		});	
+	});	
+	</script>
+	
+	<?php
+	}
+}
+add_action( 'wp_footer', 'hct_logo_slider', 50 );
 
