@@ -100,7 +100,7 @@ function hct_register_tutorials_widget() {
 	}  
 
 	function hct_tutorials_widget() {  
-		echo '<a href="/tutorials" target="_blank" style="background: #EFEFEF; font-size: large; padding: 15px 20px; border-radius: 3px; font-weight: bold">Tutorials</a>';  
+		echo '<p style="margin-top: 2em !important"><a href="/tutorials" target="_blank" style="background: #444; text-decoration: none; color: #fff; font-size: large; padding: 15px 20px; border-radius: 3px; font-weight: bold">Tutorials</a></p>';
 		}  
 add_action('wp_dashboard_setup', 'hct_register_tutorials_widget', 5);
 
