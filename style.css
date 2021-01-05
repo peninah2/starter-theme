@@ -81,12 +81,6 @@ html {
 	box-sizing: inherit;
 }
 
-
-.site-container {
-	max-width: 1600px;
-	margin: auto;
-}
-
 /* Float Clearing
 --------------------------------------------- */
 
@@ -990,11 +984,12 @@ figcaption,
 --------------------------------------------- */
 
 .site-container {
+	width: 100%; 
+	overflow: hidden;
+	margin: auto;
 	-webkit-animation: fadein 1s;
 	animation: fadein 1s;
 	word-wrap: break-word;
-	width: 100%; 
-	overflow: hidden;
 }
 
 @keyframes fadein {
