@@ -1500,10 +1500,10 @@ p.entry-meta {
 /* Block classes
 --------------------------------------------- */
 
-.content-sidebar-wrap,
+.wrap,
 .wp-block-group__inner-container,
 .wp-block-cover__inner-container {
-	max-width: 1380px; /* ----------->>>>>> Content width set here <<<<<<<-----------------*/
+	max-width: 1280px; /* ----------->>>>>> Content width set here <<<<<<<-----------------*/
 	width: 100%;
 	margin: auto;
 	padding: 0 25px;
