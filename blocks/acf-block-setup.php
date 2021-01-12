@@ -46,6 +46,20 @@ function hct_register_custom_blocks() {
 }
 add_action('acf/init', 'hct_register_custom_blocks' );
 
+
+function hct_custom_block_category( $categories, $post ) {
+	return array_merge(
+		$categories,
+		array(
+			array(
+				'slug'  => 'theme',
+				'title' => __( 'Theme Blocks', 'theme-blocks' ),
+			),
+		)
+	);
+}
+add_filter( 'block_categories', 'hct_custom_block_category', 10, 2);
+
 /*
  * Only load Featherlight scripts if team member block is present
  */
