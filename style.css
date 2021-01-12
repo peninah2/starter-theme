@@ -174,6 +174,11 @@ hr {
 	margin: 30px 0;
 }
 
+hr.wp-block-separator.has-text-color {
+    border: 0;
+    height: 1px;
+}
+
 b,
 strong {
 	font-weight: 700;
