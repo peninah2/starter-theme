@@ -1874,15 +1874,19 @@ p.entry-meta {
 		margin-right: auto;
 	}
 	
-	.alignfull,
-	.container {
+	.alignfull {
 		padding: 5em;
 	}
 	
 	.wp-block-column,
 	.wp-block-media-text .wp-block-media-text__content	{
-		padding: 7% 4%;
+		padding: 3em 2em;
 	}
+	
+	.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text {
+		width: auto;
+	}
+
 
 	/* Sidebar
 	--------------------------------------------- */
