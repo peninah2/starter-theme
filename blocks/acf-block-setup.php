@@ -11,6 +11,16 @@ function hct_register_custom_blocks() {
 	
 	if( ! function_exists( 'acf_register_block_type' ) )
 		return;
+	
+	acf_register_block_type( array(
+		'name'				=> 'svg-img',
+		'title'				=> __( 'SVG image', 'hct' ),
+		'render_template'	=> 'blocks/block-svg-img.php',
+		'category'			=> 'formatting',
+		'icon'				=> 'embed-photo',
+		'mode'				=> 'auto',
+		'keywords'			=> array( 'svg', 'image', 'hct' ),
+	));	
 
 	acf_register_block_type( array(
 		'name'			=> 'team-member',
