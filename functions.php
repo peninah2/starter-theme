@@ -160,7 +160,8 @@ function hct_responsive_menu_settings() {
 function hct_hide_scrollreveal() {
 	?>
 	<style>
-		html.sr .load-hidden,
+		html.sr .wp-block-cover,
+		html.sr .fadeIn,
 		html.sr .wp-block-column,
 		html.sr h1,
 		html.sr .wp-block-image,
