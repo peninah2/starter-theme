@@ -165,14 +165,13 @@ function hct_hide_scrollreveal() {
 		html.sr h1,
 		html.sr .wp-block-image,
 		html.sr .wp-block-media-text__media,
-		html.sr .wp-block-media-text__content,
-		html.sr .wp-block-button {
+		html.sr .wp-block-media-text__content {
 			visibility: hidden;
 		}
 	 </style>
 	<?php
 }
-// add_action( 'wp_head', 'hct_hide_scrollreveal' );
+add_action( 'wp_head', 'hct_hide_scrollreveal' );
 
 /* 
  * Google Analytics
