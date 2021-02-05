@@ -766,6 +766,14 @@ body .gform_wrapper .gform_fields.top_label div.ginput_container {
 	justify-content: center;		
 }
 
+.justify-content-space-between,
+.wp-block-group.is-style-flexbox.justify-content-space-between > .wp-block-group__inner-container {
+	 -webkit-box-pack: justify;
+ 	 -webkit-justify-content: space-between;
+	 -ms-flex-pack: justify;
+         justify-content: space-between;		
+}
+
 .align-items-stretch,
 .wp-block-group.is-style-flexbox.align-items-stretch > .wp-block-group__inner-container {
 	-webkit-box-align: stretch;
