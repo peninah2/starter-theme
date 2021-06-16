@@ -786,7 +786,12 @@ body .gform_wrapper .gform_fields.top_label div.ginput_container {
 .line-height-sm {
     line-height: 1.2 !important;
 }
-	
+
+/* Used when default ScrollReveal should not run */
+.disable-scrollreveal {
+	visibility: visible !important;
+	opacity: 1 !important;
+}
 
 /* Avatar
 --------------------------------------------- */
