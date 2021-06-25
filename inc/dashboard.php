@@ -92,19 +92,6 @@ function hct_logged_in_as_text( $wp_admin_bar ) {
 add_action( 'admin_bar_menu', 'hct_logged_in_as_text', 11 );
 
 
-
-// Add dashboard widget: Tutorials
-function hct_register_tutorials_widget() {  
-	global $wp_meta_boxes;  
-	wp_add_dashboard_widget('hct_tutorials', 'SITE NAME Tutorials', 'hct_tutorials_widget');  
-	}  
-
-	function hct_tutorials_widget() {  
-		echo '<p style="margin-top: 2em !important"><a href="/tutorials" target="_blank" style="background: #444; text-decoration: none; color: #fff; font-size: large; padding: 15px 20px; border-radius: 3px; font-weight: bold">Tutorials</a></p>';
-		}  
-add_action('wp_dashboard_setup', 'hct_register_tutorials_widget', 5);
-
-
 /**
  * Remove WPSEO Notifications
  *

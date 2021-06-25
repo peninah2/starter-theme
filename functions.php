@@ -5,7 +5,8 @@
 
 require_once get_template_directory() . '/lib/init.php';
 
-//require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-setup.php';
+// Uncomment if using WooCommerce
+// require_once get_stylesheet_directory() . '/lib/woocommerce/woocommerce-setup.php';
 
 // Defines the child theme
 define( 'CHILD_THEME_NAME', 'Highlight Creative Starter' );
@@ -23,7 +24,7 @@ function hct_enqueue_scripts_styles() {
 	);
 
 	wp_enqueue_style(
-		'themename-fonts',
+		'theme-fonts',
 		'//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700',
 		array(),
 		CHILD_THEME_VERSION
@@ -36,26 +37,9 @@ function hct_enqueue_scripts_styles() {
 		CHILD_THEME_VERSION
 	);	
 	
-	// wp_enqueue_style( 'dashicons' );
-
-	$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 	wp_enqueue_script(
-		'themename-responsive-menu',
-		get_stylesheet_directory_uri() . "/js/responsive-menus{$suffix}.js",
-		array( 'jquery' ),
-		CHILD_THEME_VERSION,
-		true
-	);
-	
-	wp_localize_script(
-		'themename-responsive-menu',
-		'genesis_responsive_menu',
-		hct_responsive_menu_settings()
-	);
-
-	wp_enqueue_script(
-		'themename',
-		get_stylesheet_directory_uri() . '/js/themename.js',
+		'global',
+		get_stylesheet_directory_uri() . '/js/global.js',
 		array( 'jquery' ),
 		CHILD_THEME_VERSION,
 		true
@@ -82,8 +66,7 @@ if ( ! isset( $content_width ) ) {
 // Theme
 include_once( get_stylesheet_directory() . '/inc/presets.php' );
 include_once( get_stylesheet_directory() . '/inc/layouts.php' );
-include_once( get_stylesheet_directory() . '/inc/navigation.php' );
-include_once( get_stylesheet_directory() . '/inc/header.php' );
+include_once( get_stylesheet_directory() . '/inc/header.php' ); // includes navigation
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/blocks/acf-block-setup.php' );
 
@@ -92,7 +75,6 @@ include_once( get_stylesheet_directory() . '/inc/login.php' );
 include_once( get_stylesheet_directory() . '/inc/dashboard.php' );
 
 // Other
-include_once( get_stylesheet_directory() . '/inc/gravity-forms.php' );
 include_once( get_stylesheet_directory() . '/inc/acf.php' ); // non-blocks
 include_once( get_stylesheet_directory() . '/inc/misc.php' );
 include_once( get_stylesheet_directory() . '/inc/genesis-changes.php' );
@@ -128,37 +110,12 @@ add_action( 'enqueue_block_editor_assets', 'hct_editor_styling_scripts' );
 
 
 
-
-// Customize the entry meta in the entry header (requires HTML5 theme support)
-add_filter( 'genesis_post_info', 'sp_post_info_filter' );
-function sp_post_info_filter($post_info) {
-	$post_info = '[post_date] by [post_author_posts_link] [post_comments] [post_edit]';
-	return $post_info;
-}
-
-// Defines responsive menu settings
-function hct_responsive_menu_settings() {
-
-	$settings = array(
-		'mainMenu'         => __( 'Menu', 'themename' ),
-		'menuIconClass'    => 'dashicons-before dashicons-menu',
-		'subMenu'          => __( 'Submenu', 'themename' ),
-		'subMenuIconClass' => 'dashicons-before dashicons-arrow-down-alt2',
-		'menuClasses'      => array(
-			'combine' => array(
-				'.nav-primary',
-			),
-			'others'  => array(),
-		),
-	);
-
-	return $settings;
-
-}
-
 // Load-hidden class for Scroll Reveal
+add_action( 'wp_head', 'hct_hide_scrollreveal' );
 function hct_hide_scrollreveal() {
 	?>
+	
+	<meta name="theme-color" content="#000">
 	<style>
 		html.sr .wp-block-cover,
 		html.sr .fadeIn,
@@ -172,7 +129,7 @@ function hct_hide_scrollreveal() {
 	 </style>
 	<?php
 }
-add_action( 'wp_head', 'hct_hide_scrollreveal' );
+
 
 /* 
  * Google Analytics
@@ -194,8 +151,8 @@ function hct_google_tag_manager_body() {
 }
 add_action( 'genesis_before', 'hct_google_tag_manager_body', 0 ); 
 
-
-add_action( 'template_redirect', 'hct_in_development_redirect' );
+// Hides site except homepage if you are not logged in. Useful if you like to show clients homepage before the rest of the site is developed.
+// add_action( 'template_redirect', 'hct_in_development_redirect' );
 function hct_in_development_redirect() {
     $homepage_id = get_option('page_on_front');
     if ( ( ! is_page( $homepage_id ) ) && ! is_user_logged_in() ) {                                                                                  

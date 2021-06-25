@@ -1,6 +1,8 @@
 <?php 
 /**
  * Default Template
+ * Moves header from inside content markup to outside it. 
+ * Delete if not using.
  */ 
  
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );

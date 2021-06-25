@@ -53,6 +53,7 @@ function hct_custom_footer() {
 }
 
 // Social menu 
+// Requires adding social media links to options page via ACF
 function hct_social_menu() {
 	
 	$linkedin 	= get_field( 'linkedin', 'option' ); 

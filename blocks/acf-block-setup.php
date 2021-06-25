@@ -22,37 +22,6 @@ function hct_register_custom_blocks() {
 		'keywords'			=> array( 'svg', 'image', 'hct' ),
 	));	
 
-	acf_register_block_type( array(
-		'name'			=> 'team-member',
-		'title'			=> __( 'Team Member', 'themename' ),
-		'render_template'	=> 'blocks/block-team-member.php',
-		'category'		=> 'formatting',
-		'icon'			=> 'businessman',
-		'mode'			=> 'edit',
-		//'post_types'	=> 'team',
-		'keywords'		=> array( 'team', 'member', 'staff', 'client'  )
-	));
-
-	acf_register_block_type( array(
-		'name'				=> 'testimonial-slider',
-		'title'				=> __( 'Testimonial Slider', 'themename' ),
-		'render_template'	=> 'blocks/block-testimonial-slider.php',
-		'category'			=> 'formatting',
-		'icon'				=> 'editor-quote',
-		'mode'				=> 'auto',
-		'keywords'			=> array( 'testimonials', 'slider', 'themename' ),
-	));	
-	
-	acf_register_block_type( array(
-		'name'				=> 'logo-slider',
-		'title'				=> __( 'Logo Slider', 'themename' ),
-		'render_template'	=> 'blocks/block-logo-slider.php',
-		'category'			=> 'formatting',
-		'icon'				=> 'gallery',
-		'mode'				=> 'auto',
-		'keywords'			=> array( 'logo', 'slider', 'themename' ),
-	));
-
 }
 add_action('acf/init', 'hct_register_custom_blocks' );
 
@@ -87,20 +56,6 @@ function hct_teamblock_featherlight_script() {
 	}
 }
 // add_action( 'wp_enqueue_scripts', 'hct_teamblock_featherlight_script' );
-
-/*
- * Hide Genesis page title when Page Title block is used
- */
-
-function hct_hide_h1() {
-	
-	if ( has_block( 'acf/page-title' ) ) {
-		remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
-		remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
-		remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
-	}
-}
-//add_action( 'genesis_before_entry', 'hct_hide_h1' );
 
 
 /*

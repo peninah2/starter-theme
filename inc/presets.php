@@ -13,36 +13,29 @@ add_theme_support( 'disable-custom-font-sizes' );
 // -- Editor Font Styles
 add_theme_support( 'editor-font-sizes', array(
 	array(
-		'name'      => __( 'Small', 'theme-name' ),
-		'shortName' => __( 'S', 'theme-name' ),
+		'name'      => __( 'Small', 'theme' ),
+		'shortName' => __( 'S', 'theme' ),
 		'size'      => 14,
 		'slug'      => 'small'
 	),
 
 	array(
-		'name'      => __( 'Medium', 'theme-name' ),
-		'shortName' => __( 'M', 'theme-name' ),
+		'name'      => __( 'Medium', 'theme' ),
+		'shortName' => __( 'M', 'theme' ),
 		'size'      => 20,
 		'slug'      => 'medium'
-	),
-
-	array(
-		'name'      => __( 'Medium-Large', 'theme-name' ),
-		'shortName' => __( 'ML', 'theme-name' ),
-		'size'      => 22,
-		'slug'      => 'med-large'
 	),		
 	
 	array(
-		'name'      => __( 'Large', 'theme-name' ),
-		'shortName' => __( 'L', 'theme-name' ),
+		'name'      => __( 'Large', 'theme' ),
+		'shortName' => __( 'L', 'theme' ),
 		'size'      => 24,
 		'slug'      => 'large'
 	),
 	
 	array(
-		'name'      => __( 'Extra Large', 'theme-name' ),
-		'shortName' => __( 'XL', 'theme-name' ),
+		'name'      => __( 'Extra Large', 'theme' ),
+		'shortName' => __( 'XL', 'theme' ),
 		'size'      => 30,
 		'slug'      => 'xlarge'
 	),	
@@ -56,19 +49,19 @@ add_theme_support( 'editor-font-sizes', array(
 add_theme_support( 'editor-color-palette', array(
 
 	array(
-		'name'  => __( 'White', 'theme-name' ),
+		'name'  => __( 'White', 'theme' ),
 		'slug'  => 'white',
 		'color' => '#ffffff',
 	),
 	
 	array(
-		'name'  => __( 'Grey', 'theme-name' ),
+		'name'  => __( 'Grey', 'theme' ),
 		'slug'  => 'grey',
 		'color' => '#ddd',
 	),
 
 	array(
-		'name'  => __( 'Black', 'theme-name' ),
+		'name'  => __( 'Black', 'theme' ),
 		'slug'  => 'black',
 		'color' => '#111',
 	),
@@ -84,7 +77,7 @@ function hct_custom_gradients() {
 		array(
 		
 			array(
-				'name'     => __( 'Vertical grey-white', 'theme-name' ),
+				'name'     => __( 'Vertical grey-white', 'theme' ),
 				'gradient' => 'linear-gradient(0deg, rgba(255,255,255,1) 50%, rgba(222,222,222,1) 50%)',
 				'slug'     => 'vertical-grey-white'
 			)

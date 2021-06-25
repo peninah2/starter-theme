@@ -68,8 +68,8 @@ function hct_remove_genesis_page_scripts_box() {
 	remove_meta_box( 'genesis_inpost_scripts_box', 'page', 'normal' );
 }
 
-// Removes output of unused admin settings metaboxes
-add_action( 'genesis_theme_settings_metaboxes', 'hct_remove_metaboxes' );
+// Removes output of unused admin settings metaboxes -- uncomment to include
+// add_action( 'genesis_theme_settings_metaboxes', 'hct_remove_metaboxes' );
 function hct_remove_metaboxes( $_genesis_admin_settings ) {
 
 	remove_meta_box( 'genesis-theme-settings-header', $_genesis_admin_settings, 'main' );
@@ -77,12 +77,21 @@ function hct_remove_metaboxes( $_genesis_admin_settings ) {
 
 } 
 
+// Customize the entry meta in the entry header (requires HTML5 theme support)
+add_filter( 'genesis_post_info', 'sp_post_info_filter' );
+function sp_post_info_filter($post_info) {
+	$post_info = '[post_date] by [post_author_posts_link] [post_comments] [post_edit]';
+	return $post_info;
+}
+
+
 /**
  * Disable customizer theme settings
- *
+ * Check the commented line to determine which to keep
  */
 function ea_disable_customizer_theme_settings( $config ) {
-	$remove = [ 'genesis_header', 'genesis_single', 'genesis_archives', 'genesis_footer' ];
+//	$remove = [ 'genesis_header', 'genesis_single', 'genesis_archives', 'genesis_footer' ];
+	$remove = [ 'genesis_footer' ];
 	foreach( $remove as $item ) {
 		unset( $config['genesis']['sections'][ $item ] );
 	}

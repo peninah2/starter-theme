@@ -4,8 +4,8 @@
 add_filter( 'woocommerce_enqueue_styles', 'hct_woocommerce_styles' );
 function hct_woocommerce_styles( $enqueue_styles ) {
 
-	$enqueue_styles['theme-name-woocommerce-styles'] = array(
-		'src'     => get_stylesheet_directory_uri() . '/lib/woocommerce/theme-name-woocommerce.css',
+	$enqueue_styles['theme-woocommerce-styles'] = array(
+		'src'     => get_stylesheet_directory_uri() . '/lib/woocommerce/theme-woocommerce.css',
 		'deps'    => '',
 		'version' => CHILD_THEME_VERSION,
 		'media'   => 'screen',
@@ -22,33 +22,6 @@ if ( class_exists( 'WooCommerce' ) ) {
 	add_theme_support( 'wc-product-gallery-lightbox' );
 	add_theme_support( 'wc-product-gallery-slider' );
 	add_theme_support( 'wc-product-gallery-zoom' );
-
-}
-
-add_action( 'wp_enqueue_scripts', 'hct_products_match_height', 99 );
-/**
- * Prints an inline script to the footer to keep products the same height.
- *
- * @since 2.3.0
- */
-function hct_products_match_height() {
-
-	// If Woocommerce is not activated, or a product page isn't showing, exit early.
-	if ( ! class_exists( 'WooCommerce' ) || ! is_shop() && ! is_product_category() && ! is_product_tag() ) {
-		return;
-	}
-
-	wp_enqueue_script(
-		'genesis-sample-match-height',
-		get_stylesheet_directory_uri() . '/js/jquery.matchHeight.min.js',
-		array( 'jquery' ),
-		CHILD_THEME_VERSION,
-		true
-	);
-	wp_add_inline_script(
-		'genesis-sample-match-height',
-		"jQuery(document).ready( function() { jQuery( '.product .woocommerce-LoopProduct-link').matchHeight(); });"
-	);
 
 }
 
