@@ -14,12 +14,12 @@ function hct_register_custom_blocks() {
 	
 	acf_register_block_type( array(
 		'name'				=> 'svg-img',
-		'title'				=> __( 'SVG image', 'hct' ),
+		'title'				=> __( 'SVG image', 'theme-blocks' ),
 		'render_template'	=> 'blocks/block-svg-img.php',
 		'category'			=> 'formatting',
 		'icon'				=> 'embed-photo',
 		'mode'				=> 'auto',
-		'keywords'			=> array( 'svg', 'image', 'hct' ),
+		'keywords'			=> array( 'svg', 'image', 'theme-blocks' ),
 	));	
 
 }
