@@ -37,7 +37,7 @@ function hct_custom_block_category( $categories, $post ) {
 		)
 	);
 }
-add_filter( 'block_categories', 'hct_custom_block_category', 10, 2);
+add_filter( 'block_categories_all', 'hct_custom_block_category', 10, 2);
 
 /*
  * Only load Featherlight scripts if team member block is present
