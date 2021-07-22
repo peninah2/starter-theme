@@ -14,12 +14,12 @@ function hct_register_custom_blocks() {
 	
 	acf_register_block_type( array(
 		'name'				=> 'svg-img',
-		'title'				=> __( 'SVG image', 'theme-blocks' ),
+		'title'				=> __( 'SVG image', 'hct-theme-blocks' ),
 		'render_template'	=> 'blocks/block-svg-img.php',
 		'category'			=> 'formatting',
 		'icon'				=> 'embed-photo',
 		'mode'				=> 'auto',
-		'keywords'			=> array( 'svg', 'image', 'theme-blocks' ),
+		'keywords'			=> array( 'svg', 'image', 'hct-theme-blocks' ),
 	));	
 
 }
@@ -31,8 +31,8 @@ function hct_custom_block_category( $categories, $post ) {
 		$categories,
 		array(
 			array(
-				'slug'  => 'theme',
-				'title' => __( 'Theme Blocks', 'theme-blocks' ),
+				'slug'  => 'hct-theme',
+				'title' => __( 'Theme Blocks', 'hct-theme-blocks' ),
 			),
 		)
 	);
