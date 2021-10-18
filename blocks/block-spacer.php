@@ -7,6 +7,15 @@
  
  $height = get_field( 'height' );
  $custom_style = '';
+ $hideonmobile = get_field( 'hide_mobile' );
+ 
+ if ( $hideonmobile == 'yes') {
+	 $hideonmobile = ' desktop';
+ }
+ 
+ if ( $hideonmobile == 'no' ) {
+	 $hideonmobile = '';
+ }
  
  if ( $height == 'custom') {
 	$height = get_field( 'custom_height' );
@@ -15,4 +24,4 @@
  
  
  
- echo '<div ' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height"></div>';
+ echo '<div ' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height' . $hideonmobile . '"></div>';

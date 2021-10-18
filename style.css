@@ -1732,7 +1732,11 @@ ul.blocks-gallery-grid {
 /* Makes media-text, columns blocks stack until 960px (instead of the 600px default)
  * ---------------------------------------------------------------------------*/
 @media only screen and (max-width: 959px) {
-
+	
+	.desktop {
+		display: none;
+	}
+	
 	/* Stacks media-text & column blocks */
 	.wp-block-media-text,
 	.wp-block-columns,
