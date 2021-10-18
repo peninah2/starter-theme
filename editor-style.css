@@ -24,25 +24,20 @@
     padding: 7% 5%;
 }
 
-/* Color styles
---------------------------------------------- */
 
-.has-primary-color {
-	color: #03a9f4;
+/* Spacer block */
+
+.wp-block-spacer.spacer-small-height {
+	height: 25px;
 }
 
-.has-primary-background-color {
-	background-color: #03a9f4;
+.wp-block-spacer.spacer-medium-height {
+	height: 3em;
 }
 
-.has-white-color {
-	color: #fff;
+.wp-block-spacer.spacer-large-height {
+	height: 7em;
 }
-
-.has-white-background-color {
-	background-color: #fff;
-}
-
 
 /* Headings
 --------------------------------------------- */

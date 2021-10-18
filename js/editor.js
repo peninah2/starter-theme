@@ -1,5 +1,8 @@
 wp.domReady( () => {
 
+
+	// 	wp.blocks.unregisterBlockType( 'core/spacer' ); Remove spacer block in favor of custom
+
 	wp.blocks.unregisterBlockStyle(
 		'core/button',
 		[ 'squared', 'fill' ]

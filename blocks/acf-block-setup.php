@@ -13,6 +13,16 @@ function hct_register_custom_blocks() {
 		return;
 	
 	acf_register_block_type( array(
+		'name'				=> 'spacer',
+		'title'				=> __( 'Spacer', 'hct-theme-blocks' ),
+		'render_template'	=> 'blocks/block-spacer.php',
+		'category'			=> 'formatting',
+		'icon'				=> 'editor-expand',
+		'mode'				=> 'preview',
+		'keywords'			=> array( 'spacer', 'separator', 'hct-theme-blocks' ),
+	));		
+	
+	acf_register_block_type( array(
 		'name'				=> 'svg-img',
 		'title'				=> __( 'SVG image', 'hct-theme-blocks' ),
 		'render_template'	=> 'blocks/block-svg-img.php',
@@ -161,4 +171,87 @@ function hct_logo_slider() {
 	}
 }
 add_action( 'wp_footer', 'hct_logo_slider', 50 );
+
+
+// Custom spacer block 
+if( function_exists('acf_add_local_field_group') ):
+
+	acf_add_local_field_group(array(
+		'key' => 'group_616d7edc6b490',
+		'title' => 'Spacer',
+		'fields' => array(
+			array(
+				'key' => 'field_616d7ee18b76b',
+				'label' => 'Height',
+				'name' => 'height',
+				'type' => 'button_group',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => 0,
+				'wrapper' => array(
+					'width' => '',
+					'class' => '',
+					'id' => '',
+				),
+				'choices' => array(
+					'small' => 'S',
+					'medium' => 'M',
+					'large' => 'L',
+					'custom' => 'Custom',
+				),
+				'allow_null' => 0,
+				'default_value' => 'large',
+				'layout' => 'horizontal',
+				'return_format' => 'value',
+			),
+			array(
+				'key' => 'field_616d7f0c8b76c',
+				'label' => 'Custom height (pixels)',
+				'name' => 'custom_height',
+				'type' => 'number',
+				'instructions' => '',
+				'required' => 0,
+				'conditional_logic' => array(
+					array(
+						array(
+							'field' => 'field_616d7ee18b76b',
+							'operator' => '==',
+							'value' => 'custom',
+						),
+					),
+				),
+				'wrapper' => array(
+					'width' => '30',
+					'class' => '',
+					'id' => '',
+				),
+				'default_value' => '',
+				'placeholder' => '',
+				'prepend' => '',
+				'append' => '',
+				'min' => '',
+				'max' => '',
+				'step' => '',
+			),
+		),
+		'location' => array(
+			array(
+				array(
+					'param' => 'block',
+					'operator' => '==',
+					'value' => 'acf/spacer',
+				),
+			),
+		),
+		'menu_order' => 0,
+		'position' => 'normal',
+		'style' => 'default',
+		'label_placement' => 'top',
+		'instruction_placement' => 'label',
+		'hide_on_screen' => '',
+		'active' => true,
+		'description' => '',
+	));
+
+endif;		
 

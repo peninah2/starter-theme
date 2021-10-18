@@ -1,0 +1,48 @@
+{
+    "version": 1,
+    "settings": {
+		"layout": {
+           "contentSize": "1200px",
+           "wideSize": "900px"
+       },
+		
+        "color": {
+            "palette": [
+                {
+                    "name": "Black",
+                    "slug": "black",
+                    "color": "#000"
+                },
+                {
+                    "name": "White",
+                    "slug": "white",
+                    "color": "#ffffff"
+                }
+            ],
+			
+			"gradients": [
+                {
+                    "slug": "black-white",
+                    "gradient": "linear-gradient(90deg, #000 60%, #fff 40%)",
+                    "name": "Black - White"
+                }
+            ]
+        },
+		
+		"typography": {			
+            "fontSizes": [
+                {
+                    "slug": "normal",
+                    "size": 16,
+                    "name": "Normal"
+                },
+                {
+                    "slug": "big",
+                    "size": 32,
+                    "name": "Big"
+                }
+            ]
+        }
+
+    }
+}
