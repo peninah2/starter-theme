@@ -135,7 +135,33 @@ jQuery( window ).on( 'load', genesisSample.init );
 		*/
 		window.sr = ScrollReveal();
 	
-		sr.reveal('.fadeIn, h1, .wp-block-column, .wp-block-media-text__media, .wp-block-media-text__content, .wp-block-image, .wp-block-cover', {
+		sr.reveal('.riseUp, .wp-block-column, .wp-block-media-text__media, .wp-block-media-text__content,', {
+			delay: 0,
+			useDelay: 'onload',
+			distance: '30px',
+			duration: 800,
+			easing : 'ease-in-out',
+			opacity: 0,
+			origin: 'bottom',
+			interval: 100,
+			scale: 1,
+			reset: false
+		});		
+
+		sr.reveal('.slowRiseUp', {
+			delay: 600,
+			useDelay: 'onload',
+			distance: '100px',
+			duration: 1800,
+			easing : 'ease-in-out',
+			opacity: 0,
+			origin: 'bottom',
+			interval: 100,
+			scale: 1,
+			reset: false
+		});		
+
+		sr.reveal('.fadeIn', {
 				duration: 1000,
 				easing : 'ease-in-out',
 				opacity: 0,
@@ -143,40 +169,18 @@ jQuery( window ).on( 'load', genesisSample.init );
 				scale: 1,
 				reset: false
 		});
-
-		sr.reveal('.delay', {
-				delay: 1000,
-		});		
 		
-		sr.reveal('.shiftUp', {
-				delay: 300,
-				distance: '30px',
-				duration: 1200,
-				easing : 'ease-in-out',
-				origin: 'bottom',
-				scale: 1,				
-				reset: false
-		},200);
+		sr.reveal('.slowFade', {
+			delay: 1000,
+			useDelay: 'onload',
+			duration: 800,
+			easing : 'ease-in-out',
+			opacity: 0,
+			interval: 0,
+			scale: 1,
+			reset: false
+		});	
 		
-		sr.reveal('.shiftDown', {
-				delay: 300,
-				distance: '30px',
-				duration: 1200,
-				easing : 'ease-in-out',
-				origin: 'top',
-				scale: 1,				
-				reset: false
-		},200);	
-
-		sr.reveal('.cubeIn', {
-				delay: 300,
-				distance: '30px',
-				duration: 1200,
-				easing : 'cubic-bezier(.5,0,.4,1.06)',
-				origin: 'left',
-				scale: 1,				
-				reset: false
-		},200);	
 		
 		// Scroll to top
 		$(document).ready(function(){

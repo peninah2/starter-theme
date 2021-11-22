@@ -19,9 +19,9 @@
  
  if ( $height == 'custom') {
 	$height = get_field( 'custom_height' );
-	$custom_style = 'style="height:' . $height . 'px"';
+	$custom_style = 'style=" height:' . $height . 'px"';
  }
  
  
  
- echo '<div ' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height' . $hideonmobile . '"></div>';
+ echo '<div' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height' . $hideonmobile . '"></div>';

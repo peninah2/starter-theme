@@ -64,7 +64,6 @@ if ( ! isset( $content_width ) ) {
 }
 
 // Theme
-include_once( get_stylesheet_directory() . '/inc/presets.php' );
 include_once( get_stylesheet_directory() . '/inc/layouts.php' );
 include_once( get_stylesheet_directory() . '/inc/header.php' ); // includes navigation
 include_once( get_stylesheet_directory() . '/inc/footer.php' );

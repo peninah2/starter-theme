@@ -31,15 +31,35 @@
 		
 		"typography": {			
             "fontSizes": [
-                {
-                    "slug": "normal",
+				{
+                    "slug": "small",
                     "size": 16,
+                    "name": "Small"
+                },
+				{
+                    "slug": "normal",
+                    "size": 18,
                     "name": "Normal"
                 },
                 {
-                    "slug": "big",
-                    "size": 32,
-                    "name": "Big"
+                    "slug": "medium",
+                    "size": 20,
+                    "name": "Medium"
+                },
+				 {
+                    "slug": "large",
+                    "size": 28,
+                    "name": "Large"
+                },
+				 {
+                    "slug": "xlarge",
+                    "size": 48,
+                    "name": "X-Large"
+                },
+				 {
+                    "slug": "title",
+                    "size": 60,
+                    "name": "Page Title"
                 }
             ]
         }
