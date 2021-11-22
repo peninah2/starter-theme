@@ -45,31 +45,6 @@
 	font-family: sans-serif;
 }
 
-h2 {
-	font-size: 27px;
-	font-size: 2.7rem;
-}
-
-h3 {
-	font-size: 24px;
-	font-size: 2.4rem;
-}
-
-h4 {
-	font-size: 20px;
-	font-size: 2rem;
-}
-
-h5 {
-	font-size: 18px;
-	font-size: 1.8rem;
-}
-
-h6 {
-	font-size: 16px;
-	font-size: 1.6rem;
-} 
-
 
 
 /* Buttons
@@ -103,8 +78,7 @@ h6 {
 /* Flexbox
 --------------------------------------------- */
 
-.flexbox,
-.wp-block-group.is-style-flexbox .wp-block-group__inner-container {
+.flexbox {
 	display: -webkit-box;
 	display: -webkit-flex;
 	display: -ms-flexbox;
@@ -114,16 +88,14 @@ h6 {
 	flex-wrap: wrap;	
 }
 
-.justify-content-center,
-.wp-block-group.is-style-flexbox.justify-content-center .wp-block-group__inner-container {
+.justify-content-center {
 	-webkit-box-pack: center;
 	-webkit-justify-content: center;
 	-ms-flex-pack: center;
 	justify-content: center;		
 }
 
-.align-items-stretch,
-.wp-block-group.is-style-flexbox.align-items-stretch .wp-block-group__inner-container {
+.align-items-stretch {
 	-webkit-box-align: stretch;
 	-webkit-align-items: stretch;
 	-ms-flex-align: stretch;
@@ -131,16 +103,14 @@ h6 {
 	align-items: stretch;		
 }
 
-.align-items-center,
-.wp-block-group.is-style-flexbox.align-items-center .wp-block-group__inner-container {
+.align-items-center {
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;		
 }
 
-.flex-direction-column,
-.wp-block-group.is-style-flexbox.flex-direction-column .wp-block-group__inner-container {
+.flex-direction-column {
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
 	-webkit-flex-direction: column;
