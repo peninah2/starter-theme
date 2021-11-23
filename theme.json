@@ -33,32 +33,32 @@
             "fontSizes": [
 				{
                     "slug": "small",
-                    "size": 16,
+                    "size": "1.6rem",
                     "name": "Small"
                 },
 				{
                     "slug": "normal",
-                    "size": 18,
+                    "size": "1.8rem",
                     "name": "Normal"
                 },
                 {
                     "slug": "medium",
-                    "size": 20,
+                    "size": "min(max(1.6rem, 4vw), 2rem)",
                     "name": "Medium"
                 },
 				 {
                     "slug": "large",
-                    "size": 28,
+                    "size": "min(max(1.8rem, 4vw), 2.8rem)",
                     "name": "Large"
                 },
 				 {
                     "slug": "xlarge",
-                    "size": 48,
+                    "size": "min(max(2.4rem, 4vw), 4.8rem)",
                     "name": "X-Large"
                 },
 				 {
                     "slug": "title",
-                    "size": 60,
+                    "size": "min(max(2.6rem, 4vw), 6rem)",
                     "name": "Page Title"
                 }
             ]

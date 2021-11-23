@@ -1691,10 +1691,6 @@ ul.blocks-gallery-grid {
 		margin-top: 32px;
 	}
 	
-	.admin-bar .menu-toggle {
-		top: 36px;
-	}
-	
 	.wp-block-columns.has-4-columns {
 		-webkit-flex-wrap: wrap;
 		-ms-flex-wrap: wrap;
