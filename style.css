@@ -303,10 +303,7 @@ input[type="reset"],
 input[type="submit"],
 input[type="submit"].gform_button,
 .wp-block-button .wp-block-button__link {
-	background-color: var(--wp--preset--color--black);
-	border: 2px solid var(--wp--preset--color--black);
 	border-radius: 0;	
-	color: #fff;
 	cursor: pointer;
 	display: inline-block;
 	font-size: 1.6rem;
@@ -317,6 +314,20 @@ input[type="submit"].gform_button,
 	width: auto;
 	-webkit-transition: .25s all ease-in-out;
 	transition: .25s all ease-in-out;
+}
+
+button,
+.button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="reset"],
+input[type="submit"],
+input[type="submit"].gform_button,
+.wp-block-button:not(.is-style-outline) .wp-block-button__link {
+	background-color: var(--wp--preset--color--black);
+	border: 2px solid var(--wp--preset--color--black);
+	color: #fff;
 }
 
 .wp-block-button .wp-block-button__link  {
@@ -341,8 +352,8 @@ input[type="submit"]:hover,
 .button:hover,
 input[type="submit"].gform_button:hover,
 input[type="submit"].gform_button:focus,
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link:focus {
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover,
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:focus {
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1.25" /><feFuncG type="linear" slope="1.25" /><feFuncB type="linear" slope="1.25" /></feComponentTransfer></filter></svg>#filter');
 	-webkit-filter: brightness(1.25);
 	filter: brightness(1.25);	
@@ -352,19 +363,20 @@ input[type="submit"].gform_button:focus,
 .button.outline,
 .wp-block-button.is-style-outline .wp-block-button__link {
 	background: transparent;
-	color: var(--wp--preset--color--black); 
 }
 
+/* Repeat this for as many colors as they will set for outline buttons */
 .outline:hover,
 .outline:focus, 
 .button.outline:hover,
 .button.outline:focus,
-.wp-block-button.is-style-outline .wp-block-button__link:hover,
-.wp-block-button.is-style-outline .wp-block-button__link:focus {
-	background: var(--wp--preset--color--black);
-	color: #fff;
-	filter: brightness(1);
+.wp-block-button.is-style-outline .wp-block-button__link.has-REPLACE-color:hover,
+.wp-block-button.is-style-outline .wp-block-button__link.has-REPLACE-color:focus {
+	background: var(--wp--preset--color--REPLACE);
+	border-color: var(--wp--preset--color--REPLACE);
+	color: #fff !important;
 }
+
 
 a.button.small,
 button.small,
