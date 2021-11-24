@@ -1585,20 +1585,14 @@ p.alignright {
 /* Native Blocks
 --------------------------------------------- */
 
-
-/*--- Media-text block ---*/
+ul.blocks-gallery-grid,
+.wp-block-image,
 .wp-block-media-text__content p:last-of-type {
     margin: 0;
 }
 
 .wp-block-media-text__content p:last-of-type + * { /* Last paragraph in media-text blocks doesn't have margin. If it's followed by another element, we add margin back. */
     margin-top: 30px;
-}
-
-/*--- Gallery ---*/
-
-ul.blocks-gallery-grid {
-    margin: 0;
 }
 
 .wp-block-gallery .blocks-gallery-item figure {
@@ -1612,6 +1606,10 @@ ul.blocks-gallery-grid {
 --------------------------------------------- */
 
 /* Custom spacer block */
+.wp-block-spacer.spacer-xsmall-height {
+    height: 1rem;
+}
+
 .wp-block-spacer.spacer-small-height {
     height: 25px;
 }

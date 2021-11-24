@@ -2,12 +2,25 @@
  * Styles Gutenberg editor
  */
 
+
+:root { /* Add sizes and change to pixel units */
+	--wp--preset--font-size--small: 16px;
+}
+
+.is-style-sans,
+.block-editor-block-list__layout.is-root-container {
+	font-family: 'Source Sans Pro';
+}
+
+.is-style-serif {
+	font-family: Georgia;
+}
+
 /* Widths/Structure
 --------------------------------------------- */
 
 .wp-block {
     max-width: 920px;
-	font-family: sans-serif;
 }
 
 .wp-block[data-align="wide"] {
@@ -20,32 +33,48 @@
     margin-right: -58px;	
 }
 
-.wp-block[data-align="full"] > .is-block-content > .wp-block-group {
-    padding: 7% 5%;
+.wp-block-cover {
+    padding: 0 25px;
 }
 
+.wp-block-column {
+    padding: 20px;
+}
 
 /* Spacer block */
+.wp-block-spacer.spacer-xsmall-height {
+    height: 16px;
+}
 
 .wp-block-spacer.spacer-small-height {
 	height: 25px;
 }
 
 .wp-block-spacer.spacer-medium-height {
-	height: 3em;
+	height: 40px;
 }
 
 .wp-block-spacer.spacer-large-height {
-	height: 7em;
+	height: 70px;
 }
 
 /* Headings
 --------------------------------------------- */
-.editor-post-title__block .editor-post-title__input {
+/* Page title */
+.editor-post-title__block .editor-post-title__input { 
 	font-family: sans-serif;
 }
 
-
+/* Remove margins added in editor */
+h1.block-editor-rich-text__editable,
+h2.block-editor-rich-text__editable,
+h3.block-editor-rich-text__editable,
+h4.block-editor-rich-text__editable,
+h5.block-editor-rich-text__editable,
+h6.block-editor-rich-text__editable {
+	margin: 0;
+	font-weight: normal;
+}
 
 /* Buttons
 --------------------------------------------- */
@@ -72,7 +101,9 @@
 	color: #03a9f4;
 }
 
-
+.editor-styles-wrapper .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color) {
+    color: currentColor;
+}
 
 
 /* Flexbox
