@@ -1,9 +1,5 @@
 /**
- * Genesis Sample entry point.
- *
- * @package GenesisSample\JS
- * @author  StudioPress
- * @license GPL-2.0+
+ * Theme js
  */
 
 var genesisSample = ( function( $ ) {
