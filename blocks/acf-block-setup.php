@@ -28,8 +28,14 @@ function hct_register_custom_blocks() {
 		'render_template'	=> 'blocks/block-svg-img.php',
 		'category'			=> 'formatting',
 		'icon'				=> 'embed-photo',
-		'mode'				=> 'auto',
+		'mode'				=> 'preview',
 		'keywords'			=> array( 'svg', 'image', 'hct-theme-blocks' ),
+		'supports'		=> [
+			'align'			=> true,
+			'anchor'		=> false,
+			'customClassName'	=> true,
+			'jsx' 			=> false,
+		]
 	));	
 
 }

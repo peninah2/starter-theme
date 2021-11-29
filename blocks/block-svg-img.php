@@ -6,4 +6,16 @@
  
  $svg = get_field( 'svg_code' );
  
- echo '<div class="svg-img">' . $svg . '</div>';
+
+/* Set class & alignment */
+$classes = ['svg-img'];
+if( !empty( $block['className'] ) )
+    $classes = array_merge( $classes, explode( ' ', $block['className'] ) ); 
+
+if( !empty($block['align']) ) {
+    $classes[] = 'align' . $block['align'];
+}
+
+
+echo '<div class="' . join( ' ', $classes ) . '">' . $svg . '</div>';
+
