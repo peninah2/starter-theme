@@ -474,7 +474,6 @@ figure {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
-	margin-bottom: 40px;
 	width: 100%;
 	word-break: break-all;
 }
@@ -620,30 +619,12 @@ input[type="search"]::-webkit-search-results-button {
 /* GRAVITY FORMS */
 
 /* Adjust whitespace between fields, and labels to fields */ 
-body .gform_wrapper ul.gform_fields  li.gfield {
-	margin-top: 26px;
+body .gform_wrapper.gravity-theme .gfield_label {
+    margin-bottom: 0;
 }
 
-body .gform_wrapper .gform_fields.top_label div.ginput_container {
-	margin-top: 2px;
-}
-
-/* Simple horizontal rules (use class gf_simple_horizontal) */
-.gform_wrapper.gf_simple_horizontal_wrapper input:not([type=radio]):not([type=checkbox]):not([type=submit]):not([type=button]):not([type=image]):not([type=file]) {
-	padding: 12px 15px;
-}
-
-.gform_wrapper.gf_simple_horizontal_wrapper li.hidden_label input {
-    margin-top: 0;
-}
-
-.gform_wrapper form.gf_simple_horizontal div.gform_body ul.top_label li.gfield {
-	padding-right: 0 !important;
-}
-
-.gform_wrapper.gf_simple_horizontal_wrapper .gform_footer {
-    padding: 0;
-    margin: 0;
+.gform_wrapper.gravity-theme .gfield {
+    margin-top: 14px;
 }
 
 
@@ -1488,7 +1469,7 @@ p.entry-meta {
 .wp-block-cover__inner-container,
 .wp-block-group,
 .wp-block-columns,
-.wp-block-cover.has-custom-content-position .wp-block-cover__inner-container {
+.wp-block-cover.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container {
 	max-width: var(--max-width);
 	width: 100%;
 	margin: auto;
