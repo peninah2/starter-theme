@@ -21,6 +21,8 @@
 
 .wp-block {
     max-width: 920px;
+	margin-left: auto;
+	margin-right: auto;
 }
 
 .wp-block[data-align="wide"] {
@@ -41,24 +43,9 @@
     padding: 20px;
 }
 
-/* Spacer block */
-.wp-block-spacer.spacer-xsmall-height {
-    height: 16px;
-}
 
-.wp-block-spacer.spacer-small-height {
-	height: 25px;
-}
 
-.wp-block-spacer.spacer-medium-height {
-	height: 40px;
-}
-
-.wp-block-spacer.spacer-large-height {
-	height: 70px;
-}
-
-/* Headings
+/* Basic typography
 --------------------------------------------- */
 /* Page title */
 .editor-post-title__block .editor-post-title__input { 
@@ -74,6 +61,10 @@ h5.block-editor-rich-text__editable,
 h6.block-editor-rich-text__editable {
 	margin: 0;
 	font-weight: normal;
+}
+
+p {
+	margin-bottom: 18px;
 }
 
 /* Buttons
@@ -149,3 +140,19 @@ h6.block-editor-rich-text__editable {
 	flex-direction: column;
 }
 
+/* Spacer block */
+.wp-block-spacer.spacer-xsmall-height {
+    height: 16px;
+}
+
+.wp-block-spacer.spacer-small-height {
+	height: 25px;
+}
+
+.wp-block-spacer.spacer-medium-height {
+	height: 40px;
+}
+
+.wp-block-spacer.spacer-large-height {
+	height: 70px;
+}
