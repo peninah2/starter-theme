@@ -627,6 +627,13 @@ body .gform_wrapper.gravity-theme .gfield_label {
     margin-top: 14px;
 }
 
+.gform_confirmation_wrapper {
+    border: 2px solid;
+    padding: 20px;
+    margin-top: 25px;
+    font-weight: bold;
+}
+
 
 /* COMMON CLASSES
 ---------------------------------------------------------------------------------------------------- */
