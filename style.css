@@ -192,9 +192,16 @@ hr {
 	margin: 30px 0;
 }
 
-hr.wp-block-separator.has-text-color {
-    border: 0;
-    height: 1px;
+hr.wp-block-separator {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid;
+    width: 50px;
+}
+
+hr.wp-block-separator.is-style-wide {
+	width: 100%;
+	border-bottom: 1px solid;
 }
 
 b,
