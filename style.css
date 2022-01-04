@@ -139,7 +139,8 @@ html {
 :root {
 	--max-width: 1200px;
 	--font-secondary: Georgia, serif;
-	--font-main: 'Source Sans Pro', Helvetica, sans-serif
+	--font-main: 'Source Sans Pro', Helvetica, sans-serif;
+	--padding-default: 25px;
 }
 
 
@@ -1269,7 +1270,7 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 --------------------------------------------- */
 
 .entry-header {
-	padding: 2em 25px;
+	padding: 2em var(--padding-default);
 }
 
 .entry-title a {
@@ -1493,12 +1494,12 @@ p.entry-meta {
 .wp-block-cover__inner-container,
 .alignfull > .wp-block-group,
 .alignfull > .wp-block-columns {
-	padding: 0 25px;
+	padding: 0 var(--padding-default);
 }
 
 .wp-block-group {
-	padding-top: 25px; 
-	padding-bottom: 25px;
+	padding-top: var(--padding-default); 
+	padding-bottom: var(--padding-default);
 }
 
 .wp-block-cover, 
@@ -1514,10 +1515,17 @@ p.entry-meta {
     margin: auto;
 }
 
-.alignfull {
+.alignfull,
+.alignfull.wp-block-image,
+.alignfull.blocks-gallery-grid {
 	margin: 0 calc(50% - 50vw);
 	max-width: 100vw;
 	width: 100vw;
+}
+
+.alignfull .wp-block-group__inner-container > .alignwide {
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 .narrow {
@@ -1580,8 +1588,7 @@ p.alignright {
 	margin-bottom: 0;
 }
 
-.wp-block-column,
-.wp-block-media-text .wp-block-media-text__content {
+.wp-block-column {
 	padding: 15px;
 }	
 
@@ -1669,10 +1676,6 @@ ul.blocks-gallery-grid,
 
 
 @media only screen and (min-width: 768px) {
-	
-	.alignfull {
-		padding: 4em;
-	}
 	
 	.admin-bar .site-container {
 		margin-top: 32px;
@@ -1824,15 +1827,6 @@ ul.blocks-gallery-grid,
 		margin-right: auto;
 	}
 	
-	.alignfull {
-		padding: 5em;
-	}
-	
-	.wp-block-column,
-	.wp-block-media-text .wp-block-media-text__content	{
-		padding: 3em 2em;
-	}
-	
 	.wp-block-group.alignfull .wp-block-group__inner-container .wp-block-media-text {
 		width: auto;
 	}
@@ -1918,15 +1912,6 @@ ul.blocks-gallery-grid,
 }
 
 @media only screen and (min-width: 1280px) {
-	
-	.alignfull,
-	.container {
-		padding: 7em;
-	}
-	
-	.alignwide {
-		padding: 3em;
-	}
 	
 	.flex-third {
 		-webkit-flex-basis: 33.33333%;
