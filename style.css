@@ -1612,6 +1612,13 @@ ul.blocks-gallery-grid,
 	align-items: center;		
 }
 
+/* Cover blocks inside a column (with no padding) don't have extra padding (ie, a column with an image background won't have more padding than the other columns). */
+.wp-block-column.no-padding .wp-block-cover__inner-container {
+    padding: 0;
+}
+
+
+
 /* Custom Blocks
 --------------------------------------------- */
 
@@ -1720,6 +1727,13 @@ ul.blocks-gallery-grid,
 	.wp-block-column:nth-child(2n) { /* combats Gutenberg default */
 		margin-left: 0;
 	}	
+	
+		
+	/* Media-text blocks without a background should not have additional padding */
+	.wp-block-media-text:not(.has-product) .wp-block-media-text__content {
+		padding-left: 0;
+		padding-right: 0;
+	}
 	
 
 }
