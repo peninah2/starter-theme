@@ -5,6 +5,14 @@
 
 :root { /* Add sizes and change to pixel units */
 	--wp--preset--font-size--small: 16px;
+	--wp--preset--font-size--caption: 24px;
+	--wp--preset--font-size--paragraph: 19px;
+	--wp--preset--font-size--medium: 28px;
+	--wp--preset--font-size--large: 48px;
+	--wp--preset--font-size--xlarge: 82px;
+	--font-main: "Source Sans Pro", Roboto, sans-serif;
+	--font-secondary: Georgia, sans-serif;
+	--padding-default: 25px;	
 }
 
 .is-style-sans,
@@ -20,7 +28,7 @@
 --------------------------------------------- */
 
 .wp-block {
-    max-width: 920px;
+    max-width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 }
@@ -48,8 +56,8 @@
 /* Basic typography
 --------------------------------------------- */
 /* Page title */
-.editor-post-title__block .editor-post-title__input { 
-	font-family: sans-serif;
+.wp-block-post-title { 
+	font-family: var(--font-main);
 }
 
 /* Remove margins added in editor */
@@ -65,6 +73,68 @@ h6.block-editor-rich-text__editable {
 
 p {
 	margin-bottom: 18px;
+}
+
+
+/* Styling classes
+--------------------------------------------- */
+
+.overflow {
+	overflow: auto;
+}
+
+.no-margin {
+	margin: 0 !important;
+}
+
+.margin-auto {
+	margin-left: auto !important;
+	margin-right: auto !important;
+}
+
+.margin-top-auto {
+	margin-top: auto; /*for flexbox*/
+}
+
+.margin-left-auto {
+	margin-left: auto; /* for flexbox */
+}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.padding-top-none {
+	padding-top: 0 !important;
+}
+
+.padding-bottom-none {
+	padding-bottom: 0 !important;
+}
+
+.padding-sm {
+    padding: 15px !important;
+}
+
+.padding-default {
+    padding: var(--padding-default);
+}
+
+.line-height-sm {
+    line-height: 1.2 !important;
+}
+
+.narrow {
+    max-width: 700px !important;
+}
+
+.x-narrow {
+	max-width: 450px !important;
+}
+
+.centered {
+	margin-left: auto;
+	margin-right: auto;
 }
 
 /* Buttons
@@ -155,4 +225,38 @@ p {
 
 .wp-block-spacer.spacer-large-height {
 	height: 70px;
+}
+
+
+/* When cover blocks have zero opacity, the color is a background. */
+.wp-block-cover .has-background-dim.has-background-dim-0,
+.wp-block-cover .wp-block-cover__gradient-background.has-background-dim.has-background-dim-0 {
+    opacity: 1;
+    z-index: 0;
+}
+
+/* Custom cover style -- Make image contain, not cover */
+.wp-block-cover.is-style-cover-contain-top img.wp-block-cover__image-background,
+.wp-block-cover.is-style-cover-contain-bottom img.wp-block-cover__image-background {
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: 0 0 !important;
+    object-position: 0 0 !important;	
+    top: 0;
+    bottom: auto;
+}
+
+.wp-block-cover.is-style-cover-contain-bottom img.wp-block-cover__image-background {
+    -o-object-position: 0 100% !important;
+    object-position: 0 100% !important;		
+}
+
+/* Custom style for cover block */
+.wp-block-cover.is-style-cover-half-right img.wp-block-cover__image-background,
+.wp-block-cover.is-style-cover-half-left img.wp-block-cover__image-background {
+	width: 50%;
+}
+
+.wp-block-cover.is-style-cover-half-right img.wp-block-cover__image-background {
+	left: auto;
 }

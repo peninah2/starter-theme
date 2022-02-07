@@ -19,7 +19,7 @@
  
  if ( $height == 'custom') {
 	$height = get_field( 'custom_height' );
-	$custom_style = 'style=" height:' . $height . 'px"';
+	$custom_style = ' style=" height:' . $height . 'px"';
  }
  
  

@@ -44,6 +44,7 @@ remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 // Remove unused sidebars
 unregister_sidebar( 'header-right' );
 unregister_sidebar( 'sidebar-alt' );
+unregister_sidebar( 'sidebar' );
 
 // Force full-width-content layout setting
 add_filter( 'genesis_pre_get_option_site_layout', '__genesis_return_full_width_content' );
