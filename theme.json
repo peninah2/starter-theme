@@ -1,5 +1,5 @@
 {
-    "version": 1,
+    "version": 2,
     "settings": {
 		"layout": {
            "contentSize": "1200px",
@@ -26,10 +26,25 @@
                     "gradient": "linear-gradient(90deg, #000 60%, #fff 40%)",
                     "name": "Black - White"
                 }
-            ]
+            ],
+			"defaultPalette": false
         },
 		
-		"typography": {			
+		"typography": {	
+
+			"fontFamilies": [
+				{
+					"fontFamily": "name-font",
+					"slug": "font-main",
+					"name": "Regular"
+				},
+				{
+					"fontFamily": "name-font",
+					"slug": "font-secondary",
+					"name": "Title"
+				}
+			],
+		
             "fontSizes": [
 				{
                     "slug": "small",
@@ -62,6 +77,17 @@
                     "name": "Page Title"
                 }
             ]
+        },
+		
+		"blocks": {
+            "core/button": {
+				"border": {
+                    "radius": false
+                },
+				"color": {
+						"background": false
+				}	
+			}
         }
 
     }

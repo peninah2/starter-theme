@@ -262,11 +262,11 @@ h6 {
 	margin: 0;
 }
 
-.is-style-sans {
+.is-style-main {
 	font-family: var(--font-main);
 }
 
-.is-style-serif {
+.is-style-secondary {
 	font-family: var(--font-secondary);
 }
 
@@ -720,6 +720,10 @@ body .gform_wrapper.gravity-theme .gfield_label {
 	overflow: auto;
 }
 
+.position-relative {
+	position: relative;
+}
+
 .no-margin {
 	margin: 0 !important;
 }
@@ -737,20 +741,20 @@ body .gform_wrapper.gravity-theme .gfield_label {
 	margin-left: auto; /* for flexbox */
 }
 
-.no-padding {
-	padding: 0 !important;
-}
-
-.padding-top-none {
-	padding-top: 0 !important;
-}
-
-.padding-bottom-none {
-	padding-bottom: 0 !important;
-}
-
 .padding-sm {
     padding: 15px !important;
+}
+
+.padding-default {
+    padding: var(--padding-default);
+}
+
+.padding-lg {
+    padding: calc( var(--padding-default) * 2) !important;
+}
+
+.no-padding {
+	padding: 0 !important;
 }
 
 .line-height-sm {
@@ -1936,7 +1940,6 @@ ul.blocks-gallery-grid,
 	.archive-description,
 	.author-box,
 	.comment-respond,
-	.entry,
 	.entry-comments,
 	.entry-pings {
 		margin-bottom: 60px;

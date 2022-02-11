@@ -15,13 +15,13 @@
 	--padding-default: 25px;	
 }
 
-.is-style-sans,
+.is-style-main,
 .block-editor-block-list__layout.is-root-container {
-	font-family: 'Source Sans Pro';
+	font-family: var(--font-main);
 }
 
-.is-style-serif {
-	font-family: Georgia;
+.is-style-secondary {
+	font-family: var(--font-secondary);
 }
 
 /* Widths/Structure
@@ -81,6 +81,10 @@ p {
 
 .overflow {
 	overflow: auto;
+}
+
+.position-relative {
+	position: relative;
 }
 
 .no-margin {
