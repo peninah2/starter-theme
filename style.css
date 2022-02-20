@@ -728,6 +728,11 @@ body .gform_wrapper.gravity-theme .gfield_label {
 	margin: 0 !important;
 }
 
+.wp-block-group.no-margin > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 .margin-auto {
 	margin-left: auto !important;
 	margin-right: auto !important;
@@ -973,11 +978,6 @@ figcaption,
 
 /* Title Area
 --------------------------------------------- */
-
-.title-area {
-	float: left;
-}
-
 .site-title {
 	line-height: 1;
 	margin-bottom: 0;

@@ -91,6 +91,11 @@ p {
 	margin: 0 !important;
 }
 
+.wp-block-group.no-margin > * {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
 .margin-auto {
 	margin-left: auto !important;
 	margin-right: auto !important;
@@ -212,6 +217,14 @@ p {
 	-webkit-flex-direction: column;
 	-ms-flex-direction: column;
 	flex-direction: column;
+}
+
+
+.justify-content-space-between {
+	 -webkit-box-pack: justify;
+ 	 -webkit-justify-content: space-between;
+	 -ms-flex-pack: justify;
+         justify-content: space-between;		
 }
 
 /* Spacer block */
