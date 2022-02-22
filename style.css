@@ -1799,6 +1799,10 @@ ul.blocks-gallery-grid,
 }
 
 @media only screen and (min-width: 960px) {
+	
+	.mobile {
+		display: none;
+	}
 
 	/* Site Header
 	--------------------------------------------- */

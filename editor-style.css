@@ -228,6 +228,10 @@ p {
 }
 
 /* Spacer block */
+.wp-block-acf-spacer {
+	clear: both !important;
+}
+
 .wp-block-spacer.spacer-xsmall-height {
     height: 16px;
 }

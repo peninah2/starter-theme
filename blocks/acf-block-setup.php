@@ -154,6 +154,25 @@ acf_add_local_field_group(array(
 			'ui_on_text' => '',
 			'ui_off_text' => '',
 		),
+		array(
+			'key' => 'field_616db86a246e22',
+			'label' => 'Hide on desktop?',
+			'name' => 'hide_desktop',
+			'type' => 'true_false',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'message' => '',
+			'default_value' => 0,
+			'ui' => 1,
+			'ui_on_text' => '',
+			'ui_off_text' => '',
+		),	
 	),
 	'location' => array(
 		array(
