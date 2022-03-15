@@ -109,9 +109,9 @@ add_action( 'enqueue_block_editor_assets', 'hct_editor_styling_scripts' );
 
 
 
-// Load-hidden class for Scroll Reveal
-add_action( 'wp_head', 'hct_hide_scrollreveal' );
-function hct_hide_scrollreveal() {
+// Head content
+add_action( 'wp_head', 'hct_head_scripts' );
+function hct_head_scripts() {
 	?>
 	
 	<meta name="theme-color" content="#000">
@@ -126,29 +126,37 @@ function hct_hide_scrollreveal() {
 			visibility: hidden;
 		}
 	 </style>
+	 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){window.dataLayer.push(arguments);}
+	  gtag('js', new Date());
+
+	  gtag('config', 'GA_MEASUREMENT_ID');
+	</script>
+	 
 	<?php
 }
 
 
 /* 
- * Google Analytics
+ * Google Analytics - replace id
  *
  */
+//add_action( 'wp_head', 'hct_google_tag_manager_head', 0 );  
 function hct_google_tag_manager_head() {
 	?>
-	<!-- Google Tag Manager -->
+
+<?php
+}
+
 	
 <?php
 }
 add_action( 'wp_head', 'hct_google_tag_manager_head', 0 ); 
 
-function hct_google_tag_manager_body() {
-	?>
-	<!-- Google Tag Manager (noscript) -->
-
-	<?php
-}
-add_action( 'genesis_before', 'hct_google_tag_manager_body', 0 ); 
 
 // Hides site except homepage if you are not logged in. Useful if you like to show clients homepage before the rest of the site is developed.
 // add_action( 'template_redirect', 'hct_in_development_redirect' );
