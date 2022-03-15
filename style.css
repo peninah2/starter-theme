@@ -762,6 +762,11 @@ body .gform_wrapper.gravity-theme .gfield_label {
 	padding: 0 !important;
 }
 
+.col-no-padding > .wp-block-column {
+	padding: 0 !important;
+}
+
+
 .line-height-sm {
     line-height: 1.2 !important;
 }
@@ -927,6 +932,13 @@ figcaption,
 .entry-content .wp-playlist,
 .entry-content .wp-video {
 	margin: 0 0 30px;
+}
+
+/* 404
+--------------------------------------------- */
+.error404 main#genesis-content {
+    min-height: 80vh;
+    padding-top: 3em;
 }
 
 
@@ -1780,14 +1792,18 @@ ul.blocks-gallery-grid,
 	}
 	
 	.wp-block-columns .wp-block-column:not(:first-child) {
-		margin: 0;
+		margin: 0 !important;
 		padding-top: 0;
 	}
 	
 	.wp-block-column:nth-child(2n) { /* combats Gutenberg default */
-		margin-left: 0;
+		margin-left: 0 !important;
 	}	
 	
+	.alignfull > .wp-block-columns.col-no-padding {
+		padding: 0 var(--padding-default);
+	}
+		
 		
 	/* Media-text blocks without a background should not have additional padding */
 	.wp-block-media-text:not(.has-product) .wp-block-media-text__content {

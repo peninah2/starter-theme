@@ -113,6 +113,11 @@ p {
 	padding: 0 !important;
 }
 
+.col-no-padding > .wp-block-column {
+	padding: 0 !important;
+}
+
+
 .padding-top-none {
 	padding-top: 0 !important;
 }
