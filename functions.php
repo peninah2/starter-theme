@@ -54,6 +54,9 @@ function hct_enqueue_scripts_styles() {
 	);	
 	
 	wp_enqueue_script( 'scrollreveal', '//unpkg.com/scrollreveal/dist/scrollreveal.min.js', true ); 
+	
+	wp_deregister_script( 'superfish' );
+	wp_deregister_script( 'superfish-args' );
 
 }
 
