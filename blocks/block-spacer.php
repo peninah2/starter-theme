@@ -10,19 +10,19 @@
  $hideonmobile = get_field( 'hide_mobile' );
  $hideondesktop = get_field( 'hide_desktop' );
  
- if ( $hideonmobile == 'yes') {
+ if ( $hideonmobile == true ) {
 	 $hideonmobile = ' desktop';
  }
  
- if ( $hideonmobile == 'no' ) {
+ if ( $hideonmobile == false ) {
 	 $hideonmobile = '';
  } 
  
- if ( $hideondesktop == 'yes') {
+ if ( $hideondesktop == true ) {
 	 $hideondesktop = ' mobile';
  }
  
- if ( $hideondesktop == 'no' ) {
+ if ( $hideondesktop == false ) {
 	 $hideondesktop = '';
  }
  
@@ -33,4 +33,4 @@
  
  
  
- echo '<div' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height' . $hideonmobile . $hideondesktop . '"></div>';
+ echo '<div' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height ' . $hideonmobile . $hideondesktop . '"></div>';
