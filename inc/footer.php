@@ -6,12 +6,7 @@
  * @package      HCStarter
 
 
- Footer options: 
- 
- - If design has fat footer and the sections are even, use widgets
- - If sections are not even, use function below and adjust as needed
-
-
+ Footer options: use 1 footer widget with columns
 **/
 
 // Remove Genesis footer
@@ -26,7 +21,7 @@ remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 add_filter( 'use_widgets_block_editor', '__return_true' );
 
 // Activate block/widget based area
-add_theme_support( 'genesis-footer-widgets', 3 );
+add_theme_support( 'genesis-footer-widgets', 1 );
 
 
 // Shortcode: current year
@@ -64,34 +59,4 @@ function hct_custom_footer() {
 	<?php
 }
 
-// Social menu 
-// Requires adding social media links to options page via ACF
-function hct_social_menu() {
-	
-	$linkedin 	= get_field( 'linkedin', 'option' ); 
-	$instagram 	= get_field( 'instagram', 'option' );
-	$facebook 	= get_field( 'facebook', 'option' );
-	$twitter 	= get_field( 'twitter', 'option' ); 
-	
-	echo '<ul class="social-media-menu">';
-	
-	if ( !empty( $linkedin ) ) {
-		echo '<li><a href="' . $linkedin . '" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>';
-	}
-	
-	if ( !empty( $instagram ) ) {
-		echo '<li><a href="' . $instagram . '" target="_blank"><i class="fab fa-instagram"></i></a></li>';
-	}
-	
-	if ( !empty( $facebook ) ) {
-		echo '<li><a href="' . $facebook . '" target="_blank"><i class="fab fa-facebook"></i></a></li>';
-	}
-	
-	if ( !empty( $twitter ) ) {
-		echo '<li><a href="' . $twitter . '" target="_blank"><i class="fab fa-twitter"></i></a></li>';
-	}	
-	
-	echo '</ul>';
-}
-//add_action( 'genesis_footer', 'hct_social_menu', 11 );
-
+// Social menu shortcode in Github > snippets

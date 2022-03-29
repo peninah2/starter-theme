@@ -7,9 +7,6 @@
 
 **/
 
-add_theme_support( 'genesis-menus', array( 'primary' => 'Primary' ) );
-
-// Unregister secondary navigation menu
 add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );
 
  // Repositions primary navigation menu to header
