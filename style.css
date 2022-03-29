@@ -950,6 +950,7 @@ figcaption,
 
 .site-container {
 	width: 100%; 
+	max-width: 2560px;
 	overflow: hidden;
 	margin: auto;
 	-webkit-animation: fadein 1s;
@@ -1966,15 +1967,15 @@ ul.blocks-gallery-grid,
 	}
 
 	/* Footer Widgets
-	--------------------------------------------- */
+	----------------------------------------
 
 	.footer-widget-area {
 		float: left;
 		margin-bottom: 0;
-		width: 33.33%; /* fallback for older browsers */
+		width: 33.33%;
 		width: calc(100% / 3);
 	}
-		
+		----- */
 	/* Spacer block */
 	.wp-block-spacer.spacer-medium-height {
 		height: 3em;
