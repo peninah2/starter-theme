@@ -47,6 +47,10 @@
     padding: 0 25px;
 }
 
+.wp-block-columns:where(.has-background) {
+    padding: 0;
+}
+
 .wp-block-column {
     padding: 20px;
 }

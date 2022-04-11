@@ -1639,6 +1639,10 @@ p.alignright {
 	margin-bottom: 0;
 }
 
+.wp-block-columns:where(.has-background) {
+    padding: 0;
+}
+
 .wp-block-column {
 	padding: 15px;
 }	
