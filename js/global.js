@@ -131,7 +131,7 @@ jQuery( window ).on( 'load', genesisSample.init );
 		*/
 		window.sr = ScrollReveal();
 	
-		sr.reveal('.riseUp, .wp-block-column, .wp-block-media-text__media, .wp-block-media-text__content,', {
+		sr.reveal('.riseUp, .wp-block-column, .wp-block-media-text__media, .wp-block-media-text__content', {
 			delay: 0,
 			useDelay: 'onload',
 			distance: '30px',
