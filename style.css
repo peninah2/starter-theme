@@ -772,9 +772,12 @@ body .gform_wrapper.gravity-theme .gfield_label {
 }
 
 /* Used when default ScrollReveal should not run */
-.disable-scrollreveal {
+.disable-scrollreveal,
+.footer-widgets .wp-block-column,
+.footer-widgets .wp-block-image  {
 	visibility: visible !important;
 	opacity: 1 !important;
+	transform: none!;
 }
 
 /* Avatar
