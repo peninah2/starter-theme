@@ -138,16 +138,22 @@ p {
     padding: var(--padding-default);
 }
 
+.padding-lg {
+	padding: calc( var(--padding-default) * 2);
+}
+
 .line-height-sm {
     line-height: 1.2 !important;
 }
 
 .narrow {
     max-width: 700px !important;
+	margin-left: 0;
 }
 
 .x-narrow {
 	max-width: 450px !important;
+	margin-left: 0;
 }
 
 .centered {
@@ -196,6 +202,13 @@ p {
 	-webkit-flex-wrap: wrap;
 	-ms-flex-wrap: wrap;
 	flex-wrap: wrap;	
+}
+
+.flex-1 {
+	-webkit-box-flex: 1;
+	-webkit-flex: 1;
+	-ms-flex: 1;
+	flex: 1;		
 }
 
 .justify-content-center {
