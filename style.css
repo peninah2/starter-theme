@@ -777,7 +777,7 @@ body .gform_wrapper.gravity-theme .gfield_label {
 .footer-widgets .wp-block-image  {
 	visibility: visible !important;
 	opacity: 1 !important;
-	transform: none!;
+	transform: none !important;
 }
 
 /* Avatar
