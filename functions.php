@@ -71,6 +71,7 @@ include_once( get_stylesheet_directory() . '/inc/layouts.php' );
 include_once( get_stylesheet_directory() . '/inc/header.php' ); // includes navigation
 include_once( get_stylesheet_directory() . '/inc/footer.php' );
 include_once( get_stylesheet_directory() . '/blocks/acf-block-setup.php' );
+include_once( get_stylesheet_directory() . '/blocks/block-patterns.php' );
 
 // Dashboard
 include_once( get_stylesheet_directory() . '/inc/login.php' );

@@ -667,7 +667,8 @@ body .gform_wrapper.gravity-theme .gfield_label {
 	justify-content: center;		
 }
 
-.justify-content-space-between {
+.justify-content-space-between,
+.wp-block-columns.is-style-col-spread {
 	 -webkit-box-pack: justify;
  	 -webkit-justify-content: space-between;
 	 -ms-flex-pack: justify;
@@ -1296,8 +1297,6 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 
 .footer-widget-area {
 	margin-bottom: 40px;
-	padding-left: 30px;
-	padding-right: 30px;
 }
 
 .footer-widget-area:last-child ,
@@ -1537,11 +1536,17 @@ p.entry-meta {
 .wp-block-cover__inner-container,
 .wp-block-group,
 .wp-block-columns,
+.wp-block-cover.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container {
 	max-width: var(--max-width);
 	width: 100%;
 	margin: auto;
 }
+
+.wp-block-cover.has-custom-content-position.is-position-bottom-center .wp-block-cover__inner-container {
+	margin: 0;
+}
+
 
 .wrap,
 .wp-block-cover__inner-container,
@@ -1649,6 +1654,11 @@ p.alignright {
 .wp-block-column {
 	padding: 15px;
 }	
+
+/* Columns with no space between cols */
+.wp-block-columns.is-style-col-no-space .wp-block-column {
+	margin: 0 !important;
+}
 
 /* Native Blocks
 --------------------------------------------- */
@@ -1810,6 +1820,10 @@ ul.blocks-gallery-grid,
 	
 	.alignfull > .wp-block-columns.col-no-padding {
 		padding: 0 var(--padding-default);
+	}
+	
+	.wp-block-column.no-padding:not(:last-child) {
+		padding-top: var(--padding-default) !important;
 	}
 		
 		

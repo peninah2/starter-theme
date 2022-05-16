@@ -241,8 +241,8 @@ p {
 	flex-direction: column;
 }
 
-
-.justify-content-space-between {
+.justify-content-space-between,
+.wp-block-columns.is-style-col-spread {
 	 -webkit-box-pack: justify;
  	 -webkit-justify-content: space-between;
 	 -ms-flex-pack: justify;
@@ -303,3 +303,12 @@ p {
 .wp-block-cover.is-style-cover-half-right img.wp-block-cover__image-background {
 	left: auto;
 }
+
+/* Custom styles for columns blocks
+------------------------------------------ */
+
+/* Columns with no space between cols */
+.wp-block-columns.is-style-col-no-space .wp-block-column {
+	margin: 0 !important;
+}
+

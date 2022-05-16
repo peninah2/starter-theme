@@ -38,6 +38,21 @@ wp.domReady( () => {
 	]);		
 	
 	
+	wp.blocks.registerBlockStyle( 'core/columns', [ 	
+		{
+			name: 'col-spread',
+			label: 'Spread columns',
+			isDefault: false,
+		},
+		{
+			name: 'col-no-space',
+			label: 'No space between',
+			isDefault: false,
+		}
+	]);
+		
+	
+	
 	wp.blocks.registerBlockStyle( 'core/cover', [ 	
 		{
 			name: 'cover-half-left',
