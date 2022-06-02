@@ -196,8 +196,8 @@ hr {
 hr.wp-block-separator {
 	margin-top: 10px;
 	margin-bottom: 10px;
-	border-bottom: 2px solid;
-    width: 50px;
+	border-bottom: 1px solid;
+    width: 100px;
 }
 
 hr.wp-block-separator.is-style-wide {
@@ -258,6 +258,7 @@ h4,
 h5,
 h6 {
 	font-weight: 400;
+	font-size: inherit;
 	line-height: 1.2;
 	margin: 0;
 }
@@ -1656,6 +1657,10 @@ p.alignright {
 }	
 
 /* Columns with no space between cols */
+.wp-block-columns.is-style-col-no-space {
+	gap: 0;
+}
+
 .wp-block-columns.is-style-col-no-space .wp-block-column {
 	margin: 0 !important;
 }
@@ -1693,21 +1698,38 @@ ul.blocks-gallery-grid,
     z-index: 0;
 }
 
+
 /* Custom cover style -- Make image contain, not cover */
 .wp-block-cover.is-style-cover-contain-top img.wp-block-cover__image-background,
-.wp-block-cover.is-style-cover-contain-bottom img.wp-block-cover__image-background {
+.wp-block-cover.is-style-cover-contain-bottom img.wp-block-cover__image-background,
+.wp-block-cover.is-style-cover-left img.wp-block-cover__image-background,
+.wp-block-cover.is-style-cover-right img.wp-block-cover__image-background {
     -o-object-fit: contain;
     object-fit: contain;
+}
+
+.wp-block-cover.is-style-cover-contain-top img.wp-block-cover__image-background {
     -o-object-position: 0 0 !important;
     object-position: 0 0 !important;	
     top: 0;
-    bottom: auto;
+    bottom: auto;	
 }
 
 .wp-block-cover.is-style-cover-contain-bottom img.wp-block-cover__image-background {
     -o-object-position: 0 100% !important;
     object-position: 0 100% !important;		
 }
+
+.wp-block-cover.is-style-cover-left img.wp-block-cover__image-background {
+	-o-object-position: top left;
+    object-position: top left;
+}
+
+.wp-block-cover.is-style-cover-right img.wp-block-cover__image-background {
+	-o-object-position: top right;
+    object-position: top right;
+}
+
 
 /* Custom Blocks
 --------------------------------------------- */

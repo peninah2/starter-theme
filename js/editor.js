@@ -55,23 +55,23 @@ wp.domReady( () => {
 	
 	wp.blocks.registerBlockStyle( 'core/cover', [ 	
 		{
-			name: 'cover-half-left',
-			label: 'Image 50% Left',
+			name: 'cover-left',
+			label: 'Align Image Left',
 			isDefault: false,
 		},
 		{
-			name: 'cover-half-right',
-			label: 'Image 50% Right',
+			name: 'cover-right',
+			label: 'Align Image Right',
 			isDefault: false,
 		},
 		{
 			name: 'cover-contain-top',
-			label: 'Align image top',
+			label: 'Align Image Top',
 			isDefault: false,
 		},			
 		{
 			name: 'cover-contain-bottom',
-			label: 'Align image bottom',
+			label: 'Align Image Bottom',
 			isDefault: false,
 		},	
 	
@@ -84,7 +84,7 @@ wp.domReady( () => {
 
 	wp.blocks.unregisterBlockStyle(
 		'core/separator',
-		[ 'default', 'wide', 'dots' ],
+		[ 'dots' ],
 	);
 
 

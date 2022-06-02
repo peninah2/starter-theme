@@ -278,15 +278,21 @@ p {
     z-index: 0;
 }
 
+
 /* Custom cover style -- Make image contain, not cover */
 .wp-block-cover.is-style-cover-contain-top img.wp-block-cover__image-background,
-.wp-block-cover.is-style-cover-contain-bottom img.wp-block-cover__image-background {
+.wp-block-cover.is-style-cover-contain-bottom img.wp-block-cover__image-background,
+.wp-block-cover.is-style-cover-left img.wp-block-cover__image-background,
+.wp-block-cover.is-style-cover-right img.wp-block-cover__image-background {
     -o-object-fit: contain;
     object-fit: contain;
+}
+
+.wp-block-cover.is-style-cover-contain-top img.wp-block-cover__image-background {
     -o-object-position: 0 0 !important;
     object-position: 0 0 !important;	
     top: 0;
-    bottom: auto;
+    bottom: auto;	
 }
 
 .wp-block-cover.is-style-cover-contain-bottom img.wp-block-cover__image-background {
@@ -294,14 +300,27 @@ p {
     object-position: 0 100% !important;		
 }
 
-/* Custom style for cover block */
-.wp-block-cover.is-style-cover-half-right img.wp-block-cover__image-background,
-.wp-block-cover.is-style-cover-half-left img.wp-block-cover__image-background {
-	width: 50%;
+.wp-block-cover.is-style-cover-left img.wp-block-cover__image-background {
+	-o-object-position: top left;
+    object-position: top left;
 }
 
-.wp-block-cover.is-style-cover-half-right img.wp-block-cover__image-background {
-	left: auto;
+.wp-block-cover.is-style-cover-right img.wp-block-cover__image-background {
+	-o-object-position: top right;
+    object-position: top right;
+}
+
+
+hr.wp-block-separator {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid;
+    width: 100px;
+}
+
+hr.wp-block-separator.is-style-wide {
+	width: 100%;
+	border-bottom: 1px solid;
 }
 
 /* Custom styles for columns blocks
