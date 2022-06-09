@@ -156,10 +156,6 @@ function hct_google_tag_manager_head() {
 <?php
 }
 
-	
-<?php
-}
-add_action( 'wp_head', 'hct_google_tag_manager_head', 0 ); 
 
 
 // Hides site except homepage if you are not logged in. Useful if you like to show clients homepage before the rest of the site is developed.

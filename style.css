@@ -707,11 +707,14 @@ body .gform_wrapper.gravity-theme .gfield_label {
 	flex: 1;		
 }
 
-.flex-half,
-.flex-fourth {
-	-webkit-flex-basis: 50%;
-	-ms-flex-preferred-size: 50%;
-	flex-basis: 50%;		
+.flex-gap {
+	gap: 1em;
+}
+
+.col-3 .flex-item {
+	-webkit-box-flex: 3;
+	-ms-flex: 3 1 350px;
+	flex: 3 1 350px;
 }
 
 
@@ -2046,29 +2049,6 @@ ul.blocks-gallery-grid,
 
 @media only screen and (min-width: 1280px) {
 	
-	.flex-third {
-		-webkit-flex-basis: 33.33333%;
-		-ms-flex-preferred-size: 33.33333%;
-		flex-basis: 33.33333%;		
-	}
-	
-	.flex-fourth {
-		-webkit-flex-basis: 25%;
-		-ms-flex-preferred-size: 25%;
-		flex-basis: 25%;		
-	}
-
-	.flex-two-thirds {
-		-webkit-flex-basis: 66.66666%;
-		-ms-flex-preferred-size: 66.66666%;
-		flex-basis: 66.66666%;		
-	}
-
-	.flex-three-fourths {
-		-webkit-flex-basis: 75%;
-		-ms-flex-preferred-size: 75%;
-		flex-basis: 75%;		
-	}	
 	
 }
 
