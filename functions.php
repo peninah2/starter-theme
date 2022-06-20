@@ -37,6 +37,14 @@ function hct_enqueue_scripts_styles() {
 		CHILD_THEME_VERSION
 	);	
 	
+		
+	wp_enqueue_script(
+		'a11y-menu',
+		get_stylesheet_directory_uri() . '/js/a11y-menu.dist.min.js',
+		array( 'jquery' ),
+		true
+	);
+	
 	wp_enqueue_script(
 		'global',
 		get_stylesheet_directory_uri() . '/js/global.js',

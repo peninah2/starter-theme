@@ -1035,7 +1035,7 @@ figcaption,
 .genesis-nav-menu a,
 .menu a {
 	color: var(--wp--preset--color--black);
-	display: block;
+	display: inline-block;
 	font-size: 15px;
 	font-size: 1.5rem;
 	font-weight: 400;
@@ -1092,6 +1092,22 @@ figcaption,
 
 #menu-footer a {
     padding: 0 0 5px 0;
+}
+
+button.button-toggle-sub-menu:before {
+    content: '+';
+}
+
+.genesis-nav-menu .menu-item-has-children:hover button.button-toggle-sub-menu:before,
+button.button-toggle-sub-menu[aria-expanded="true"]:before {
+    content: '−';
+}
+
+button.button-toggle-sub-menu {
+    background: transparent;
+    padding: 5px;
+    margin-left: -12px;
+	width: 13px;
 }
 
 /* Responsive Menu
@@ -1780,14 +1796,12 @@ ul.blocks-gallery-grid,
 ---------------------------------------------------------------------------------------------------- */
 
 
-@media only screen and (min-width: 480px) {
-
-	/* Blocks */	
-	.wp-block-buttons .wp-block-button.wp-block-button,
+@media only screen and (max-width: 480px) {
+	
+	/* Make stacked buttons equal width*/
 	.wp-block-button .wp-block-button__link {
-		display: inline-block;
-	}	
-
+		width: 250px;
+	}
 }
 
 /* Default blocks columns start here, but our css switches this to 768 */
@@ -1889,10 +1903,12 @@ ul.blocks-gallery-grid,
 		position: relative;
 	}
 	
-	.genesis-nav-menu .menu-item:hover > .sub-menu {
+	.genesis-nav-menu .menu-item:hover > .sub-menu,
+	.genesis-nav-menu .menu-item:focus > .sub-menu, 
+	.genesis-nav-menu .menu-item.has-expanded-sub-menu > .sub-menu {
 		left: auto;
 		opacity: 1;
-		display: block;
+		display: block !important;
 	}
 
 	.genesis-responsive-menu .genesis-nav-menu .sub-menu,
