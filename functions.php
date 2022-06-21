@@ -122,22 +122,11 @@ add_action( 'enqueue_block_editor_assets', 'hct_editor_styling_scripts' );
 
 
 // Head content
-add_action( 'wp_head', 'hct_head_scripts' );
+// add_action( 'wp_head', 'hct_head_scripts' );
 function hct_head_scripts() {
 	?>
 	
 	<meta name="theme-color" content="#000">
-	<style>
-		html.sr .wp-block-cover,
-		html.sr .fadeIn,
-		html.sr .wp-block-column,
-		html.sr h1,
-		html.sr .wp-block-image,
-		html.sr .wp-block-media-text__media,
-		html.sr .wp-block-media-text__content {
-			visibility: hidden;
-		}
-	 </style>
 	 
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
