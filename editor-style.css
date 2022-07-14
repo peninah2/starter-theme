@@ -192,8 +192,40 @@ p {
 }
 
 
-/* Flexbox
+/* Flexbox & Grid
 --------------------------------------------- */
+
+
+.flex-gap,
+.gap {
+	grid-gap: 1em;
+	gap: 1em;
+}
+
+.flex-gap-lg,
+.gap-lg {
+	grid-gap: 2em;
+	gap: 2em;
+}
+
+.col-3 .flex-item {
+	-webkit-box-flex: 3;
+	-ms-flex: 3 1 350px;
+	  flex: 3 1 350px;
+}
+
+.grid {
+	display: -ms-grid;
+	display: grid;	
+}
+
+.grid.col-3 {
+	grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid.col-4  {
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+}
 
 .flexbox {
 	display: -webkit-box;
