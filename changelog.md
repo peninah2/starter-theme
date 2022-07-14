@@ -1,9 +1,10 @@
-/* -----------------------   ----- 2022 ----------------------------*/
+/* ----------------------- July 14, 2022 ----------------------------*/
 
 -- Sticky header only on scroll. Removed js to calculate height of header.
 -- Moved check for h1 block off of page.php and into inc/layouts.php
 -- Replaced jquery smooth-scroll with css (scroll-padding-top, scroll-behavior)
 -- Removed default padding on columns and media-text blocks, added it only if there is a background 
+-- add .grid, .col-3, .col-4 for gap (don't use flexgap, doesn't work on older Safari)
 
 
 

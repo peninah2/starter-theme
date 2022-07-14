@@ -650,7 +650,7 @@ body .gform_wrapper.gravity-theme .gfield_label {
 ---------------------------------------------------------------------------------------------------- */
 
 
-/* Flexbox
+/* Flexbox & Grid
 --------------------------------------------- */
 .flexbox,
 .site-header .wrap {
@@ -709,14 +709,38 @@ body .gform_wrapper.gravity-theme .gfield_label {
 	flex: 1;		
 }
 
-.flex-gap {
+
+
+.flex-gap,
+.gap {
+	grid-gap: 1em;
 	gap: 1em;
+}
+
+.flex-gap-lg,
+.gap-lg {
+	grid-gap: 2em;
+	gap: 2em;
 }
 
 .col-3 .flex-item {
 	-webkit-box-flex: 3;
 	-ms-flex: 3 1 350px;
-	flex: 3 1 350px;
+	  flex: 3 1 350px;
+}
+
+.grid {
+	display: -ms-grid;
+	display: grid;	
+}
+
+.grid.col-3,
+.grid.col-4  {
+	/*
+	-ms-grid-columns: (minmax(355px, 1fr))[auto-fit];
+	grid-template-columns: repeat(auto-fit, minmax(355px, 1fr));	
+	*/
+	grid-template-columns: 1fr;
 }
 
 
@@ -1805,14 +1829,13 @@ ul.blocks-gallery-grid,
 	}
 }
 
-/* Default blocks columns start here, but our css switches this to 768 */
-@media only screen and (min-width: 600px) {
-	
-
-}
-
 
 @media only screen and (min-width: 768px) {
+	
+	.grid.col-3,
+	.grid.col-4  {
+		grid-template-columns: 1fr 1fr;
+	}
 	
 	.admin-bar .site-container {
 		margin-top: 32px;
@@ -1889,6 +1912,17 @@ ul.blocks-gallery-grid,
 	.mobile {
 		display: none;
 	}
+	
+		
+	/* Flexbox & Grid */
+	.grid.col-3 {
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	
+	.grid.col-4  {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+	
 
 	/* Site Header
 	--------------------------------------------- */
