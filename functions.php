@@ -53,14 +53,6 @@ function hct_enqueue_scripts_styles() {
 		true
 	);
 	
-	wp_enqueue_script(
-		'smooth-scroll',
-		get_stylesheet_directory_uri() . '/js/smooth-scroll.js',
-		array( 'jquery' ),
-		CHILD_THEME_VERSION,
-		true
-	);	
-	
 	wp_enqueue_script( 'scrollreveal', '//unpkg.com/scrollreveal/dist/scrollreveal.min.js', true ); 
 	
 	wp_deregister_script( 'superfish' );

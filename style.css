@@ -72,6 +72,8 @@ button,hr,input{overflow:visible}progress,sub,sup{vertical-align:baseline}[type=
 
 html {
 	box-sizing: border-box;
+	scroll-padding-top: 6rem;
+	scroll-behavior: smooth;
 }
 
 *,
@@ -766,11 +768,6 @@ body .gform_wrapper.gravity-theme .gfield_label {
 .no-padding {
 	padding: 0 !important;
 }
-
-.col-no-padding > .wp-block-column {
-	padding: 0 !important;
-}
-
 
 .line-height-sm {
     line-height: 1.2 !important;
@@ -1667,13 +1664,11 @@ p.alignright {
 	margin-bottom: 0;
 }
 
-.wp-block-columns:where(.has-background) {
-    padding: 0;
+.wp-block-columns.has-background,
+.wp-block-media-text.has-background .wp-block-media-text__content {
+    padding: 15px;
 }
-
-.wp-block-column {
-	padding: 15px;
-}	
+	
 
 /* Columns with no space between cols */
 .wp-block-columns.is-style-col-no-space {
@@ -1753,6 +1748,12 @@ ul.blocks-gallery-grid,
 /* Custom Blocks
 --------------------------------------------- */
 
+
+/* SVG */
+.svg-img.aligncenter {
+    text-align: center;
+}
+
 /* Custom spacer block */
 .wp-block-spacer.spacer-xsmall-height {
     height: 1rem;
@@ -1817,8 +1818,8 @@ ul.blocks-gallery-grid,
 		margin-top: 32px;
 	}
 	
-	.wp-block-column,
-	.wp-block-media-text .wp-block-media-text__content {
+	.wp-block-columns.has-background,
+	.wp-block-media-text.has-background .wp-block-media-text__content {
 		padding: 35px;
 	}
 	
@@ -1834,9 +1835,9 @@ ul.blocks-gallery-grid,
 }
 
 
-/* Makes media-text, columns blocks stack until 960px (instead of the 600px default)
+/* Makes media-text, columns blocks stack until 1280px (instead of the 600px default)
  * ---------------------------------------------------------------------------*/
-@media only screen and (max-width: 959px) {
+@media only screen and (max-width: 1279px) {
 	
 	.desktop {
 		display: none;
@@ -1864,10 +1865,18 @@ ul.blocks-gallery-grid,
 	.wp-block-column.no-padding:not(:last-child) {
 		padding-top: var(--padding-default) !important;
 	}
+	
+		
+	/* Add class to elements that should be full width on mobile */
+	.alignfull-mobile {
+		width: 100vw;
+		margin: 0 calc(50% - 50vw);
+		padding: var(--padding-default);
+	}
 		
 		
 	/* Media-text blocks without a background should not have additional padding */
-	.wp-block-media-text:not(.has-product) .wp-block-media-text__content {
+	.wp-block-media-text:not(.has-background) .wp-block-media-text__content {
 		padding-left: 0;
 		padding-right: 0;
 	}
@@ -1875,7 +1884,7 @@ ul.blocks-gallery-grid,
 
 }
 
-@media only screen and (min-width: 960px) {
+@media only screen and (min-width: 1280px) {
 	
 	.mobile {
 		display: none;
@@ -1885,10 +1894,15 @@ ul.blocks-gallery-grid,
 	--------------------------------------------- */
 
 	.site-header {
-		position: fixed;
 		width: 100%;
 		z-index: 9999;
 		padding: 0 2em;
+		transition: .2s top ease-in-out;
+	}
+	
+	.scroll .site-header {
+		position: fixed;
+		top: 0;
 	}
 
 	/* Genesis Menu
@@ -2050,23 +2064,6 @@ ul.blocks-gallery-grid,
 
 }
 
-@media only screen and (max-width: 1279px) {
-	
-	.wp-block-columns.stack-1280,
-	.stack-1280.flexbox {
-		display: block;	
-	}
-
-	.wp-block-columns.stack-1280 .wp-block-column:not(:first-child) {
-		margin: 0;
-	}
-
-}
-
-@media only screen and (min-width: 1280px) {
-	
-	
-}
 
 /* Make typography larger and max-width wider for large screens */
 @media only screen and (min-width: 1919px) {

@@ -1,3 +1,12 @@
+/* -----------------------   ----- 2022 ----------------------------*/
+
+-- Sticky header only on scroll. Removed js to calculate height of header.
+-- Moved check for h1 block off of page.php and into inc/layouts.php
+-- Replaced jquery smooth-scroll with css (scroll-padding-top, scroll-behavior)
+-- Removed default padding on columns and media-text blocks, added it only if there is a background 
+
+
+
 /* -----------------------   June 20, 2022 ----------------------------*/
 
 -- Added custom cover block styles to give option to contain images (not cover), ie align image to top/left/etc.

@@ -2,62 +2,6 @@
  * Theme js
  */
 
-var genesisSample = ( function( $ ) {
-	'use strict';
-
-	/**
-	 * Adjust site inner margin top to compensate for sticky header height.
-	 *
-	 * @since 2.6.0
-	 */
-	var moveContentBelowFixedHeader = function() {
-		var siteInnerMarginTop = 0;
-
-		if( $('.site-header').css('position') === 'fixed' ) {
-			siteInnerMarginTop = $('.site-header').outerHeight();
-		}
-
-		$('.site-inner').css('margin-top', siteInnerMarginTop);
-	},
-
-	/**
-	 * Initialize Genesis Sample.
-	 *
-	 * Internal functions to execute on document load can be called here.
-	 *
-	 * @since 2.6.0
-	 */
-	init = function() {
-		// Run on first load.
-		moveContentBelowFixedHeader();
-
-		// Run after window resize.
-		$( window ).resize(function() {
-			moveContentBelowFixedHeader();
-		});
-
-		// Run after the Customizer updates.
-		// 1.5s delay is to allow logo area reflow.
-		if (typeof wp.customize != "undefined") {
-			wp.customize.bind( 'change', function ( setting ) {
-				setTimeout(function() {
-					moveContentBelowFixedHeader();
-				  }, 1500);
-			});
-		}
-	};
-
-	// Expose the init function only.
-	return {
-		init: init
-	};
-
-})( jQuery );
-
-jQuery( window ).on( 'load', genesisSample.init );
-
-
-
 
 // Remove focus outlines for mouse users only
 // https://github.com/nuclei/unfocus
@@ -96,11 +40,25 @@ jQuery( window ).on( 'load', genesisSample.init );
  */
  
 (function($) {
+	
+	// Add class to site-header on scroll
+	$(function() {
+		var header = $(".site-header");
+		$(window).scroll(function() {
+			var scroll = $(window).scrollTop();
+
+			if (scroll >= 100) {
+				header.addClass("scroll");
+			} else {
+				header.removeClass("scroll");
+			}
+		});
+	});
 
 	// Responsive menu toggle
 	$('.menu-toggle').on('click', function(e){
       e.preventDefault();
-      $(this).parent().toggleClass('mobile-nav-active');
+      $('.site-container').toggleClass('mobile-nav-active');
     });
 	
 	$(function () {

@@ -71,7 +71,8 @@ h3.block-editor-rich-text__editable,
 h4.block-editor-rich-text__editable,
 h5.block-editor-rich-text__editable,
 h6.block-editor-rich-text__editable {
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 	font-weight: normal;
 }
 
@@ -329,5 +330,11 @@ hr.wp-block-separator.is-style-wide {
 /* Columns with no space between cols */
 .wp-block-columns.is-style-col-no-space .wp-block-column {
 	margin: 0 !important;
+}
+
+
+/* SVG */
+.svg-img.aligncenter {
+    text-align: center;
 }
 
