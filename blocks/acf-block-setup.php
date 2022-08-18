@@ -20,6 +20,9 @@ function hct_register_custom_blocks() {
 		'icon'				=> 'editor-expand',
 		'mode'				=> 'preview',
 		'keywords'			=> array( 'spacer', 'separator', 'hct-theme-blocks' ),
+		'supports'		=> [
+			'anchor'	=> true,
+		]
 	));		
 	
 	acf_register_block_type( array(

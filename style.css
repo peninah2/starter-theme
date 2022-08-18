@@ -388,13 +388,15 @@ input[type="submit"].gform_button:focus,
 	color: #fff !important;
 }
 
+/* Safari ~13 doesn't support gap for flexbox, but WP 6.0 has it. Removing and replacing. */
+.wp-block-buttons,
+.wp-block-social-links,
+.wp-block-columns {
+	gap: 0 !important;
+}
 
-a.button.small,
-button.small,
-input[type="button"].small,
-input[type="reset"].small,
-input[type="submit"].small {
-	padding: 8px 16px;
+.wp-block-button + .wp-block-button {
+	margin-left: .5em;
 }
 
 /* Scroll to top button */
@@ -1830,6 +1832,25 @@ ul.blocks-gallery-grid,
 }
 
 
+
+	
+@media only screen and (max-width: 600px) {
+	
+	/* Safari ~13 doesn't support gap for flexbox, but WP 6.0 has it. Removing and replacing. */
+	.wp-block-buttons {
+		-webkit-box-orient: vertical;
+		-webkit-box-direction: normal;
+		-webkit-flex-direction: column;
+		-ms-flex-direction: column;
+		flex-direction: column;
+	}
+
+	.wp-block-button + .wp-block-button {
+		margin: .5em 0 0 0;
+	}
+	
+}
+
 @media only screen and (min-width: 768px) {
 	
 	.grid.col-3,
@@ -1891,10 +1912,17 @@ ul.blocks-gallery-grid,
 	
 		
 	/* Add class to elements that should be full width on mobile */
-	.alignfull-mobile {
+	.alignfull-mobile:not(.wp-block-image) {
 		width: 100vw;
 		margin: 0 calc(50% - 50vw);
 		padding: var(--padding-default);
+	}
+	
+	/* Image needs its own styling for full-width on mobile*/
+	figure.alignfull-mobile img {
+		width: 100vw;
+		margin: 0 calc(50% - 50vw);
+		padding: 0;
 	}
 		
 		

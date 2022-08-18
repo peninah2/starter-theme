@@ -10,6 +10,10 @@
  $hideonmobile = get_field( 'hide_mobile' );
  $hideondesktop = get_field( 'hide_desktop' );
  
+ $anchor = '';
+ if( !empty( $block['anchor'] ) )
+	$anchor = ' id="' . sanitize_title( $block['anchor'] ) . '"';
+ 
  if ( $hideonmobile == true ) {
 	 $hideonmobile = ' desktop';
  }
@@ -33,4 +37,4 @@
  
  
  
- echo '<div' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height ' . $hideonmobile . $hideondesktop . '"></div>';
+ echo '<div' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height ' . $hideonmobile . $hideondesktop . '"' . $anchor . '></div>';

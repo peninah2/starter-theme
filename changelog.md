@@ -1,3 +1,9 @@
+/* ----------------------- ------ 2022 ----------------------------*/
+
+-- Added anchor support to spacer block
+-- Removes gap on button block, Safari ~13 doesn't support gap for flexbox. Replace with margin. Update when don't have to support Safari 13
+
+
 /* ----------------------- July 14, 2022 ----------------------------*/
 
 -- Sticky header only on scroll. Removed js to calculate height of header.
