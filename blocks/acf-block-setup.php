@@ -6,43 +6,19 @@
 
 **/
 
-// Create blocks
-function hct_register_custom_blocks() {
-	
-	if( ! function_exists( 'acf_register_block_type' ) )
-		return;
-	
-	acf_register_block_type( array(
-		'name'				=> 'spacer',
-		'title'				=> __( 'Spacer', 'hct-theme-blocks' ),
-		'render_template'	=> 'blocks/block-spacer.php',
-		'category'			=> 'hct-theme',
-		'icon'				=> 'editor-expand',
-		'mode'				=> 'preview',
-		'keywords'			=> array( 'spacer', 'separator', 'hct-theme-blocks' ),
-		'supports'		=> [
-			'anchor'	=> true,
-		]
-	));		
-	
-	acf_register_block_type( array(
-		'name'				=> 'svg-img',
-		'title'				=> __( 'SVG image', 'hct-theme-blocks' ),
-		'render_template'	=> 'blocks/block-svg-img.php',
-		'category'			=> 'hct-theme',
-		'icon'				=> 'embed-photo',
-		'mode'				=> 'preview',
-		'keywords'			=> array( 'svg', 'image', 'hct-theme-blocks' ),
-		'supports'		=> [
-			'align'			=> true,
-			'anchor'		=> false,
-			'customClassName'	=> true,
-			'jsx' 			=> false,
-		]
-	));	
 
+
+/**
+ * Load Blocks
+ */
+add_action( 'init', 'hct_load_blocks' );
+function hct_load_blocks() {
+	
+	register_block_type( get_stylesheet_directory() . '/blocks/svg/block.json' );
+	register_block_type( get_stylesheet_directory() . '/blocks/spacer/block.json' );
+	
 }
-add_action('acf/init', 'hct_register_custom_blocks' );
+
 
 add_filter( 'block_categories_all', 'hct_custom_block_category', 10, 2);
 function hct_custom_block_category( $categories, $post ) {
@@ -51,30 +27,11 @@ function hct_custom_block_category( $categories, $post ) {
 		array(
 			array(
 				'slug'  => 'hct-theme',
-				'title' => __( 'Theme Blocks', 'hct-theme-blocks' ),
+				'title' => __( 'Theme Blocks', 'hct-theme' ),
 			),
 		)
 	);
 }
-
-/*
- * Only load Featherlight scripts if team member block is present
- */
-
-function hct_teamblock_featherlight_script() {
-	
-	if ( has_block( 'acf/team-member' ) ) {
-		wp_enqueue_script(
-			'featherlight',
-			get_stylesheet_directory_uri() . '/js/featherlight.min.js',
-			array( 'jquery' ),
-			CHILD_THEME_VERSION,
-			true
-		);
-	}
-}
-// add_action( 'wp_enqueue_scripts', 'hct_teamblock_featherlight_script' );
-
 
 
 
@@ -197,3 +154,53 @@ acf_add_local_field_group(array(
 ));
 
 endif;	
+
+
+// Custom SVG block since WP doesn't support SVG image code
+if( function_exists('acf_add_local_field_group') ):
+
+acf_add_local_field_group(array(
+	'key' => 'group_6243440366f50',
+	'title' => 'Block: SVG image',
+	'fields' => array(
+		array(
+			'key' => 'field_6243440802b3a',
+			'label' => 'SVG code',
+			'name' => 'svg_code',
+			'type' => 'textarea',
+			'instructions' => '',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => array(
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			),
+			'default_value' => '',
+			'placeholder' => '',
+			'maxlength' => '',
+			'rows' => '',
+			'new_lines' => '',
+		),
+	),
+	'location' => array(
+		array(
+			array(
+				'param' => 'block',
+				'operator' => '==',
+				'value' => 'acf/svg-img',
+			),
+		),
+	),
+	'menu_order' => 0,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+	'show_in_rest' => 0,
+));
+
+endif;		

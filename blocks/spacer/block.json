@@ -1,0 +1,30 @@
+{
+    "name": "spacer",
+    "title": "Spacer",
+    "description": "Custom spacer with automatic sizing",
+	"style": "",
+    "script": "",
+    "category": "hct-theme",
+    "icon": "editor-expand",
+    "apiVersion": 2,
+    "keywords": [ "spacer", "separator" ],
+    "acf": {
+        "mode": "preview",
+		"renderTemplate": "render.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": false,
+        "anchor": true,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": false,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}

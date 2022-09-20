@@ -1,0 +1,29 @@
+{
+    "name": "svg-img",
+    "title": "SVG Image",
+    "description": "Add SVG code for image",
+    "script": "",
+    "category": "hct-theme",
+    "icon": "embed-photo",
+    "apiVersion": 2,
+    "keywords": [],
+    "acf": {
+        "mode": "preview",
+	"renderTemplate": "render.php"
+    },
+    "styles": [],
+    "supports": {
+        "align": true,
+        "anchor": false,
+        "alignContent": false,
+        "color": {
+            "text": false,
+            "background": true,
+            "link": false
+        },
+        "alignText": false,
+        "fullHeight": false
+    },
+    "attributes": {
+    }
+}
