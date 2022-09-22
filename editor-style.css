@@ -71,8 +71,8 @@ h6.block-editor-rich-text__editable {
 	font-weight: normal;
 }
 
-p {
-	margin-bottom: 18px;
+p + p {
+	margin-top: 18px;
 }
 
 

@@ -4,7 +4,7 @@ Description:
 Author: Highlight Creative
 Author URI: https://highlightcreative.com
 Template: genesis
-Version: 1.1.3
+Version: 1.0.0
 */
 
 /* Table of Contents
@@ -183,8 +183,12 @@ textarea:focus,
 }
 
 p {
-	margin: 0 0 30px;
+	margin: 0;
 	padding: 0;
+}
+
+p + p {
+	margin-top: 30px;
 }
 
 hr {
@@ -1590,10 +1594,6 @@ p.entry-meta {
 	margin: auto;
 }
 
-.wp-block-cover.has-custom-content-position.is-position-bottom-center .wp-block-cover__inner-container {
-	margin: 0;
-}
-
 
 .wrap,
 .wp-block-cover__inner-container,
@@ -1616,6 +1616,8 @@ p.entry-meta {
 /* Allow bottom/left positioning for cover blocks */
 .wp-block-cover.is-position-top-left.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.is-position-top-right.has-custom-content-position .wp-block-cover__inner-container,
+.wp-block-cover.is-position-top-center.has-custom-content-position .wp-block-cover__inner-container,
+.wp-block-cover.is-position-bottom-center.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.is-position-bottom-left.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.is-position-bottom-right.has-custom-content-position .wp-block-cover__inner-container {
 	margin: 0 auto;
