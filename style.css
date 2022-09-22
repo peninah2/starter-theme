@@ -399,6 +399,10 @@ input[type="submit"].gform_button:focus,
 	margin-left: .5em;
 }
 
+.wp-block-columns .wp-block-column:not(:first-of-type) {
+    margin-top: 1em;
+}
+
 /* Scroll to top button */
 #scroll-top {
   display: none;
@@ -1609,6 +1613,15 @@ p.entry-meta {
 }
 
 
+/* Allow bottom/left positioning for cover blocks */
+.wp-block-cover.is-position-top-left.has-custom-content-position .wp-block-cover__inner-container,
+.wp-block-cover.is-position-top-right.has-custom-content-position .wp-block-cover__inner-container,
+.wp-block-cover.is-position-bottom-left.has-custom-content-position .wp-block-cover__inner-container,
+.wp-block-cover.is-position-bottom-right.has-custom-content-position .wp-block-cover__inner-container {
+	margin: 0 auto;
+}
+
+
 /* Alignwide is used for slightly narrower than the .wrap width.  */
 .alignwide {
     width: calc(var(--max-width) - 25%);
@@ -2104,16 +2117,12 @@ ul.blocks-gallery-grid,
 		margin-bottom: 60px;
 	}
 
-	/* Footer Widgets
-	----------------------------------------
-
-	.footer-widget-area {
-		float: left;
-		margin-bottom: 0;
-		width: 33.33%;
-		width: calc(100% / 3);
+	/* Columns */
+	.wp-block-columns .wp-block-column:not(:first-of-type) {
+		margin-left: 1em;
+		margin-top: 0;
 	}
-		----- */
+
 	/* Spacer block */
 	.wp-block-spacer.spacer-medium-height {
 		height: 3em;
