@@ -5,11 +5,11 @@
 
 :root { /* Add sizes and change to pixel units */
 	--wp--preset--font-size--small: 16px;
-	--wp--preset--font-size--caption: 24px;
-	--wp--preset--font-size--paragraph: 19px;
+	--wp--preset--font-size--normal: 18px;
 	--wp--preset--font-size--medium: 28px;
 	--wp--preset--font-size--large: 48px;
 	--wp--preset--font-size--xlarge: 82px;
+	--wp--preset--font-size--title: 82px;
 	--font-main: "Source Sans Pro", Roboto, sans-serif;
 	--font-secondary: Georgia, sans-serif;
 	--padding-default: 25px;	
@@ -355,6 +355,10 @@ hr.wp-block-separator.is-style-wide {
 ------------------------------------------ */
 
 /* Columns with no space between cols */
+.wp-block-columns.is-style-col-no-space {
+	gap: 0 !important;
+}
+
 .wp-block-columns.is-style-col-no-space .wp-block-column {
 	margin: 0 !important;
 }

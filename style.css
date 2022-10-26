@@ -1136,6 +1136,7 @@ button.button-toggle-sub-menu[aria-expanded="true"]:before {
 
 button.button-toggle-sub-menu {
     background: transparent;
+	border: 0;
     padding: 5px;
     margin-left: -12px;
 	width: 13px;
@@ -1362,19 +1363,6 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 
 /* Page Headers
 --------------------------------------------- */
-
-.entry-header {
-	padding: 3em var(--padding-default);
-	background: #000;
-}
-
-.entry-title {
-	color: #fff;
-	font-size: var(--wp--preset--font-size--xlarge);	
-	max-width: var(--max-width);
-	margin: auto;
-	padding: 0;
-}
 
 .entry-title a {
 	color: var(--wp--preset--color--black);
@@ -1633,8 +1621,7 @@ p.entry-meta {
 
 .alignfull,
 .alignfull.wp-block-image,
-.alignfull.blocks-gallery-grid,
-.entry-header {
+.alignfull.blocks-gallery-grid {
 	margin: 0 calc(50% - 50vw);
 	max-width: 100vw;
 	width: 100vw;
@@ -1977,7 +1964,7 @@ ul.blocks-gallery-grid,
 		transition: .2s top ease-in-out;
 	}
 	
-	.scroll .site-header {
+	.scroll.site-header {
 		position: fixed;
 		top: 0;
 	}
