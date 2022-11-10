@@ -266,7 +266,8 @@ h6 {
 	font-weight: 400;
 	font-size: inherit;
 	line-height: 1.2;
-	margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .is-style-main {
@@ -1640,6 +1641,8 @@ p.entry-meta {
 	max-width: 450px;
 }
 
+.narrow.has-text-align-center,
+.x-narrow.has-text-align-center,
 .centered {
 	margin-left: auto;
 	margin-right: auto;
@@ -1713,7 +1716,8 @@ p.alignright {
 ul.blocks-gallery-grid,
 .wp-block-image,
 .wp-block-media-text__content p:last-of-type {
-    margin: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 }
 
 .wp-block-media-text__content p:last-of-type + * { /* Last paragraph in media-text blocks doesn't have margin. If it's followed by another element, we add margin back. */
@@ -1932,6 +1936,11 @@ ul.blocks-gallery-grid,
 	.wp-block-media-text:not(.has-background) .wp-block-media-text__content {
 		padding-left: 0;
 		padding-right: 0;
+	}
+	
+	/* Full-width media-text blocks DO need padding*/
+	.wp-block-media-text.alignfull .wp-block-media-text__content {
+		padding: calc( var(--padding-default) * 1.5);
 	}
 	
 
