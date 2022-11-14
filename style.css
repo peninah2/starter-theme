@@ -1161,6 +1161,7 @@ button.button-toggle-sub-menu {
 .mobile-nav-active .mobile-menu-wrap {
 	display: block;
 	opacity: 1;
+	overflow: scroll;
 	position: fixed;
 	-webkit-transform: translateX(0); 
 	    -ms-transform: translateX(0);
