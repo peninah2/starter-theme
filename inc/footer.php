@@ -31,32 +31,4 @@ function hct_current_year() {
 	return $year;
 }
 
-
-// Custom footer
-//add_action( 'genesis_footer', 'hct_custom_footer', 9 ); 
-
-function hct_custom_footer() {
-	?>
-	<div class="flexbox stack-1280">
-		
-		<div class="logo-footer flex-1 flex-item">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo/logo.svg" alt="COMPANY NAME logo" />
-		</div>
-		
-		<div class="flex-1 flex-item">
-			<?php wp_nav_menu( array( 'theme_location' => 'footer_menu_1', 'menu_class' => 'footer-menu genesis-nav-menu', ) ); ?>
-		</div>
-		
-		<div class="flex-1 flex-item">
-			<?php wp_nav_menu( array( 'theme_location' => 'footer_menu_2', 'menu_class' => 'footer-menu footer-menu-2 genesis-nav-menu', ) ); ?>
-		</div>
-		
-		<div class="flex-2 flex-item">
-			<?php gravity_form( 1, false, false, false, '', true ); ?>
-		</div>
-		
-	</div>
-	<?php
-}
-
 // Social menu shortcode in Github > snippets

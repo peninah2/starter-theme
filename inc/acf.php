@@ -12,11 +12,11 @@
 if( function_exists('acf_add_options_page') ) {
 	
 	acf_add_options_page(array(
-		'page_title' 	=> 'Theme Settings',
-		'menu_title'	=> 'Theme Settings',
-		'menu_slug' 	=> 'theme-settings',
+		'page_title' 	=> 'Contact',
+		'menu_title'	=> 'Contact',
+		'menu_slug' 	=> 'Contact',
 		'capability'	=> 'edit_posts',
-		'icon_url'	 	=> 'dashicons-admin-site-alt3',
+		'icon_url'	 	=> 'dashicons-phone',
 		'position' 		=> 20,
 		'redirect'		=> false
 	));
@@ -37,6 +37,14 @@ function hct_encoded_phone_shortcode() {
 	$phoneLink = '<a href="tel:' . $phone . '">' . $phone . '</a>';
 	
 	return $phoneLink;
+
+}
+
+add_shortcode( 'email', 'hct_email_shortcode' );
+function hct_email_shortcode() {
+	
+	$email = get_field( 'email', 'option' );	
+	return $email;
 
 }
 

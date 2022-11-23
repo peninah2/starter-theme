@@ -95,6 +95,12 @@ add_theme_support( 'align-wide' );
 // Editor Styles
 add_theme_support( 'editor-styles' );
 add_editor_style( 'editor-style.css' );
+add_theme_support( 'custom-line-height' );
+add_theme_support( 'custom-spacing' );
+add_theme_support( 'appearance-tools' );
+remove_theme_support( 'core-block-patterns' );
+
+
 
 /** 
  * Gutenberg scripts and styles

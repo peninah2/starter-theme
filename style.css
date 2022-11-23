@@ -138,8 +138,7 @@ html {
 
 /* CSS Variables
 --------------------------------------------- */
-:root {
-	--max-width: 1200px;
+body {
 	--font-secondary: Georgia, serif;
 	--font-main: 'Source Sans Pro', Helvetica, sans-serif;
 	--padding-default: 25px;
@@ -153,12 +152,6 @@ html {
 	font-size: 62.5%; /* 10px browser default */
 	-moz-osx-font-smoothing: grayscale;
 	-webkit-font-smoothing: antialiased;
-}
-
-/* Chrome fix */
-body > div {
-	font-size: 18px;
-	font-size: 1.8rem;
 }
 
 body {
@@ -406,6 +399,20 @@ input[type="submit"].gform_button:focus,
 
 .wp-block-columns .wp-block-column:not(:first-of-type) {
     margin-top: 1em;
+}
+
+.wp-block-social-links .wp-social-link {
+	margin-right: .5em;
+}
+
+
+/* Left-aligned buttons don't stay aligned on mobile */
+.wp-block-buttons.is-content-justification-left {
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	-ms-grid-row-align: flex-start;
+	align-items: flex-start;
 }
 
 /* Scroll to top button */
@@ -703,6 +710,16 @@ body .gform_wrapper.gravity-theme .gfield_label {
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;		
+}
+
+
+.align-items-start,
+.align-items-start.is-layout-flex,
+.is-layout-flex.wp-block-buttons:not(.is-content-justification-center) {
+	-webkit-box-align: start;
+	-webkit-align-items: flex-start;
+	-ms-flex-align: start;
+	align-items: flex-start;	
 }
 
 .flex-direction-column {
@@ -1579,7 +1596,7 @@ p.entry-meta {
 .wp-block-columns,
 .wp-block-cover.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container {
-	max-width: var(--max-width);
+	max-width: var(--wp--style--global--content-size);
 	width: 100%;
 	margin: auto;
 }
@@ -1587,10 +1604,19 @@ p.entry-meta {
 
 .wrap,
 .wp-block-cover__inner-container,
-.alignfull > .wp-block-group,
-.alignfull > .wp-block-columns {
+.alignfull.is-layout-flow > .wp-block-group,
+.alignfull.is-layout-flow > .wp-block-columns,
+.alignfull.is-layout-constrained {
 	padding: 0 var(--padding-default);
 }
+
+
+.wp-block-columns.has-background,
+.wp-block-media-text .wp-block-media-text__content,
+.alignfull.wp-block-group .wp-block-column > .wp-block-group {
+    padding: var(--padding-default);
+}
+
 
 .wp-block-group {
 	padding-top: var(--padding-default); 
@@ -1616,7 +1642,7 @@ p.entry-meta {
 
 /* Alignwide is used for slightly narrower than the .wrap width.  */
 .alignwide {
-    width: calc(var(--max-width) - 25%);
+    width: calc(var(--wp--style--global--content-size) - 25%);
 	max-width: 100%;
     margin: auto;
 }
@@ -1739,7 +1765,7 @@ ul.blocks-gallery-grid,
 
 
 /* When cover blocks have zero opacity, the color is a background. */
-.wp-block-cover .has-background-dim.has-background-dim-0,
+.wp-block-cover .wp-block-cover__background.has-background-dim.has-background-dim-0,
 .wp-block-cover .wp-block-cover__gradient-background.has-background-dim.has-background-dim-0 {
     opacity: 1;
     z-index: 0;
@@ -1775,6 +1801,11 @@ ul.blocks-gallery-grid,
 .wp-block-cover.is-style-cover-right img.wp-block-cover__image-background {
 	-o-object-position: top right;
     object-position: top right;
+}
+
+/* Social links */
+ul.wp-block-social-links {
+	margin: 0;
 }
 
 
@@ -1885,25 +1916,44 @@ ul.blocks-gallery-grid,
 
 }
 
-
-/* Makes media-text, columns blocks stack until 1280px (instead of the 600px default)
+/* Columns collapse
  * ---------------------------------------------------------------------------*/
-@media only screen and (max-width: 1279px) {
+@media only screen and (max-width: 959px) {
 	
-	.desktop {
-		display: none;
+	/* Media-text blocks */
+	.wp-block-media-text.is-stacked-on-mobile {
+		grid-template-columns: 100%!important;
+	}
+
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__media, .wp-block-media-text.has-media-on-the-right .wp-block-media-text__media {
+		grid-column: 1;
+		grid-row: 1;
 	}
 	
-	/* Stacks media-text & column blocks */
-	.wp-block-media-text,
+	.wp-block-media-text.is-image-fill .wp-block-media-text__media {
+		height: 100%;
+		min-height: 250px;
+		background-size: cover;
+	}
+	
+	.wp-block-media-text.is-stacked-on-mobile .wp-block-media-text__content {
+		grid-column: 1;
+		grid-row: 2;
+	}
+	
+	/* Columns */
 	.wp-block-columns {
-		display: block;
-	}
+		flex-wrap: wrap !important;
+	}	
 	
-	.wp-block-columns .wp-block-column:not(:first-child) {
-		margin: 0 !important;
-		padding-top: 0;
-	}
+	.wp-block-columns:not(.is-not-stacked-on-mobile)>.wp-block-column {
+		flex-basis: 100%!important;
+	}	
+	
+	/* .wp-block-columns:not(.is-not-stacked-on-mobile) .wp-block-column:not(:first-child) { */
+		/* margin: 0 !important; */
+		/* padding-top: 0; */
+	/* } */
 	
 	.wp-block-column:nth-child(2n) { /* combats Gutenberg default */
 		margin-left: 0 !important;
@@ -1915,7 +1965,30 @@ ul.blocks-gallery-grid,
 	
 	.wp-block-column.no-padding:not(:last-child) {
 		padding-top: var(--padding-default) !important;
+	}	
+		
+	/* Media-text blocks without a background should not have additional padding */
+	.wp-block-media-text:not(.has-background) .wp-block-media-text__content {
+		padding-left: 0;
+		padding-right: 0;
 	}
+	
+	/* Full-width media-text blocks DO need padding*/
+	.wp-block-media-text.alignfull .wp-block-media-text__content {
+		padding: calc( var(--padding-default) * 1.5);
+	}	
+	
+	
+}
+
+/* Nav changes
+ * ---------------------------------------------------------------------------*/
+@media only screen and (max-width: 1279px) {
+	
+	.desktop {
+		display: none;
+	}
+
 	
 		
 	/* Add class to elements that should be full width on mobile */
@@ -1931,18 +2004,7 @@ ul.blocks-gallery-grid,
 		margin: 0 calc(50% - 50vw);
 		padding: 0;
 	}
-		
-		
-	/* Media-text blocks without a background should not have additional padding */
-	.wp-block-media-text:not(.has-background) .wp-block-media-text__content {
-		padding-left: 0;
-		padding-right: 0;
-	}
-	
-	/* Full-width media-text blocks DO need padding*/
-	.wp-block-media-text.alignfull .wp-block-media-text__content {
-		padding: calc( var(--padding-default) * 1.5);
-	}
+
 	
 
 }
@@ -2138,11 +2200,8 @@ ul.blocks-gallery-grid,
 /* Make typography larger and max-width wider for large screens */
 @media only screen and (min-width: 1919px) {
 	
-	:root {
-		--max-width: 1536px;
-	}
-	
 	body {
+		--wp--style--global--content-size: 1536px;
 		font-size: 2rem;
 	}
 		

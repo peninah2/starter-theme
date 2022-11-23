@@ -4,9 +4,17 @@
 		"layout": {
            "contentSize": "1200px",
            "wideSize": "900px"
-       },
+        },
+	   
+	   "border": {
+            "radius": true,
+            "color": true,
+            "style": false,
+            "width": true
+        },
 		
         "color": {
+			"link": true,
             "palette": [
                 {
                     "name": "Black",
