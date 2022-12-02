@@ -135,7 +135,7 @@
 						"margin": false,
 						"padding": true,
 						"blockGap": null,
-						"units": [ "px", "rem" ]
+						"units": [ "px", "rem", "%" ]
 					}	
 			},
 			
@@ -145,7 +145,7 @@
 						"margin": false,
 						"padding": true,
 						"blockGap": null,
-						"units": [ "px", "rem" ]
+						"units": [ "px", "rem", "%"  ]
 					}	
 			}
 			
