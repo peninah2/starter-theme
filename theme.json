@@ -5,6 +5,33 @@
            "contentSize": "1200px",
            "wideSize": "900px"
         },
+		
+		"spacing": {
+            "margin": false,
+            "padding": false,
+            "blockGap": null,
+            "units": [ "px", "em", "rem", "vh", "vw" ],
+		  	"spacingScale": {
+				"steps": 0
+			},
+		   "spacingSizes": [
+				{
+				"size": "clamp(3rem, 5vw, 3.5rem)",
+				"slug": "default",
+				"name": "Normal"
+				},
+			    {
+				"size": "clamp(3rem, 5vw, 5rem)",
+				"slug": "medium",
+				"name": "Medium"
+				},
+				{
+				"size": "clamp(3.5rem, 8vw, 7rem)",
+				"slug": "large",
+				"name": "Large"
+				}
+			]
+        },			
 	   
 	   "border": {
             "radius": true,
@@ -88,6 +115,8 @@
         },
 		
 		"blocks": {
+			
+			
             "core/button": {
 				"border": {
                     "radius": false
@@ -95,7 +124,32 @@
 				"color": {
 						"background": false
 				}	
+			},
+			
+			"core/column": {
+					"border": {
+						"radius": true
+					},
+					
+					"spacing": {
+						"margin": false,
+						"padding": true,
+						"blockGap": null,
+						"units": [ "px", "rem" ]
+					}	
+			},
+			
+			"core/group": {
+					
+					"spacing": {
+						"margin": false,
+						"padding": true,
+						"blockGap": null,
+						"units": [ "px", "rem" ]
+					}	
 			}
+			
+			
         }
 
     }

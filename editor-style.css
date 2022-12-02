@@ -11,8 +11,7 @@
 	--wp--preset--font-size--xlarge: 82px;
 	--wp--preset--font-size--title: 82px;
 	--font-main: "Source Sans Pro", Roboto, sans-serif;
-	--font-secondary: Georgia, sans-serif;
-	--padding-default: 25px;	
+	--font-secondary: Georgia, sans-serif;	
 }
 
 .is-style-main,
@@ -131,11 +130,11 @@ p + p {
 }
 
 .padding-default {
-    padding: var(--padding-default);
+    padding: var(--wp--preset--spacing--default);
 }
 
 .padding-lg {
-	padding: calc( var(--padding-default) * 2);
+	padding: var(--wp--preset--spacing--large);
 }
 
 .line-height-sm {

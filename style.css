@@ -141,7 +141,6 @@ html {
 body {
 	--font-secondary: Georgia, serif;
 	--font-main: 'Source Sans Pro', Helvetica, sans-serif;
-	--padding-default: 25px;
 }
 
 
@@ -810,11 +809,11 @@ body .gform_wrapper.gravity-theme .gfield_label {
 }
 
 .padding-default {
-    padding: var(--padding-default);
+    padding: var(--wp--preset--spacing--default);
 }
 
 .padding-lg {
-    padding: calc( var(--padding-default) * 2) !important;
+    padding: calc( var(--wp--preset--spacing--default) * 2) !important;
 }
 
 .no-padding {
@@ -1607,20 +1606,13 @@ p.entry-meta {
 .alignfull.is-layout-flow > .wp-block-group,
 .alignfull.is-layout-flow > .wp-block-columns,
 .alignfull.is-layout-constrained {
-	padding: 0 var(--padding-default);
+	padding: 0 var(--wp--preset--spacing--default);
 }
 
 
-.wp-block-columns.has-background,
 .wp-block-media-text .wp-block-media-text__content,
 .alignfull.wp-block-group .wp-block-column > .wp-block-group {
-    padding: var(--padding-default);
-}
-
-
-.wp-block-group {
-	padding-top: var(--padding-default); 
-	padding-bottom: var(--padding-default);
+    padding: var(--wp--preset--spacing--default);
 }
 
 .wp-block-cover, 
@@ -1722,7 +1714,6 @@ p.alignright {
 	margin-bottom: 0;
 }
 
-.wp-block-columns.has-background,
 .wp-block-media-text.has-background .wp-block-media-text__content {
     padding: 15px;
 }
@@ -1900,9 +1891,8 @@ ul.wp-block-social-links {
 		margin-top: 32px;
 	}
 	
-	.wp-block-columns.has-background,
 	.wp-block-media-text.has-background .wp-block-media-text__content {
-		padding: 35px;
+		padding: var(--wp--preset--spacing--default);
 	}
 	
 }
@@ -1959,12 +1949,21 @@ ul.wp-block-social-links {
 		margin-left: 0 !important;
 	}	
 	
+	.wp-block-columns:not(.is-not-stacked-on-mobile) .wp-block-column:not(:first-of-type) {
+		margin-top: 1em;
+		margin-left: 0;
+	}
+	
+	.wp-block-columns.is-not-stacked-on-mobile .wp-block-column:not(:first-of-type) {
+		margin-top: 0;
+	}
+	
 	.alignfull > .wp-block-columns.col-no-padding {
-		padding: 0 var(--padding-default);
+		padding: 0 var(--wp--preset--spacing--default);
 	}
 	
 	.wp-block-column.no-padding:not(:last-child) {
-		padding-top: var(--padding-default) !important;
+		padding-top: var(--wp--preset--spacing--default) !important;
 	}	
 		
 	/* Media-text blocks without a background should not have additional padding */
@@ -1975,7 +1974,7 @@ ul.wp-block-social-links {
 	
 	/* Full-width media-text blocks DO need padding*/
 	.wp-block-media-text.alignfull .wp-block-media-text__content {
-		padding: calc( var(--padding-default) * 1.5);
+		padding: calc( var(--wp--preset--spacing--default) * 1.5);
 	}	
 	
 	
@@ -1995,7 +1994,7 @@ ul.wp-block-social-links {
 	.alignfull-mobile:not(.wp-block-image) {
 		width: 100vw;
 		margin: 0 calc(50% - 50vw);
-		padding: var(--padding-default);
+		padding: var(--wp--preset--spacing--default);
 	}
 	
 	/* Image needs its own styling for full-width on mobile*/
