@@ -59,6 +59,12 @@
 }
 
 /* Remove margins added in editor */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
 h1.block-editor-rich-text__editable,
 h2.block-editor-rich-text__editable,
 h3.block-editor-rich-text__editable,
@@ -70,10 +76,20 @@ h6.block-editor-rich-text__editable {
 	font-weight: normal;
 }
 
-p + p {
+p.wp-block {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p.wp-block + p.wp-block {
 	margin-top: 18px;
 }
 
+
+/* Images */
+.wp-block.wp-block-image {
+    margin-bottom: 0;
+}
 
 /* Styling classes
 --------------------------------------------- */
