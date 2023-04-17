@@ -1535,18 +1535,9 @@ p.entry-meta {
 	margin-bottom: 40px;
 }
 
-.sidebar p {
-	margin-bottom: 20px;
-}
-
 /* Widgets
 --------------------------------------------- */
 
-.widget {
-	margin-bottom: 40px;
-}
-
-.widget p:last-child,
 .widget ul > li:last-of-type {
 	margin-bottom: 0;
 }
@@ -1571,16 +1562,6 @@ p.entry-meta {
 	margin: 0 0 0 30px;
 	padding: 0;
 }
-
-.widget_calendar table {
-	width: 100%;
-}
-
-.widget_calendar td,
-.widget_calendar th {
-	text-align: center;
-}
-
 
 
 /* BLOCKS
