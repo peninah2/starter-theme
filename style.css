@@ -245,6 +245,9 @@ blockquote::before {
   background: var(--wp--preset--color--black);
 }
 
+.svg-img svg {
+    max-width: 100%;
+}
 
 /* Typography
 --------------------------------------------- */
@@ -591,12 +594,9 @@ th {
 input,
 select,
 textarea {
-	background-color: #fff;
+	background-color: transparent;
 	border: 1px solid #ddd;
 	color: var(--wp--preset--color--black);
-	font-size: 18px;
-	font-size: 1.8rem;
-	font-weight: 400;
 	padding: 15px;
 	width: 100%;
 }
@@ -656,10 +656,17 @@ body .gform_wrapper.gravity-theme .gfield_label {
 }
 
 .gform_confirmation_wrapper {
-    border: 2px solid;
     padding: 20px;
     margin-top: 25px;
     font-weight: bold;
+}
+
+p.gform_required_legend {
+	display: none;
+}
+
+.gform_wrapper.gravity-theme .gfield_required {
+    color: inherit !important;
 }
 
 
@@ -1172,6 +1179,10 @@ button.button-toggle-sub-menu {
     left: 0;
     top: 0;
     padding: 5%;
+	-webkit-transform: translateX(-100%); 
+	-ms-transform: translateX(-100%);	
+	transform: translateX(-100%);
+	transition: .2s all ease-in-out;	
 }
 
 .mobile-nav-active .mobile-menu-wrap {
@@ -1179,9 +1190,9 @@ button.button-toggle-sub-menu {
 	opacity: 1;
 	overflow: scroll;
 	position: fixed;
-	-webkit-transform: translateX(0); 
-	    -ms-transform: translateX(0);
-	        transform: translateX(0);
+	-webkit-transform: translateX(0%); 
+	-ms-transform: translateX(0%);	
+	transform: translateX(0%);
 	-webkit-transition: opacity 100ms ease-in-out;
 	transition: opacity 100ms ease-in-out;
 }
@@ -1355,18 +1366,11 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 
 .footer-widgets {
 	clear: both;
-	font-size: 18px;
-	font-size: 1.8rem;
-	padding: 60px 0;
 }
 
 .footer-widgets .wrap {
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.footer-widget-area {
-	margin-bottom: 40px;
 }
 
 .footer-widget-area:last-child ,
@@ -1518,22 +1522,6 @@ p.entry-meta {
 	display: none;
 }
 
-/* Custom page templates (delete if not using)
---------------------------------------------- */
-
-
-/* SIDEBAR
----------------------------------------------------------------------------------------------------- */
-
-.sidebar {
-	font-size: 16px;
-	font-size: 1.6rem;
-	line-height: 1.5;
-}
-
-.sidebar .widget {
-	margin-bottom: 40px;
-}
 
 /* Widgets
 --------------------------------------------- */
@@ -1633,13 +1621,24 @@ p.entry-meta {
     padding-bottom: 0;
 }
 
-.narrow {
+.narrow,
+body .is-layout-constrained > .narrow {
     max-width: 700px;
 }
 
-.x-narrow {
-	max-width: 450px;
+.narrow:not(.has-text-align-center),
+body .is-layout-constrained > .narrow:not(.has-text-align-center) {
+	margin-left: 0 !important;
+	margin-right: 0 !important;	
 }
+
+.x-narrow,
+body .is-layout-constrained > .x-narrow {
+	max-width: 450px;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+
 
 .narrow.has-text-align-center,
 .x-narrow.has-text-align-center,
