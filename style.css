@@ -180,7 +180,7 @@ p {
 }
 
 p + p {
-	margin-top: 30px;
+	margin-top: var(--wp--preset--spacing--default);
 }
 
 hr {
@@ -1410,12 +1410,6 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 
 /* Entry Meta
 --------------------------------------------- */
-
-p.entry-meta {
-	font-size: 16px;
-	font-size: 1.6rem;
-	margin-bottom: 0;
-}
 
 .entry-header .entry-meta {
 	margin-bottom: 20px;
