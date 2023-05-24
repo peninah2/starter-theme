@@ -22,21 +22,6 @@ function hct_enqueue_scripts_styles() {
 		array(),
 		filemtime( get_stylesheet_directory() . '/style.css' )
 	);
-
-	wp_enqueue_style(
-		'theme-fonts',
-		'//fonts.googleapis.com/css?family=Source+Sans+Pro:400,400i,600,700',
-		array(),
-		CHILD_THEME_VERSION
-	);
-	
-	wp_enqueue_style(
-		'font-awesome',
-		'//use.fontawesome.com/releases/v5.5.0/css/all.css',
-		array(),
-		CHILD_THEME_VERSION
-	);	
-	
 		
 	wp_enqueue_script(
 		'a11y-menu',
@@ -53,7 +38,9 @@ function hct_enqueue_scripts_styles() {
 		true
 	);
 	
-	wp_enqueue_script( 'scrollreveal', '//unpkg.com/scrollreveal/dist/scrollreveal.min.js', true ); 
+	
+	wp_enqueue_script( 'gsap', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js', true );
+	wp_enqueue_script( 'scrollTrigger', '//cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js', true );
 	
 	wp_deregister_script( 'superfish' );
 	wp_deregister_script( 'superfish-args' );
@@ -148,16 +135,6 @@ function hct_head_scripts() {
 function hct_google_tag_manager_head() {
 	?>
 
-<?php
+	<?php
 }
 
-
-
-// Hides site except homepage if you are not logged in. Useful if you like to show clients homepage before the rest of the site is developed.
-// add_action( 'template_redirect', 'hct_in_development_redirect' );
-function hct_in_development_redirect() {
-    $homepage_id = get_option('page_on_front');
-    if ( ( ! is_page( $homepage_id ) ) && ! is_user_logged_in() ) {                                                                                  
-         wp_redirect( home_url() ); 
-    }    
-}
