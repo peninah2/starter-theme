@@ -16,9 +16,9 @@
 			},
 		   "spacingSizes": [
 				{
-				"size": "clamp(3rem, 5vw, 3.5rem)",
-				"slug": "default",
-				"name": "Normal"
+				"size": "3rem",
+				"slug": "small",
+				"name": "Small"
 				},
 			    {
 				"size": "clamp(3rem, 5vw, 5rem)",
@@ -82,34 +82,39 @@
 		
             "fontSizes": [
 				{
-                    "slug": "small",
-                    "size": "1.6rem",
-                    "name": "Small"
+                    "slug": "14",
+                    "size": "1.4rem",
+                    "name": "14"
                 },
 				{
-                    "slug": "normal",
+                    "slug": "16",
+                    "size": "1.6rem",
+                    "name": "16"
+                },
+				{
+                    "slug": "18",
                     "size": "1.8rem",
-                    "name": "Normal"
+                    "name": "18"
                 },
                 {
-                    "slug": "medium",
-                    "size": "min(max(1.6rem, 4vw), 2rem)",
-                    "name": "Medium"
+                    "slug": "20",
+                    "size": "2rem",
+                    "name": "20"
                 },
-				 {
-                    "slug": "large",
-                    "size": "min(max(1.8rem, 4vw), 2.8rem)",
-                    "name": "Large"
+				{
+                    "slug": "32",
+                    "size": "clamp(2.5rem, 4vw, 3.2rem)",
+                    "name": "32"
                 },
-				 {
-                    "slug": "xlarge",
-                    "size": "min(max(2.4rem, 4vw), 4.8rem)",
-                    "name": "X-Large"
+				{
+                    "slug": "56",
+                    "size": "clamp(4rem, 5vw, 5.6rem)",
+                    "name": "56"
                 },
-				 {
-                    "slug": "title",
-                    "size": "min(max(2.6rem, 4vw), 6rem)",
-                    "name": "Page Title"
+				{
+                    "slug": "88",
+                    "size": "clamp(4.6rem, 6vw, 8.8rem)",
+                    "name": "88"
                 }
             ]
         },
@@ -140,7 +145,9 @@
 			},
 			
 			"core/group": {
-					
+					"border": {
+						"color": true
+					},
 					"spacing": {
 						"margin": false,
 						"padding": true,

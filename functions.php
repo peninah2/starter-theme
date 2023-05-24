@@ -101,9 +101,9 @@ function hct_editor_styling_scripts() {
 		filemtime( get_stylesheet_directory() . '/js/editor.js' ),
 		true
 	);
+	
 }
 add_action( 'enqueue_block_editor_assets', 'hct_editor_styling_scripts' );
-
 
 
 // Head content

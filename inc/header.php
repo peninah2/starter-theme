@@ -7,7 +7,7 @@
 
 **/
 
-add_theme_support( 'genesis-menus', array( 'primary' => __( 'Primary Navigation Menu', 'genesis' ) ) );
+add_theme_support( 'genesis-menus', array( 'primary' => __( 'Desktop Menu', 'genesis' ) ) );
 
  // Repositions primary navigation menu to header
 remove_action( 'genesis_after_header', 'genesis_do_nav' );
@@ -18,8 +18,6 @@ add_action( 'genesis_header', 'genesis_do_nav', 12 );
 add_action( 'after_setup_theme', 'hct_register_nav_menu', 0 );
 function hct_register_nav_menu(){
 	register_nav_menus( array(
-	//	'footer_menu'  => __( 'Footer', 'text_domain' ),
-	//	'social_menu'  => __( 'Social', 'text_domain' ),
 		'mobile_menu'  => __( 'Responsive', 'text_domain' ),
 	) );
 }
@@ -44,15 +42,3 @@ function hct_responsive_menu_button() {
 // Uncomment to add custom header
 // add_action( 'genesis_header', 'hct_custom_header' );
 // function hct_custom_header() {} 
-
-
-
-// Scroll to top 
-function hct_scroll_top() {
-	?>
-	<a href="#" class="button scroll-top" id="scroll-top">
- 		<i class="arrow up"></i>
-	</a>
-	<?php
-}
-add_action( 'genesis_after_content', 'hct_scroll_top' );
