@@ -40,6 +40,11 @@ wp.domReady( () => {
 	
 	wp.blocks.registerBlockStyle( 'core/columns', [ 	
 		{
+			name: 'col-wide',
+			label: 'Wide gap between columns',
+			isDefault: false,
+		},
+		{
 			name: 'col-spread',
 			label: 'Spread columns',
 			isDefault: false,
