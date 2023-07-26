@@ -69,14 +69,14 @@
 
 			"fontFamilies": [
 				{
-					"fontFamily": "name-font",
-					"slug": "font-main",
-					"name": "Regular"
+					"fontFamily": "SANS FONT, 'Segoe UI', Roboto, Helvetica Neue, Arial, sans-serif",
+					"slug": "main",
+					"name": "FONT NAME"
 				},
 				{
-					"fontFamily": "name-font",
-					"slug": "font-secondary",
-					"name": "Title"
+					"fontFamily": "SERIF FONT, Georgia, Cambria, serif",
+					"slug": "secondary",
+					"name": "FONT NAME"
 				}
 			],
 		

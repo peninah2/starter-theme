@@ -4,24 +4,17 @@
 
 
 :root { /* Add sizes and change to pixel units */
-	--wp--preset--font-size--small: 16px;
-	--wp--preset--font-size--normal: 18px;
-	--wp--preset--font-size--medium: 28px;
-	--wp--preset--font-size--large: 48px;
-	--wp--preset--font-size--xlarge: 82px;
-	--wp--preset--font-size--title: 82px;
-	--font-main: "Source Sans Pro", Roboto, sans-serif;
-	--font-secondary: Georgia, sans-serif;	
+	--wp--preset--font-size--16: 16px;
+	--wp--preset--font-size--35: 35px;
+	--wp--preset--font-size--55: 55px;
+	--wp--preset--font-size--80: 80px;
 }
 
-.is-style-main,
+
 .block-editor-block-list__layout.is-root-container {
-	font-family: var(--font-main);
+	font-family: var(--wp--preset--font-family--main);
 }
 
-.is-style-secondary {
-	font-family: var(--font-secondary);
-}
 
 /* Widths/Structure
 --------------------------------------------- */
@@ -55,7 +48,7 @@
 --------------------------------------------- */
 /* Page title */
 .wp-block-post-title { 
-	font-family: var(--font-main);
+	font-family: var(--wp--preset--font-family--main);
 }
 
 /* Remove margins added in editor */
@@ -170,6 +163,31 @@ p.wp-block + p.wp-block {
 .centered {
 	margin-left: auto;
 	margin-right: auto;
+}
+
+/* Images aligned left/right and still inline with grid */
+
+.wp-block-image.alignright,
+.wp-block-image.alignleft {
+	margin: 0 calc(50% - 50vw) !important;
+	max-width: 100vw;
+	width: 100vw; 
+	
+	display: grid;
+    grid-template-columns: 1fr var(--wp--style--global--content-size) 1fr;
+}
+
+.wp-block-image.alignright {
+	grid-template-areas: "left main main";
+}
+
+.wp-block-image.alignleft {
+	grid-template-areas: "main main right";
+}
+
+.wp-block-image.alignright img,
+.wp-block-image.alignleft img {
+	grid-area: main;
 }
 
 /* Buttons
@@ -366,6 +384,8 @@ hr.wp-block-separator.is-style-wide {
 	border-bottom: 1px solid;
 }
 
+
+
 /* Custom styles for columns blocks
 ------------------------------------------ */
 
@@ -378,6 +398,16 @@ hr.wp-block-separator.is-style-wide {
 	margin: 0 !important;
 }
 
+/* Columns with lines */
+.wp-block-columns.is-style-col-lines .wp-block-column:not(:first-of-type) {
+	border-left: 1px solid;
+	padding-left: var(--wp--preset--spacing--medium);
+}
+
+/* Wide column */
+.wp-block-columns.is-style-col-wide .wp-block-column:not(:first-of-type) {
+	margin-left: var(--wp--preset--spacing--medium);
+}	
 
 /* SVG */
 .svg-img.aligncenter {

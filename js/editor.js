@@ -53,6 +53,11 @@ wp.domReady( () => {
 			name: 'col-no-space',
 			label: 'No space between',
 			isDefault: false,
+		},
+		{
+			name: 'col-lines',
+			label: 'Lines between columns',
+			isDefault: false,
 		}
 	]);
 		
