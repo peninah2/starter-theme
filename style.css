@@ -1459,10 +1459,8 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 
 
 .wrap,
-.wp-block-cover__inner-container,
-.alignfull.is-layout-flow > .wp-block-group,
-.alignfull.is-layout-flow > .wp-block-columns,
-.alignfull.is-layout-constrained {
+.alignfull.is-layout-constrained,
+.wp-block-cover {
 	padding: 0 var(--wp--preset--spacing--small);
 }
 
