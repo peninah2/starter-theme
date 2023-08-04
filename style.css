@@ -1464,12 +1464,6 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 	padding: 0 var(--wp--preset--spacing--small);
 }
 
-/* Alignwide is used for slightly narrower than the .wrap width.  */
-.alignwide {
-    width: calc(var(--wp--style--global--content-size) - 25%);
-	max-width: 100%;
-    margin: auto;
-}
 
 .alignfull,
 .alignfull.wp-block-image,
@@ -1477,6 +1471,19 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 	margin: 0 calc(50% - 50vw);
 	max-width: 100vw;
 	width: 100vw;
+}
+
+/* Also set in theme.json*/
+.alignwide {
+    max-width: 900px;
+}
+
+.alignwide.wp-block-group,
+.alignwide.wp-block-cover,
+.alignwide.wp-block-columns,
+.alignwide.wp-block-image,
+.alignwide.wp-block-media-text {
+	margin: 0 auto;
 }
 
 .narrow,
@@ -1587,13 +1594,6 @@ ul.blocks-gallery-grid,
 
 /* Cover block
 --------------------------------------------- */
-.wp-block-cover, 
-.wp-block-cover-image,
-/* Cover blocks inside a column (with no padding) don't have extra padding (ie, a column with an image background won't have more padding than the other columns). */
-.wp-block-column.no-padding .wp-block-cover__inner-container {
-	padding: 0;
-}
-
 /* Allow bottom/left positioning for cover blocks */
 .wp-block-cover.is-position-top-left.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.is-position-top-right.has-custom-content-position .wp-block-cover__inner-container,
