@@ -1457,11 +1457,12 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 	margin: auto;
 }
 
-
 .wrap,
-.alignfull.is-layout-constrained,
-.wp-block-cover {
-	padding: 0 var(--wp--preset--spacing--small);
+.wp-block-cover__inner-container.is-layout-constrained,
+.wp-block-media-text .wp-block-media-text__content,
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    padding-left: var(--wp--preset--spacing--small);
+    padding-right: var(--wp--preset--spacing--small);
 }
 
 
@@ -1541,10 +1542,6 @@ body .is-layout-constrained > .x-narrow {
 
 /* Media-text 
 -------------------------*/
-
-.wp-block-media-text.has-background .wp-block-media-text__content {
-    padding: var(--wp--preset--spacing--small);
-}
 
 
 /* Columns block
