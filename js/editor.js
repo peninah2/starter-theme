@@ -3,27 +3,11 @@ wp.domReady( () => {
 	// Remove spacer block as we have a custom one with more settings
 	wp.blocks.unregisterBlockType( 'core/spacer' );
 
-	wp.blocks.registerBlockStyle( 'core/heading', [ 	
+	wp.blocks.registerBlockStyle( 'core/media-text', [ 	
 		{
-			name: 'main',
-			label: 'Main',
-		},
-		{
-			name: 'secondary',
-			label: 'Secondary',
-			isDefault: true,
-		}
-	]);
-	
-	wp.blocks.registerBlockStyle( 'core/paragraph', [ 
-		{
-			name: 'main',
-			label: 'Main',
-			isDefault: true,			
-		},
-		{
-			name: 'secondary',
-			label: 'Secondary',
+			name: 'content-fit',
+			label: 'Full width image, content within grid',
+			isDefault: false,			
 		}
 	
 	]);	
