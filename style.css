@@ -1546,10 +1546,6 @@ body .is-layout-constrained > .x-narrow {
 	padding: 0;
 }
 
-.wp-block-media-text.is-style-content-fit .wp-block-media-text__content {
-    max-width: calc(var(--wp--style--global--content-size)/2);
-}
-
 /* Columns block
 -------------------------*/
 
@@ -1845,6 +1841,10 @@ ul.wp-block-social-links {
 	}
 
 	/* Alignfull media-text with content that fits the width */
+	.wp-block-media-text.is-style-content-fit .wp-block-media-text__content {
+		max-width: calc(var(--wp--style--global--content-size)/2);	
+	}
+	
 	.wp-block-media-text.is-style-content-fit.has-media-on-the-right .wp-block-media-text__content {
 		justify-self: right;
 	}
