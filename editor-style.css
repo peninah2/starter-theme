@@ -192,8 +192,8 @@ p.wp-block + p.wp-block {
 	grid-template-areas: "main main right";
 }
 
-.wp-block-image.alignright img,
-.wp-block-image.alignleft img {
+.wp-block-image.alignright div,
+.wp-block-image.alignleft div {
 	grid-area: main;
 }
 
