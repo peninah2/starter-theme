@@ -21,8 +21,6 @@
 
 .wp-block-post-content .wp-block {
     max-width: 1200px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 .wp-block[data-align="wide"] {
@@ -31,8 +29,6 @@
 
 .wp-block[data-align="full"] {
     max-width: none;
-	margin-left: -58px;
-    margin-right: -58px;	
 }
 
 .wp-block-cover {
@@ -420,4 +416,4 @@ hr.wp-block-separator.is-style-wide {
 .svg-img.aligncenter {
     text-align: center;
 }
-
+ 
