@@ -1,0 +1,115 @@
+/*
+ * Styles Gutenberg editor
+ */
+
+@import "/wp-content/themes/-------THEME NAME ------------------/css/global.css";
+
+:root { /* Add sizes and change to pixel units */
+	--wp--preset--font-size--14: 14px;
+	--wp--preset--font-size--16: 16px;
+	--wp--preset--font-size--18: 18px;	
+	--wp--preset--font-size--20: 20px;
+	--wp--preset--font-size--24: 24px;
+	--wp--preset--font-size--36: 36px;
+	--wp--preset--font-size--48: 48px;
+	--wp--preset--font-size--90: 90px;
+}
+
+
+.block-editor-block-list__layout.is-root-container {
+	font-family: var(--wp--preset--font-family--main);
+}
+
+
+/* Widths/Structure
+--------------------------------------------- */
+
+.wp-block-post-content .wp-block {
+    max-width: 1200px;
+	font-size: 18px;
+	font-weight: 400;
+    line-height: 1.625;	
+}
+
+.wp-block[data-align="wide"] {
+    max-width: 1280px;
+}
+
+.wp-block[data-align="full"] {
+    max-width: none;
+}
+
+.wp-block-cover {
+    padding: 0 25px;
+}
+
+.wp-block-columns:where(.has-background) {
+    padding: 0;
+}
+
+
+/* Basic typography
+--------------------------------------------- */
+/* Page title */
+.wp-block-post-title { 
+	font-family: var(--wp--preset--font-family--main);
+}
+
+/* Remove margins added in editor */
+h1.block-editor-rich-text__editable,
+h2.block-editor-rich-text__editable,
+h3.block-editor-rich-text__editable,
+h4.block-editor-rich-text__editable,
+h5.block-editor-rich-text__editable,
+h6.block-editor-rich-text__editable {
+	margin-top: 0;
+	margin-bottom: 0;
+	font-weight: normal;
+}
+
+p.wp-block {
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+p.wp-block + p.wp-block {
+	margin-top: 18px;
+}
+
+
+/* Images */
+.wp-block.wp-block-image {
+    margin-bottom: 0;
+}
+
+/* Media text*/
+.wp-block-media-text .wp-block-media-text__content {
+	padding: 0;
+}
+
+
+
+/* Spacer block */
+.wp-block-acf-spacer {
+	clear: both !important;
+}
+
+.wp-block-spacer.spacer-xsmall-height {
+    height: 16px;
+}
+
+.wp-block-spacer.spacer-small-height {
+	height: 25px;
+}
+
+.wp-block-spacer.spacer-medium-height {
+	height: 40px;
+}
+
+.wp-block-spacer.spacer-large-height {
+	height: 70px;
+}
+
+.wp-block-spacer.spacer-xlarge-height {
+	height: 100px;
+}

@@ -20,8 +20,8 @@
 				"slug": "small",
 				"name": "Small"
 				},
-			    {
-				"size": "clamp(3rem, 5vw, 5rem)",
+				{
+				"size": "clamp(3rem, 5vw, 4rem)",
 				"slug": "medium",
 				"name": "Medium"
 				},
@@ -29,6 +29,11 @@
 				"size": "clamp(3.5rem, 8vw, 7rem)",
 				"slug": "large",
 				"name": "Large"
+				},
+				{
+				"size": "clamp(6rem, 8vw, 16rem)",
+				"slug": "xlarge",
+				"name": "X-Large"
 				}
 			]
         },			

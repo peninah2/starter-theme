@@ -22,6 +22,13 @@ function hct_enqueue_scripts_styles() {
 		array(),
 		filemtime( get_stylesheet_directory() . '/style.css' )
 	);
+	
+	wp_enqueue_style(
+		'block-styles',
+		get_stylesheet_directory_uri() . '/css/global.css',
+		array(),
+		filemtime( get_stylesheet_directory() . '/css/global.css' )
+	);
 		
 	wp_enqueue_script(
 		'a11y-menu',
@@ -81,7 +88,7 @@ add_theme_support( 'align-wide' );
 
 // Editor Styles
 add_theme_support( 'editor-styles' );
-add_editor_style( 'editor-style.css' );
+add_editor_style( 'css/editor-style.css' );
 add_theme_support( 'custom-line-height' );
 add_theme_support( 'custom-spacing' );
 add_theme_support( 'appearance-tools' );

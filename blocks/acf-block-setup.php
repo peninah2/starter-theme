@@ -14,8 +14,8 @@
 add_action( 'init', 'hct_load_blocks' );
 function hct_load_blocks() {
 	
-	register_block_type( get_stylesheet_directory() . '/blocks/svg/block.json' );
-	register_block_type( get_stylesheet_directory() . '/blocks/spacer/block.json' );
+	register_block_type( get_stylesheet_directory() . '/blocks/svg' );
+	register_block_type( get_stylesheet_directory() . '/blocks/spacer' );
 	
 }
 
@@ -60,6 +60,7 @@ acf_add_local_field_group(array(
 				'small' => 'S',
 				'medium' => 'M',
 				'large' => 'L',
+				'xlarge' => 'XL',
 				'custom' => 'Custom',
 			),
 			'allow_null' => 0,
