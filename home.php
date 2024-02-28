@@ -33,4 +33,4 @@ function hct_custom_blog_loop() {
 
 }
 
-
+genesis();
