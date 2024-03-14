@@ -9,8 +9,8 @@
 /* Main regular */
 @font-face {
 	font-family: XXX;
-	src: url('fonts/fontname/font.woff2') format('woff2'), 
-		 url('fonts/fontname/font.woff') format('woff');
+	src: url('../fonts/fontname/font.woff2') format('woff2'), 
+		 url('../fonts/fontname/font.woff') format('woff');
 	font-weight:  400;
 	font-style:   normal;
 	font-stretch: normal;
@@ -19,8 +19,8 @@
 /* Main bold */
 @font-face {
 	font-family: XXX;
-	src: url('fonts/fontname/font.woff2') format('woff2'), 
-		 url('fonts/fontname/font.woff') format('woff');
+	src: url('../fonts/fontname/font.woff2') format('woff2'), 
+		 url('../fonts/fontname/font.woff') format('woff');
 	font-weight:  bold;
 	font-style:   normal;
 	font-stretch: normal;
@@ -29,8 +29,8 @@
 /* Main italic */
 @font-face {
 	font-family: XXX;
-	src: url('fonts/fontname/font.woff2') format('woff2'), 
-		 url('fonts/fontname/font.woff') format('woff');
+	src: url('../fonts/fontname/font.woff2') format('woff2'), 
+		 url('../fonts/fontname/font.woff') format('woff');
 	font-weight:  normal;
 	font-style:   italic;
 	font-stretch: normal;
@@ -39,8 +39,8 @@
 /* Secondary */
 @font-face {
 	font-family: XXX;
-	src: url('fonts/fontname/font.woff2') format('woff2'), 
-		 url('fonts/fontname/font.woff') format('woff');
+	src: url('../fonts/fontname/font.woff2') format('woff2'), 
+		 url('../fonts/fontname/font.woff') format('woff');
 	font-weight:  normal;
 	font-style:   normal;
 	font-stretch: normal;
@@ -422,6 +422,10 @@ hr.wp-block-separator.is-style-wide {
 	.wp-block-column.no-padding:not(:last-child) {
 		padding-top: var(--wp--preset--spacing--small) !important;
 	}	
+
+	.col-flip-mobile .wp-block-column:first-of-type {
+		order: 2;
+	}
 	
 }
 
