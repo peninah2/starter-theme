@@ -299,19 +299,19 @@ input[type="submit"].gform_button:focus,
 hr {
 	border: 0;
 	border-collapse: collapse;
-	border-top: 1px solid #eee;
+	border-bottom: 1px solid #eee;
 	clear: both;
 	margin: 0;
 }
 
 hr.wp-block-separator {
 	border-bottom: 1px solid;
+	border-top: 0;
     width: 100px;
 }
 
 hr.wp-block-separator.is-style-wide {
 	width: 100%;
-	border-bottom: 1px solid;
 }
 
 

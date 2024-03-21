@@ -24,16 +24,6 @@ function hct_remove_admin_bar_links() {
 }
 add_action( 'wp_before_admin_bar_render', 'hct_remove_admin_bar_links' );
 
-// Remove admin bar for non-admins
-function hc_remove_admin_bar() {
-	
-	$cu = wp_get_current_user();
-    if ( $cu->has_cap('edit_users') && !is_admin() ) {
-  		show_admin_bar(true);
-	}
-}
-add_action('after_setup_theme', 'hc_remove_admin_bar');
-
 
 
 // Remove default dashboard widgets
@@ -138,6 +128,7 @@ add_filter( 'wpseo_metabox_prio', function(){ return 'low'; } );
 /**
  * Redirect all users to front page after login besides Editor and Admin
  */
+add_action('admin_menu', 's9_add_manage_patterns_menu'); 
 function hctt_login_redirect( $redirect_to, $request, $user ) {
 	global $user;
 	if ( isset( $user->roles ) && is_array( $user->roles ) ) {
@@ -158,6 +149,8 @@ function hctt_login_redirect( $redirect_to, $request, $user ) {
 }
 
 add_filter( 'login_redirect', 'hctt_login_redirect', 10, 3 );
+
+
 
 /**
  * Auto update plugins 
