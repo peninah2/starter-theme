@@ -719,22 +719,19 @@ figcaption,
 	background-color: #fff;
 }
 
-/* Title Area
+/* Logo
 --------------------------------------------- */
-.site-title {
+.site-name {
 	line-height: 1;
-	margin-bottom: 0;
+    display: inline-block;
 	text-indent: -9999px;
 }
 
 .site-title a {
 	position: relative;
     z-index: 999;
-	display: block;
-	width: 200px;
-    height: 54px;
-	background: url(images/logo/logo.svg) no-repeat;
-    background-size: contain;
+	border: 0;
+	display: flex;
 }
 
 .site-title a:focus,

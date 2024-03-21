@@ -39,6 +39,20 @@ function hct_responsive_menu_button() {
 	
 }
 
-// Uncomment to add custom header
-// add_action( 'genesis_header', 'hct_custom_header' );
-// function hct_custom_header() {} 
+// Puts logo in as file 
+remove_action( 'genesis_site_title', 'genesis_seo_site_title' );
+add_action( 'genesis_header', 'hct_site_title' );
+function hct_site_title() {
+	?>
+	<h1 itemprop="headline" class="site-title">
+		<a href="<?php echo network_site_url( '/' ); ?>">
+			<span class="site-name"><?php echo get_bloginfo( 'name' ); ?></span>	
+
+			<div class="site-logo">
+				----- Enter logo path or svg -----
+			</div>	
+		</a>
+	</h1>
+
+	<?php 
+}
