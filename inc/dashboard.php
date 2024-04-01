@@ -151,6 +151,25 @@ function hctt_login_redirect( $redirect_to, $request, $user ) {
 add_filter( 'login_redirect', 'hctt_login_redirect', 10, 3 );
 
 
+/**
+ * Adds a menu item to the admin menu for managing patterns
+ */
+add_action('admin_menu', 's9_add_manage_patterns_menu');
+function s9_add_manage_patterns_menu() {
+    // Check if the current user has the capability to edit pages
+    if (!current_user_can('edit_pages')) {
+        return;
+    }
+
+    // Use the add_submenu_page function to add the menu item under Appearance
+   add_submenu_page(
+        'edit.php?post_type=page', // The slug name for the parent menu (Pages)
+        'Manage Patterns', // The text to be displayed in the title tags of the page when the menu is selected
+        'Manage Patterns', // The text to be used for the menu
+        'edit_pages', // The capability required for this menu to be displayed to the user
+        'edit.php?post_type=wp_block' // The slug name to refer to this menu by; should be unique for this menu
+    );
+}
 
 /**
  * Auto update plugins 

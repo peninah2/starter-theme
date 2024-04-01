@@ -5,8 +5,6 @@
  *
  * @package      HCStarter
 
-
- Footer options: use 1 footer widget with columns
 **/
 
 // Remove Genesis footer
@@ -20,9 +18,6 @@ remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 // Activate block-based widgets
 add_filter( 'use_widgets_block_editor', '__return_true' );
 
-// Activate block/widget based area
-add_theme_support( 'genesis-footer-widgets', 1 );
-
 
 // Shortcode: current year
 add_shortcode( 'current_year', 'hct_current_year' );
@@ -31,4 +26,13 @@ function hct_current_year() {
 	return $year;
 }
 
-// Social menu shortcode in Github > snippets
+// Change pattern number
+add_action( 'genesis_footer', 'hct_block_footer' );
+function hct_block_footer() {
+		
+    $block_content = do_blocks('<!-- wp:block {"ref":1} /-->');
+	$footer = do_shortcode($block_content);
+	
+	echo $footer;
+
+}
