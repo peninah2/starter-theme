@@ -19,6 +19,13 @@ function hct_load_blocks() {
 	
 }
 
+add_action( 'wp_enqueue_scripts', 'hct_block_scripts' );
+function hct_block_scripts() {	
+
+
+	
+}
+
 
 add_filter( 'block_categories_all', 'hct_custom_block_category', 10, 2);
 function hct_custom_block_category( $categories, $post ) {
