@@ -20,23 +20,6 @@ function hct_register_nav_menu(){
 	) );
 }
 
-// Sets up separate menu location for responsive
-add_action('genesis_header', 'hct_responsive_menu_button', 11 );
-function hct_responsive_menu_button() {
-	
-	//echo '<button href="#" class="menu-toggle"><span class="toggle-icon"></span></button>'; 
-	echo '<button href="#" class="menu-toggle"><span></span> <span></span> <span></span> <span></span></button>'; 
-	
-	wp_nav_menu( array( 
-		'theme_location' => 'mobile_menu', 
-		'container' => 'nav', 
-		'container_class' => 'mobile-menu-wrap', 
-		'menu_class' => 'genesis-nav-menu mobile-menu',
-		) 
-	);
-	
-}
-
 // Setup header
 add_action( 'genesis_header', 'hct_header' );
 function hct_header() {
@@ -49,6 +32,7 @@ function hct_header() {
 	</h1>
 
 	<?php 
+	
 	genesis_do_nav();
 
 //  Use if want to include a block in the header	

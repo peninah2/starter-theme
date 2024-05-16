@@ -733,6 +733,7 @@ figcaption,
 	line-height: 1;
     display: inline-block;
 	text-indent: -9999px;
+	width: 0; /* older Safari browsers */
 }
 
 .site-title a {
@@ -942,9 +943,56 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 
 .nav-primary {
 	clear: left;
-	width: 100%;
+	width: auto;
 	display: none;
+	margin-left: auto;
 }
+
+.nav-primary .menu-item,
+.nav-primary .menu-item	a {
+	display: inline-block;
+}
+
+.nav-primary .menu-item:focus,
+.nav-primary .menu-item:hover {
+	position: relative;
+}	
+
+.nav-primary a {
+	padding: 15px;
+}
+
+/* Submenus behave differently on desktop primary menu */
+.nav-primary .menu-item:hover > .sub-menu,
+.nav-primary .menu-item:focus > .sub-menu, 
+.nav-primary .menu-item.has-expanded-sub-menu > .sub-menu {
+	left: auto;
+	opacity: 1;
+	display: block !important;
+}
+
+.nav-primary .sub-menu,
+.nav-primary .sub-menu a {
+	width: 180px;
+}
+
+.nav-primary .sub-menu {
+	opacity: 0;
+	padding-left: 0;
+	position: absolute;
+	transition: opacity .4s ease-in-out;
+}
+
+.nav-primary .sub-menu a {
+	border: 1px solid #eee;
+	border-top: 0;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.nav-primary .sub-menu .sub-menu {
+	margin: -46px 0 0 179px;
+}	
 
 
 /* SITE FOOTER
@@ -1159,6 +1207,12 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 	width: 100vw;
 }
 
+/* Constrained layouts within a full-width group need to be adjusted so the width matches ungrouped items */
+body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)) {
+    max-width: calc( var(--wp--style--global--content-size) - 6rem);
+}
+
+
 /* Also set in theme.json*/
 .alignwide {
     max-width: 900px;
@@ -1302,57 +1356,9 @@ body .is-layout-constrained > .x-narrow {
 	--------------------------------------------- */
 
 	.nav-primary {
-		width: auto;
-		margin-left: auto;
 		display: block;
 	}
 	
-	.nav-primary .menu-item,
-	.nav-primary .menu-item	a {
-		display: inline-block;
-	}
-	
-	.nav-primary .menu-item:focus,
-	.nav-primary .menu-item:hover {
-		position: relative;
-	}	
-
-	.nav-primary a {
-		padding: 15px;
-	}
-	
-	/* Submenus behave differently on desktop primary menu */
-	.nav-primary .menu-item:hover > .sub-menu,
-	.nav-primary .menu-item:focus > .sub-menu, 
-	.nav-primary .menu-item.has-expanded-sub-menu > .sub-menu {
-		left: auto;
-		opacity: 1;
-		display: block !important;
-	}
-
-	.nav-primary .sub-menu,
-	.nav-primary .sub-menu a {
-		width: 180px;
-	}
-
-	.nav-primary .sub-menu {
-		opacity: 0;
-		padding-left: 0;
-		position: absolute;
-		transition: opacity .4s ease-in-out;
-	}
-
-	.nav-primary .sub-menu a {
-		border: 1px solid #eee;
-		border-top: 0;
-		padding-bottom: 15px;
-		padding-top: 15px;
-	}
-
-	.nav-primary .sub-menu .sub-menu {
-		margin: -46px 0 0 179px;
-	}	
-
 
 	/* Content
 	--------------------------------------------- */
