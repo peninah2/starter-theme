@@ -56,30 +56,12 @@ add_action('wp_dashboard_setup', 'hct_remove_wpseo_dashboard_overview' );
 
 
 
-//Changes WP default "Howdy" text to "Logged in as"
-function hct_logged_in_as_text( $wp_admin_bar ) {
-	$user_id = get_current_user_id();
-	$current_user = wp_get_current_user();
-	$profile_url = get_edit_profile_url( $user_id );
-
-	if ( 0 != $user_id ) {
-	/* Add the "My Account" menu */
-		$avatar = get_avatar( $user_id, 28 );
-		$howdy = sprintf( __('Logged in as %1$s'), $current_user->display_name );
-		$class = empty( $avatar ) ? '' : 'with-avatar';
-	
-	$wp_admin_bar->add_menu( array(
-		'id' => 'my-account',
-		'parent' => 'top-secondary',
-		'title' => $howdy . $avatar,
-		'href' => $profile_url,
-		'meta' => array(
-		'class' => $class,
-		),
-	) );
-	}
+//Changes WP default "Howdy" text
+add_filter('gettext', 'hct_howdy_message', 10, 3);
+function hct_howdy_message($translated_text, $text, $domain) {
+    $new_message = str_replace('Howdy', 'Welcome', $text);
+    return $new_message;
 }
-add_action( 'admin_bar_menu', 'hct_logged_in_as_text', 11 );
 
 
 /**

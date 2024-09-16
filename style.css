@@ -213,6 +213,11 @@ blockquote::before {
 	height: auto;
 }
 
+/* Remove gutenberg spacing */
+.is-layout-flow > * {
+    margin-block-start: 0;
+}
+
 /* Typography
 --------------------------------------------- */
 
@@ -497,7 +502,16 @@ p.gform_required_legend {
     color: inherit !important;
 }
 
+.gform_wrapper.gravity-theme .gfield_checkbox .gfield-choice-input {
+    display: inline-block;
+    margin-top: 5px;
+    vertical-align: top;
+    margin-right: 5px;
+}
 
+.gform_wrapper.gravity-theme .gfield_checkbox .gfield-choice-input+label {
+    vertical-align: top;
+}
 
 /* Avatar
 --------------------------------------------- */
@@ -1331,10 +1345,23 @@ body .is-layout-constrained > .x-narrow {
 
 
 
-/* Columns & media-text collapse -- Gutenberg default is to collapse at 600
- * ---------------------------------------------------------------------------*/
-
-
+@media only screen and (max-width: 959px) {
+	
+	.no-side-padding-mobile {
+		padding-right: 0 !important;
+		padding-left: 0 !important;
+	}
+	
+	/* Make large images retain some height on mobile */
+    .wp-block-image.alignfull img, 
+	.wp-block-image.alignright img, 
+	.wp-block-image.alignleft img, 
+	.wp-block-image.img-height img {
+        min-height: 300px;
+        object-fit: cover;
+    }
+	
+}
 
 /* Nav changes
  * ---------------------------------------------------------------------------*/

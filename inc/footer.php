@@ -30,9 +30,7 @@ function hct_current_year() {
 add_action( 'genesis_footer', 'hct_block_footer' );
 function hct_block_footer() {
 		
-    $block_content = do_blocks('<!-- wp:block {"ref":1} /-->');
-	$footer = do_shortcode($block_content);
-	
-	echo $footer;
+	$block_content = do_blocks('<!-- wp:block {"ref":9} /-->');
+	echo do_shortcode($block_content);
 
 }
