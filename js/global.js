@@ -102,6 +102,11 @@
 		start: "top 90%",
 	});
 	
+	// Suppress "target not found" warnings
+	gsap.config({ 
+		nullTargetWarn: false 
+	});
+	
 
 	
 	/* Element fades in

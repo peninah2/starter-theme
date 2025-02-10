@@ -20,7 +20,6 @@ function hct_remove_admin_bar_links() {
     $wp_admin_bar->remove_menu('view-site');        // Remove the view site link
     $wp_admin_bar->remove_menu('comments');         // Remove the comments link
     $wp_admin_bar->remove_menu('new-content');      // Remove the content link
-    $wp_admin_bar->remove_menu('w3tc');             // If you use w3 total cache remove the performance link
 }
 add_action( 'wp_before_admin_bar_render', 'hct_remove_admin_bar_links' );
 
@@ -47,35 +46,12 @@ add_action('wp_dashboard_setup', 'hct_dashboard_widgets', 11);
 remove_action('welcome_panel', 'wp_welcome_panel');
 
 
-
-// Remove Yoast SEO Dashboard Widget
-function hct_remove_wpseo_dashboard_overview() {
-	remove_meta_box( 'wpseo-dashboard-overview', 'dashboard', 'side' );
-}
-add_action('wp_dashboard_setup', 'hct_remove_wpseo_dashboard_overview' );
-
-
-
 //Changes WP default "Howdy" text
 add_filter('gettext', 'hct_howdy_message', 10, 3);
 function hct_howdy_message($translated_text, $text, $domain) {
     $new_message = str_replace('Howdy', 'Welcome', $text);
     return $new_message;
 }
-
-
-/**
- * Remove WPSEO Notifications
- *
- */
-function ea_remove_wpseo_notifications() {
-	if( ! class_exists( 'Yoast_Notification_Center' ) )
-		return;
-	remove_action( 'admin_notices', array( Yoast_Notification_Center::get(), 'display_notifications' ) );
-	remove_action( 'all_admin_notices', array( Yoast_Notification_Center::get(), 'display_notifications' ) );
-}
-add_action( 'init', 'ea_remove_wpseo_notifications' );
-
 
 
 /**
@@ -101,10 +77,6 @@ function hct_remove_post_custom_fields_now() {
 }
 add_action( 'admin_menu' , 'hct_remove_post_custom_fields_now' );
 
-
-
-// Don't let WPSEO metabox be high priority
-add_filter( 'wpseo_metabox_prio', function(){ return 'low'; } );
 
 
 /**
@@ -134,5 +106,5 @@ add_filter( 'login_redirect', 'hctt_login_redirect', 10, 3 );
 /**
  * Auto update plugins 
  */
-// add_filter( 'auto_update_plugin', '__return_true' );
-// add_filter( 'auto_update_theme', '__return_true' );
+add_filter( 'auto_update_plugin', '__return_true' );
+add_filter( 'auto_update_theme', '__return_true' );
