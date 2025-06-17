@@ -3,6 +3,10 @@
  * Responsive breakpoints: 600, 768, 960, 1280
  */
  
+:root :where(.is-layout-constrained) > * {
+	margin-block-start: 0;
+}
+
 
 /* Font imports
 --------------------------------------------- */
@@ -462,14 +466,6 @@ ul.blocks-gallery-grid,
 .wp-block-cover.is-position-bottom-left.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.is-position-bottom-right.has-custom-content-position .wp-block-cover__inner-container {
 	margin: 0 auto;
-}
-
-
-/* When cover blocks have zero opacity, the color is a background. */
-.wp-block-cover .wp-block-cover__background.has-background-dim.has-background-dim-0,
-.wp-block-cover .wp-block-cover__gradient-background.has-background-dim.has-background-dim-0 {
-    opacity: 1;
-    z-index: 0;
 }
 
 /* Custom cover style -- Make image contain, not cover */

@@ -87,7 +87,9 @@ p.wp-block + p.wp-block {
 	padding: 0;
 }
 
-
+.wp-block-heading {
+    white-space: normal !important;
+}
 
 /* Spacer block */
 .wp-block-acf-spacer {
