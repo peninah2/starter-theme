@@ -162,7 +162,8 @@ p {
 	padding: 0;
 }
 
-p + p {
+p + p,
+:root :where(.is-layout-constrained) > p + p {
 	margin-top: var(--wp--preset--spacing--small);
 }
 
