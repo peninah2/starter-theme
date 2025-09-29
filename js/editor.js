@@ -50,22 +50,22 @@ wp.domReady( () => {
 	wp.blocks.registerBlockStyle( 'core/cover', [ 	
 		{
 			name: 'cover-left',
-			label: 'Align Image Left',
+			label: 'Align Left',
 			isDefault: false,
 		},
 		{
 			name: 'cover-right',
-			label: 'Align Image Right',
+			label: 'Align Right',
 			isDefault: false,
 		},
 		{
 			name: 'cover-contain-top',
-			label: 'Align Image Top',
+			label: 'Align Top',
 			isDefault: false,
 		},			
 		{
 			name: 'cover-contain-bottom',
-			label: 'Align Image Bottom',
+			label: 'Align Bottom',
 			isDefault: false,
 		},	
 	

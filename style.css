@@ -163,6 +163,7 @@ p {
 }
 
 p + p,
+.is-layout-flow > p + p,
 :root :where(.is-layout-constrained) > p + p {
 	margin-top: var(--wp--preset--spacing--small);
 }
