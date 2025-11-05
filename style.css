@@ -954,6 +954,11 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
     content: "-";
 }
 
+.mobile-menu .sub-menu > .menu-item > .sub-menu {
+    text-indent: 20px;
+}
+
+
 
 /* Desktop menu
 --------------------------------------------- */

@@ -62,21 +62,20 @@
     });
 	
 	$(function () {
-			$('.menu-item-has-children').click(function () {
-				$(this).children('.sub-menu').slideToggle('fast'),
-				$(this).toggleClass('submenu-expanded');
-				if ( $( this ).hasClass( 'submenu-expanded' )) {
-					this.setAttribute('aria-expanded', "true");
-				}
-				else {
-					this.setAttribute('aria-expanded', "false");
-				}
-				
-			
-			});
+		$('.menu-item-has-children').click(function (e) {
+			e.stopPropagation(); // Prevent event from bubbling to parent menu items
+
+			$(this).children('.sub-menu').slideToggle('fast');
+			$(this).toggleClass('submenu-expanded');
+
+			if ($(this).hasClass('submenu-expanded')) {
+				this.setAttribute('aria-expanded', "true");
+			}
+			else {
+				this.setAttribute('aria-expanded', "false");
+			}
 		});
-	
-	
+	});
 	
 	
 
