@@ -13,6 +13,10 @@
  $anchor = '';
  if( !empty( $block['anchor'] ) )
 	$anchor = ' id="' . sanitize_title( $block['anchor'] ) . '"';
+
+ $extra_classes = '';
+ if ( !empty( $block['className'] ) )
+	$extra_classes = ' ' . $block['className'];
  
  if ( $hideonmobile == true ) {
 	 $hideonmobile = ' desktop';
@@ -35,6 +39,4 @@
 	$custom_style = ' style=" height:' . $height . 'px"';
  }
  
- 
- 
- echo '<div' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height ' . $hideonmobile . $hideondesktop . '"' . $anchor . '></div>';
+ echo '<div' . $custom_style . ' aria-hidden="true" class="wp-block-spacer spacer-' . $height . '-height' . $hideonmobile . $hideondesktop . $extra_classes . '"' . $anchor . '></div>';

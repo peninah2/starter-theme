@@ -249,6 +249,11 @@ input[type="submit"].gform_button:focus,
 	position: relative;
 }
 
+
+.z-1 {
+	z-index: 1;
+}
+
 .no-margin {
 	margin: 0 !important;
 }

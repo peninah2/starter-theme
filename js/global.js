@@ -56,10 +56,32 @@
 	});
 
 	// Responsive menu toggle
+	var scrollPosition = 0;
+
 	$('.menu-toggle').on('click', function(e){
-      e.preventDefault();
-      $('.site-container').toggleClass('mobile-nav-active');
-    });
+		e.preventDefault();
+		$('.site-container').toggleClass('mobile-nav-active');
+		
+		if ($('.site-container').hasClass('mobile-nav-active')) {
+			// Nav is opening — save scroll position and freeze the page
+			scrollPosition = window.pageYOffset;
+			$('body').css({
+				'overflow': 'hidden',
+				'position': 'fixed',
+				'top': -scrollPosition + 'px',
+				'width': '100%'
+			});
+		} else {
+			// Nav is closing — unfreeze and restore scroll position
+			$('body').css({
+				'overflow': '',
+				'position': '',
+				'top': '',
+				'width': ''
+			});
+			window.scrollTo(0, scrollPosition);
+		}
+	});
 	
 	$(function () {
 		$('.menu-item-has-children').click(function (e) {

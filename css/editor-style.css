@@ -13,6 +13,12 @@
 	--wp--preset--font-size--36: 36px;
 	--wp--preset--font-size--48: 48px;
 	--wp--preset--font-size--90: 90px;
+	
+	--wp--preset--spacing--xsmall: 16px;
+    --wp--preset--spacing--small: 25px;
+    --wp--preset--spacing--medium: 40px;
+    --wp--preset--spacing--large: 70px;
+    --wp--preset--spacing--xlarge: 100px;		
 }
 
 
@@ -23,9 +29,14 @@
 
 /* Widths/Structure
 --------------------------------------------- */
+:root :where(.editor-styles-wrapper) :where(.is-layout-flow)>* {
+	margin-block-start: 0;	
+}
+
 
 .wp-block-post-content .wp-block {
     max-width: 1200px;
+	margin: auto;
 	font-size: 18px;
 	font-weight: 400;
     line-height: 1.625;	

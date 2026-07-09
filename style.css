@@ -1204,7 +1204,6 @@ nav.mobile-menu-wrap .mobile-menu { /* move menu down so you can click the menu 
 .wrap,
 .wp-block-cover__inner-container,
 .wp-block-group,
-.wp-block-columns,
 .wp-block-cover.has-custom-content-position .wp-block-cover__inner-container,
 .wp-block-cover.has-custom-content-position.has-custom-content-position .wp-block-cover__inner-container {
 	max-width: var(--wp--style--global--content-size);
