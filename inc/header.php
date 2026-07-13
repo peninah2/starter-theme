@@ -27,7 +27,7 @@ function hct_header() {
 	<h1 itemprop="headline" class="site-title">
 		<a href="<?php echo network_site_url( '/' ); ?>">
 			<span class="site-name"><?php echo get_bloginfo( 'name' ); ?></span>	
-			<img src="../images/logo.svg" alt="<?php echo get_bloginfo( 'name' ); ?> logo" />
+			<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/logo.svg" alt="<?php echo get_bloginfo( 'name' ); ?> logo" />
 		</a>
 	</h1>
 
