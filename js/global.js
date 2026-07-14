@@ -61,10 +61,9 @@
 	$('.menu-toggle').on('click', function(e){
 		e.preventDefault();
 		$('.site-container').toggleClass('mobile-nav-active');
-		
 		if ($('.site-container').hasClass('mobile-nav-active')) {
-			// Nav is opening — save scroll position and freeze the page
 			scrollPosition = window.pageYOffset;
+			$('.site-header').addClass('scroll'); // force header pinned styling while open
 			$('body').css({
 				'overflow': 'hidden',
 				'position': 'fixed',
@@ -79,7 +78,10 @@
 				'top': '',
 				'width': ''
 			});
-			window.scrollTo(0, scrollPosition);
+			window.scrollTo({ top: scrollPosition, left: 0, behavior: 'instant' });
+			if (scrollPosition < 100) {
+				$('.site-header').removeClass('scroll'); // restore correct state after closing
+			}
 		}
 	});
 	

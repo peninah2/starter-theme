@@ -742,6 +742,33 @@ figcaption,
 	-webkit-align-items: center;
 	-ms-flex-align: center;
 	align-items: center;
+	position: fixed;
+	z-index: 999;
+	width: 100%;
+}
+
+/* Pin header to top of viewport once scrolled, and whenever the mobile nav is open */
+.scroll.site-header,
+.mobile-nav-active header.site-header {
+	position: fixed;
+	top: 0;
+}
+
+/* Bulletproof pin: guarantees the header (and its close/X button) stay visible
+   whenever the mobile nav is open, regardless of scroll state or tag name */
+.mobile-nav-active .site-header {
+	position: fixed !important;
+	top: 0 !important;
+	left: 0 !important;
+	z-index: 1001 !important;
+}
+
+.header-right {
+	margin-left: auto;
+	display: flex;
+	gap: 25px;
+	justify-content: center;
+	align-items: center;
 }
 
 /* Logo
@@ -917,6 +944,10 @@ button.button-toggle-sub-menu[aria-expanded="true"]:before {
   top: 10px;
   width: 0%;
   left: 50%;
+}
+
+.mobile-nav-active .menu-toggle {
+	z-index: 1002;
 }
 
 /* Mobile nav 
