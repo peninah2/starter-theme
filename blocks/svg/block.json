@@ -5,7 +5,7 @@
     "script": "",
     "category": "hct-theme",
     "icon": "embed-photo",
-    "apiVersion": 2,
+    "apiVersion": 3,
     "keywords": [],
     "acf": {
         "mode": "preview",
@@ -14,7 +14,7 @@
     "styles": [],
     "supports": {
         "align": true,
-        "anchor": false,
+        "anchor": true,
         "alignContent": false,
         "color": {
             "text": false,
