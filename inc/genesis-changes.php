@@ -19,7 +19,7 @@ add_theme_support(
 		'headings',
 		'rems',
 		'search-form',
-		'skip-links',
+	//	'skip-links',
 		'screen-reader-text',
 	)
 );
